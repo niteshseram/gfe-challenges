@@ -39,18 +39,6 @@ body {
   padding-right: 17.5px;
 }
 
-@media screen and (min-width: 375px) {
-  .testimonial-container {
-    max-width: 768px;
-  }
-}
-
-@media screen and (min-width: 768px) {
-  .testimonial-container {
-    max-width: 1280px;
-  }
-}
-
 .testimonial-card {
   background: #ffffff;
   padding: 24px;
