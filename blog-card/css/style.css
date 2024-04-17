@@ -64,7 +64,7 @@ body {
 }
 
 .badge {
-  padding: 1px 8px;
+  padding: 1px 7.5px;
 
   background: #f0fdf4;
   border: 1px solid #bbf7d0;
@@ -98,6 +98,7 @@ body {
 
 .card-description {
   line-height: 24px;
+  font-weight: 500;
   color: #525252;
 }
 
@@ -117,6 +118,7 @@ body {
 
   cursor: pointer;
   outline: none;
+  padding: 0;
 }
 
 .card-btn:focus {
@@ -126,4 +128,9 @@ body {
 .card-btn:disabled {
   pointer-events: none;
   color: #a3a3a3;
+}
+
+.btn-arrow {
+  width: 20px;
+  height: 20px;
 }
