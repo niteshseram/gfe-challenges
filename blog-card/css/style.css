@@ -130,7 +130,11 @@ body {
   color: #a3a3a3;
 }
 
-.btn-arrow {
+.card-btn-text {
+  padding: 0 2px;
+}
+
+.card-btn-arrow {
   width: 20px;
   height: 20px;
 }
