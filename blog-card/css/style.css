@@ -119,6 +119,7 @@ body {
   cursor: pointer;
   outline: none;
   padding: 0;
+  min-width: 114px;
 }
 
 .card-btn:focus {
@@ -131,5 +132,6 @@ body {
 }
 
 .card-btn-text {
-  padding: 0 2px;
+  flex: 1;
+  text-align: center;
 }
