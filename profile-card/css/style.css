@@ -67,9 +67,10 @@ body {
 }
 
 .user-name-designation {
+  margin-top: 1px;
   display: flex;
   flex-direction: column;
-  gap: 4px;
+  gap: 3px;
   align-items: center;
 }
 
