@@ -62,15 +62,13 @@ body {
 
 .user-image {
   width: 64px;
-  height: 64px;
-  border-radius: 64px;
 }
 
 .user-name-designation {
   margin-top: 1px;
   display: flex;
   flex-direction: column;
-  gap: 3px;
+  gap: 4px;
   align-items: center;
 }
 
