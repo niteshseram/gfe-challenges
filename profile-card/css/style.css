@@ -61,15 +61,15 @@ body {
 }
 
 .user-image {
-  width: 65px;
-  height: 65px;
-  border-radius: 50%;
+  width: 64px;
+  height: 64px;
+  border-radius: 64px;
 }
 
 .user-name-designation {
   display: flex;
   flex-direction: column;
-  gap: 3px;
+  gap: 4px;
   align-items: center;
 }
 
