@@ -175,6 +175,7 @@ body {
   }
   .banner-image {
     height: 526px;
+    object-fit: cover;
   }
 
   .btn {
