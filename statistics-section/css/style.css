@@ -114,6 +114,7 @@ body {
 }
 
 .stats-card {
+  width: 100%;
   padding: 23px 0px;
   background: #ffffff;
   border: 1px solid #e6e6e6;
