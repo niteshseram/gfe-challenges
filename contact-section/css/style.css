@@ -115,7 +115,7 @@ body {
 .heading-title {
   font-weight: 600;
   font-size: 36px;
-  line-height: 36px;
+  line-height: 40px;
   color: #171717;
 }
 
@@ -203,7 +203,7 @@ body {
   border: 1px solid #e6e6e6;
   border-radius: 4px;
   height: 40px;
-  padding: 10px 14px;
+  padding: 9px 13px;
 
   font-family: inherit;
   font-weight: 400;
