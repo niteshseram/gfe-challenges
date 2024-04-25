@@ -132,6 +132,11 @@ body {
   height: 264px;
 }
 
+.desktop-banner,
+.tablet-banner {
+  display: none;
+}
+
 @media screen and (min-width: 768px) {
   .hero-section {
     gap: 32px;
@@ -164,6 +169,14 @@ body {
     height: 526px;
   }
 
+  .mobile-banner,
+  .desktop-banner {
+    display: none;
+  }
+  .tablet-banner {
+    display: block;
+  }
+
   .btn {
     height: 60px;
     font-size: 18px;
@@ -190,5 +203,13 @@ body {
   .btn-primary,
   .btn-secondary {
     width: 175.5px;
+  }
+
+  .desktop-banner {
+    display: block;
+  }
+  .mobile-banner,
+  .tablet-banner {
+    display: none;
   }
 }
