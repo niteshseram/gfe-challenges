@@ -187,7 +187,7 @@ body {
   .header__content_title {
     padding: 0 250px;
   }
-  .header__content__subtitle {
+  .header__content__subtitle-padded {
     padding: 0 360px;
   }
 
