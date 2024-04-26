@@ -87,23 +87,24 @@ body {
   .team-list {
     grid-template-columns: repeat(1, 1fr);
   }
-  gap: 32px;
+  grid-row-gap: 64px;
+  grid-column-gap: 32px;
 }
 
-.user {
+.member {
   display: flex;
   flex-direction: column;
   gap: 24px;
 }
 
-.user__picture {
+.member__picture {
   height: 296px;
   min-height: 280px;
   width: 100%;
   object-fit: cover;
 }
 
-.user__info {
+.member__info {
   display: flex;
   flex-direction: column;
   gap: 16px;
@@ -113,20 +114,20 @@ body {
   color: #525252;
 }
 
-.user__info__metadata {
+.member__info__metadata {
   display: flex;
   flex-direction: column;
   gap: 4px;
 }
 
-.user__info__metadata__name {
+.member__info__metadata__name {
   font-weight: 600;
   font-size: 20px;
   line-height: 28px;
   color: #171717;
 }
 
-.user__info__metadata__designation {
+.member__info__metadata__designation {
   font-weight: 500;
   font-size: 18px;
   line-height: 28px;
