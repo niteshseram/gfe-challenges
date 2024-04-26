@@ -136,7 +136,7 @@ body {
     gap: 64px;
   }
 
-  .header__content_title {
+  .header__content__title {
     font-size: 48px;
     line-height: 48px;
   }
