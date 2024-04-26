@@ -1,0 +1,168 @@
+/* Put any custom CSS styles here.  */
+/* Be sure to delete the <style> tag in index.html if you want to use this stylesheet. */
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+body {
+  font-family: "Noto Sans", system-ui, -apple-system, BlinkMacSystemFont,
+    "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue",
+    sans-serif;
+  min-height: 100vh;
+}
+
+.credits {
+  color: #777;
+  position: fixed;
+  bottom: 24px;
+  left: 24px;
+  font-size: 11px;
+  text-align: center;
+}
+
+.credits a {
+  color: #000;
+  font-weight: bold;
+}
+
+.container {
+  min-height: 100vh;
+  padding: 16px;
+  background: linear-gradient(147.52deg, #f9fafb 8.89%, #d2d6db 100.48%);
+}
+
+.team-section {
+  background: #ffffff;
+  box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.05);
+  border-radius: 4px;
+
+  padding: 48px 16px;
+
+  display: flex;
+  flex-direction: column;
+  gap: 48px;
+}
+
+.header {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.header_supporting-text {
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 24px;
+  text-align: center;
+  color: #4338ca;
+}
+
+.header__content {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.header__content_title {
+  font-weight: 600;
+  font-size: 30px;
+  line-height: 36px;
+  text-align: center;
+  color: #171717;
+}
+
+.header__content__subtitle {
+  font-size: 20px;
+  line-height: 28px;
+  text-align: center;
+  color: #525252;
+}
+
+.team-list {
+  display: grid;
+  .team-list {
+    grid-template-columns: repeat(1, 1fr);
+  }
+  gap: 32px;
+}
+
+.user {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.user__picture {
+  height: 296px;
+  min-height: 280px;
+  width: 100%;
+  object-fit: cover;
+}
+
+.user__info {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+
+  font-size: 16px;
+  line-height: 24px;
+  color: #525252;
+}
+
+.user__info__metadata {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.user__info__metadata__name {
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 28px;
+  color: #171717;
+}
+
+.user__info__metadata__designation {
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 28px;
+  color: #4338ca;
+}
+
+@media screen and (min-width: 768px) {
+  .team-section {
+    box-shadow: 0px 4px 6px -1px rgba(0, 0, 0, 0.1),
+      0px 2px 4px -1px rgba(0, 0, 0, 0.06);
+    padding: 64px 32px;
+    gap: 64px;
+  }
+
+  .header__content_title {
+    font-size: 48px;
+    line-height: 48px;
+  }
+
+  .team-list {
+    grid-template-columns: repeat(2, 1fr);
+    padding-right: 16px;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .team-section {
+    box-shadow: 0px 10px 15px -3px rgba(0, 0, 0, 0.1),
+      0px 4px 6px -2px rgba(0, 0, 0, 0.05);
+    border-radius: 6px;
+
+    padding: 96px 64px;
+  }
+
+  .team-list {
+    grid-template-columns: repeat(4, 1fr);
+    padding: 0 32px;
+  }
+}
