@@ -167,6 +167,7 @@ body {
 
   .header__content__subtitle {
     font-size: 20px;
+    padding: 0 100px;
   }
 
   .content__image-wrapper img {
@@ -183,8 +184,11 @@ body {
     padding: 96px;
   }
 
-  .header {
-    padding: 0 160px;
+  .header__content_title {
+    padding: 0 250px;
+  }
+  .header__content__subtitle {
+    padding: 0 360px;
   }
 
   .content {
