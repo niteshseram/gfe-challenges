@@ -72,6 +72,10 @@ body {
   color: #525252;
 }
 
+.header__content p {
+  padding: 0 30px;
+}
+
 .header__content__title {
   font-weight: 600;
   font-size: 30px;
