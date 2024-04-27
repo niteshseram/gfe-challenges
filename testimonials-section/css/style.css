@@ -66,7 +66,7 @@ body {
   flex-direction: column;
   gap: 20px;
 
-  font-size: 20px;
+  font-size: 18px;
   line-height: 28px;
   text-align: center;
   color: #525252;
@@ -147,6 +147,10 @@ body {
       0px 2px 4px -1px rgba(0, 0, 0, 0.06);
     padding: 64px 16px;
     gap: 64px;
+  }
+
+  .header__content {
+    font-size: 20px;
   }
 
   .header__content__title {
