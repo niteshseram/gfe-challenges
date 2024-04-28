@@ -18,14 +18,18 @@
       <section class="footer-section">
         <footer class="footer">
           <div class="footer__content">
-            <div class="footer__content__items">
+            <nav class="footer__content__items" aria-label="Footer navigation">
               <a href="https://greatfrontend.com">Features</a>
               <a href="https://greatfrontend.com">Pricing</a>
               <a href="https://greatfrontend.com">About us</a>
               <a href="https://greatfrontend.com">Contact</a>
-            </div>
+            </nav>
             <div class="footer__content__items footer__content__icons">
-              <a href="https://youtube.com" target="_blank">
+              <a
+                href="https://youtube.com"
+                target="_blank"
+                aria-label="Youtube"
+              >
                 <svg
                   width="24"
                   height="24"
@@ -39,7 +43,11 @@
                   />
                 </svg>
               </a>
-              <a href="https://instagram.com" target="_blank">
+              <a
+                href="https://instagram.com"
+                target="_blank"
+                aria-label="Instagram"
+              >
                 <svg
                   width="24"
                   height="24"
@@ -53,7 +61,11 @@
                   />
                 </svg>
               </a>
-              <a href="https://facebook.com" target="_blank">
+              <a
+                href="https://facebook.com"
+                target="_blank"
+                aria-label="Facebook"
+              >
                 <svg
                   width="24"
                   height="24"
@@ -67,7 +79,7 @@
                   />
                 </svg>
               </a>
-              <a href="https://github.com" target="_blank">
+              <a href="https://github.com" target="_blank" aria-label="Github">
                 <svg
                   width="24"
                   height="24"
@@ -81,7 +93,11 @@
                   />
                 </svg>
               </a>
-              <a href="https://twitter.com" target="_blank">
+              <a
+                href="https://twitter.com"
+                target="_blank"
+                aria-label="Twitter"
+              >
                 <svg
                   width="24"
                   height="24"
@@ -97,7 +113,10 @@
               </a>
             </div>
           </div>
-          <p>&copy; 2024 Abstractly, Inc. All rights reserved.</p>
+          <p>
+            &copy; <span id="copyrightYear"></span> Abstractly, Inc. All rights
+            reserved.
+          </p>
         </footer>
       </section>
     </div>
