@@ -90,6 +90,7 @@ body {
 .newsletter__banner {
   height: 288px;
   width: 100%;
+  object-fit: cover;
   padding-right: 8px;
 }
 
@@ -266,7 +267,6 @@ body {
 
   .newsletter__banner {
     height: 608px;
-    object-fit: cover;
     padding-right: 16px;
   }
 
