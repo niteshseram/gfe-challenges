@@ -71,7 +71,7 @@ body {
 }
 .footer__content__items {
   display: flex;
-  gap: 24px;
+  gap: 16px;
   justify-content: center;
 }
 
@@ -111,6 +111,10 @@ body {
 
   .footer {
     padding: 64px 16px;
+  }
+
+  .footer__content__items {
+    gap: 24px;
   }
 }
 
