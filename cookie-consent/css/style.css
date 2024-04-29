@@ -141,16 +141,15 @@ body {
 }
 
 .allow-cookie-btn {
-  padding: 0px 18px;
-}
-
-.btn-secondary.allow-cookie-btn {
-  padding: 0px 17px;
+  width: 184px;
 }
 
 .decline-cookie-btn {
   height: 40px;
-  padding: 0 14px;
+  width: 101px;
+
+  font-size: 14px;
+  line-height: 20px;
 }
 
 .popup-overlay {
