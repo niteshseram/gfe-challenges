@@ -1,0 +1,337 @@
+/* Put any custom CSS styles here.  */
+/* Be sure to delete the <style> tag in index.html if you want to use this stylesheet. */
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+body {
+  font-family: "Noto Sans", system-ui, -apple-system, BlinkMacSystemFont,
+    "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue",
+    sans-serif;
+  min-height: 100vh;
+}
+
+.credits {
+  color: #777;
+  position: fixed;
+  bottom: 24px;
+  left: 24px;
+  font-size: 11px;
+  text-align: center;
+}
+
+.credits a {
+  color: #000;
+  font-weight: bold;
+}
+
+.container {
+  min-height: 100vh;
+  padding: 16px;
+  background: linear-gradient(147.52deg, #f9fafb 8.89%, #d2d6db 100.48%);
+}
+
+.pricing-tiers {
+  background: #ffffff;
+  box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.05);
+  border-radius: 4px;
+
+  padding: 48px 12px;
+
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.header {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.header_supporting-text {
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 24px;
+  text-align: center;
+  color: #4338ca;
+}
+
+.header__content {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.header__content_title {
+  font-weight: 600;
+  font-size: 30px;
+  line-height: 36px;
+  text-align: center;
+  color: #171717;
+}
+
+.header__content__subtitle {
+  font-size: 18px;
+  line-height: 28px;
+  text-align: center;
+  color: #525252;
+}
+
+.btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 14px;
+  height: 48px;
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.06);
+  border-radius: 4px;
+
+  border: none;
+  outline: none;
+  font-family: inherit;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 24px;
+  cursor: pointer;
+  width: 100%;
+  white-space: noWrap;
+}
+.btn:focus {
+  box-shadow: 0px 0px 0px 4px rgba(68, 76, 231, 0.12);
+}
+.btn:disabled {
+  pointer-events: none;
+  background: #f5f5f5;
+  color: #a3a3a3;
+  box-shadow: none;
+}
+.btn-primary {
+  background: #4338ca;
+  color: #ffffff;
+}
+.btn-primary:hover,
+.btn-primary:focus {
+  background: #3730a3;
+}
+.btn-secondary {
+  background: #ffffff;
+  border: 0.5px solid #e6e6e6;
+  color: #0a0a0a;
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.06);
+}
+.btn-secondary:hover,
+.btn-secondary:focus {
+  background: #fafafa;
+  border: 1px solid #e6e6e6;
+}
+
+.pricing-tiers__content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 48px;
+}
+
+.pricing-tiers__toggle {
+  display: flex;
+  gap: 16px;
+  width: 100%;
+}
+
+.btn-toggle {
+  width: 100%;
+
+  border: none;
+  outline: none;
+  background: none;
+  cursor: pointer;
+
+  font-family: inherit;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 24px;
+  white-space: noWrap;
+
+  height: 44px;
+}
+
+.pricing-tiers__toggle__wrapper {
+  flex: 1 1 0%;
+}
+
+.pricing-tiers__plans {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.pricing-tiers__plan {
+  background: #ffffff;
+  border: 1px solid #e6e6e6;
+  box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.05);
+  border-radius: 8px;
+
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  flex: 1 1 0%;
+  overflow: hidden;
+}
+
+.pricing-tiers__plan__highlight {
+  width: 100%;
+  height: 60px;
+
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 28px;
+  text-align: center;
+  color: #4338ca;
+  background: #eef2ff;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: -15px -15px 0 -15px;
+  width: calc(100% + 30px);
+}
+
+.pricing-tiers__plan__active {
+  border: 1px solid #4f46e5;
+  box-shadow: 0px 25px 50px -12px rgba(0, 0, 0, 0.25);
+}
+
+.pricing-tiers__plan__header {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+
+  font-size: 16px;
+  line-height: 24px;
+  color: #525252;
+}
+
+.pricing-tiers__plan__header h6 {
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 32px;
+  color: #171717;
+}
+
+.pricing-tiers__plan__price {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+
+  font-size: 16px;
+  line-height: 24px;
+  color: #171717;
+}
+.pricing-tiers__plan__price__active {
+  color: #4338ca;
+}
+
+.pricing-tiers__plan__price__amount {
+  font-weight: 600;
+  font-size: 48px;
+  line-height: 48px;
+}
+
+.pricing-tiers__plan__price__label {
+  color: #525252;
+}
+
+.pricing-tiers__plan__features {
+  list-style: none;
+  font-size: 16px;
+  line-height: 24px;
+  color: #525252;
+
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 0;
+  flex: 1;
+}
+
+.pricing-tiers__plan__features li {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.pricing-tiers__plan__features svg {
+  flex-shrink: 0;
+}
+
+@media screen and (min-width: 768px) {
+  .pricing-tiers {
+    box-shadow: 0px 4px 6px -1px rgba(0, 0, 0, 0.1),
+      0px 2px 4px -1px rgba(0, 0, 0, 0.06);
+    padding: 64px 16px;
+  }
+
+  .header {
+    padding: 0 50px;
+  }
+
+  .header__content_title {
+    font-size: 48px;
+    line-height: 48px;
+  }
+
+  .header__content__subtitle {
+    font-size: 20px;
+  }
+
+  .pricing-tiers__content {
+    gap: 64px;
+  }
+
+  .pricing-tiers__toggle {
+    width: auto;
+    gap: 32px;
+  }
+
+  .pricing-tiers__toggle__wrapper {
+    width: 140px;
+    flex: auto;
+  }
+
+  .pricing-tiers__plan {
+    padding: 31px;
+    min-height: 532px;
+  }
+
+  .pricing-tiers__plan__highlight {
+    margin: -32px -32px 0 -32px;
+    width: calc(100% + 64px);
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .pricing-tiers {
+    box-shadow: 0px 10px 15px -3px rgba(0, 0, 0, 0.1),
+      0px 4px 6px -2px rgba(0, 0, 0, 0.05);
+    border-radius: 6px;
+    padding: 96px;
+  }
+
+  .header {
+    padding: 0 150px;
+  }
+
+  .pricing-tiers__plans {
+    flex-direction: row;
+  }
+
+  .pricing-tiers__plan {
+    min-height: 676px;
+  }
+}
