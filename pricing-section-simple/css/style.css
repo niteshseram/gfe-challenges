@@ -38,11 +38,11 @@ body {
   box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.05);
   border-radius: 4px;
 
-  padding: 48px 16px;
+  padding: 48px 12px;
 
   display: flex;
   flex-direction: column;
-  gap: 48px;
+  gap: 64px;
 }
 
 .header {
@@ -92,6 +92,7 @@ body {
   display: flex;
   flex-direction: column;
   gap: 32px;
+  width: 100%;
 }
 
 .pricing__content__features h3 {
@@ -168,8 +169,8 @@ body {
 
 .pricing__content__card__info__price {
   font-weight: 700;
-  font-size: 60px;
-  line-height: 60px;
+  font-size: 48px;
+  line-height: 48px;
   text-align: center;
   color: #171717;
 }
@@ -190,7 +191,7 @@ body {
   justify-content: center;
   align-items: center;
   padding: 0 14px;
-  height: 48px;
+  height: 44px;
   box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.06);
   border-radius: 4px;
 
@@ -227,8 +228,7 @@ body {
   .pricing {
     box-shadow: 0px 4px 6px -1px rgba(0, 0, 0, 0.1),
       0px 2px 4px -1px rgba(0, 0, 0, 0.06);
-    padding: 64px 32px;
-    gap: 64px;
+    padding: 64px 16px;
   }
 
   .header__content_title {
@@ -248,8 +248,18 @@ body {
     font-size: 36px;
     line-height: 40px;
   }
+
+  .pricing__content__card__info__price {
+    font-size: 60px;
+    line-height: 60px;
+  }
+
   .pricing__content__card__desc {
     padding: 0 180px;
+  }
+
+  .btn {
+    height: 48px;
   }
 }
 
@@ -264,10 +274,12 @@ body {
 
   .pricing__content {
     flex-direction: row;
+    align-items: center;
     gap: 32px;
   }
 
   .pricing__content__card {
+    min-width: 487px;
     width: 487px;
   }
 
