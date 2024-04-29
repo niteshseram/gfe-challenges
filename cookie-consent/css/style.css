@@ -339,7 +339,8 @@ input:disabled + .slider:before {
     padding-top: 23px;
   }
 
-  .allow-cookie-btn {
+  .allow-cookie-btn,
+  .btn-secondary.allow-cookie-btn {
     width: 184px;
   }
 
