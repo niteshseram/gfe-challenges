@@ -237,6 +237,12 @@ body {
   color: #4338ca;
 }
 
+.pricing-tiers__plan__price-wrapper {
+  display: flex;
+  gap: 2px;
+  align-items: flex-end;
+}
+
 .pricing-tiers__plan__price__amount {
   font-weight: 600;
   font-size: 48px;
@@ -304,14 +310,18 @@ body {
     flex: auto;
   }
 
+  .pricing-tiers__plans {
+    width: 100%;
+  }
+
   .pricing-tiers__plan {
     padding: 31px;
     min-height: 532px;
   }
 
   .pricing-tiers__plan__highlight {
-    margin: -32px -32px 0 -32px;
-    width: calc(100% + 64px);
+    margin: -32px -31px 0 -31px;
+    width: calc(100% + 62px);
   }
 }
 
