@@ -237,12 +237,6 @@ body {
   color: #4338ca;
 }
 
-.pricing-tiers__plan__price-wrapper {
-  display: flex;
-  gap: 2px;
-  align-items: flex-end;
-}
-
 .pricing-tiers__plan__price__amount {
   font-weight: 600;
   font-size: 48px;
