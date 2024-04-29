@@ -76,7 +76,7 @@ body {
 }
 
 .header__content__subtitle {
-  font-size: 20px;
+  font-size: 18px;
   line-height: 28px;
   text-align: center;
   color: #525252;
@@ -93,6 +93,7 @@ body {
   flex-direction: column;
   gap: 32px;
   width: 100%;
+  padding: 0 4px;
 }
 
 .pricing__content__features h3 {
@@ -231,9 +232,17 @@ body {
     padding: 64px 16px;
   }
 
+  .header {
+    padding: 0 32px;
+  }
+
   .header__content_title {
     font-size: 48px;
     line-height: 48px;
+  }
+
+  .header__content__subtitle {
+    font-size: 20px;
   }
 
   .pricing__content {
@@ -242,6 +251,7 @@ body {
 
   .pricing__content__features {
     gap: 64px;
+    padding: 0;
   }
 
   .pricing__content__features h3 {
@@ -276,6 +286,10 @@ body {
     flex-direction: row;
     align-items: center;
     gap: 32px;
+  }
+
+  .pricing__content__features__list {
+    padding: 0 16px;
   }
 
   .pricing__content__card {
