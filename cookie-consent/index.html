@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Hero Section | GreatFrontEnd Projects</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+
+    <link rel="icon" href="img/favicon.ico" sizes="any" />
+    <style>
+      /* You may write styles inside this <style> tag or within `css/style.css`. */
+    </style>
+  </head>
+  <body>
+    <div class="cookie-consent-banner" id="cookieConsentBanner">
+      <div class="cookie-consent-banner__content">
+        <h6>We use cookies</h6>
+        <p>
+          We use cookies to enhance your browsing experience and improve our
+          website's performance. By continuing to use this site, you consent to
+          the use of cookies. To learn more about how we use cookies and your
+          options, please read our
+          <a href="https://greatfrontend.com">cookie policy</a>.
+        </p>
+      </div>
+      <div class="cookie-consent-banner__actions">
+        <div class="cookie-consent-banner__actions__decline">
+          <button
+            type="button"
+            class="btn btn-danger decline-cookie-btn"
+            onclick="rejectAllCookies()"
+          >
+            Decline all
+          </button>
+        </div>
+        <div class="cookie-consent-banner__actions__allow">
+          <button
+            type="button"
+            class="btn btn-primary allow-cookie-btn"
+            onclick="acceptAllCookies()"
+          >
+            Allow cookies
+          </button>
+          <button
+            type="button"
+            class="btn btn-secondary allow-cookie-btn"
+            onclick="openManageCookies()"
+          >
+            Manage Cookies
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div class="popup-overlay" id="popupOverlay">
+      <div class="popup" id="popup">
+        <div class="popup__content">
+          <div class="popup__content__cookie">
+            <div class="popup__content__cookie__header">
+              <h6>Essentials</h6>
+              <label class="switch">
+                <input type="checkbox" checked disabled />
+                <span class="slider round"></span>
+              </label>
+            </div>
+            <p>
+              These cookies are essential for the proper functioning of our
+              services and cannot be disabled.
+            </p>
+          </div>
+          <div class="popup__content__cookie">
+            <div class="popup__content__cookie__header">
+              <h6>Analytics</h6>
+              <label class="switch">
+                <input type="checkbox" checked id="analyticsConsent" />
+                <span class="slider round"></span>
+              </label>
+            </div>
+            <p>
+              These cookies collect information about how you use our services
+              or potential errors you encounter. Based on this information we
+              are able to improve your experience and react to any issues.
+            </p>
+          </div>
+          <div class="popup__content__cookie">
+            <div class="popup__content__cookie__header">
+              <h6>Marketing</h6>
+              <label class="switch">
+                <input type="checkbox" checked id="marketingConsent" />
+                <span class="slider round"></span>
+              </label>
+            </div>
+            <p>
+              These cookies allow us to show you advertisements relevant to you
+              through our advertising partners.
+            </p>
+          </div>
+          <div class="popup__content__actions">
+            <div class="popup__content__actions__allow">
+              <div class="popup__content__actions__btn__wrapper">
+                <button
+                  type="button"
+                  class="btn btn-primary popup__content__actions__btn"
+                  onclick="acceptAllCookies()"
+                >
+                  Accept all
+                </button>
+              </div>
+              <div class="popup__content__actions__btn__wrapper">
+                <button
+                  type="button"
+                  class="btn btn-secondary popup__content__actions__btn"
+                  onclick="saveCookies()"
+                >
+                  Save
+                </button>
+              </div>
+            </div>
+            <button
+              type="button"
+              class="btn btn-danger decline-cookie-btn"
+              onclick="rejectAllCookies()"
+            >
+              Decline all
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Attribute this challenge to yourself! -->
+    <div class="credits">
+      A challenge by
+      <a
+        href="https://www.greatfrontend.com/projects?ref=challenges"
+        target="_blank"
+        >GreatFrontEnd Projects</a
+      >. Built by
+      <a href="https://www.greatfrontend.com/u/niteshseram" target="_blank"
+        >Nitesh Seram</a
+      >.
+    </div>
+    <script src="js/index.js"></script>
+  </body>
+</html>
