@@ -150,7 +150,7 @@ body {
   text-align: center;
 }
 
-.badge-success {
+.badge--success {
   color: #15803d;
   background: #f0fdf4;
   border: 1px solid #bbf7d0;
