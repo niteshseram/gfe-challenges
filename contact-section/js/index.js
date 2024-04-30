@@ -1,14 +1,14 @@
 const nameField = document.getElementById("name");
-const nameError = document.getElementById("name-error");
+const nameError = document.getElementById("nameError");
 
 const emailField = document.getElementById("email");
-const emailError = document.getElementById("email-error");
+const emailError = document.getElementById("emailError");
 
 const messageField = document.getElementById("message");
-const messageError = document.getElementById("message-error");
+const messageError = document.getElementById("messageError");
 
-const charCountValue = document.getElementById("char-count-value");
-const charCountLabel = document.getElementById("char-label");
+const charCountValue = document.getElementById("charCountValue");
+const charCountLabel = document.getElementById("charCountLabel");
 const form = document.getElementById("form");
 const confirmation = document.getElementById("confirmation");
 
@@ -18,11 +18,11 @@ function onMessageChange() {
   charCountValue.innerHTML = valueLength;
 
   if (valueLength > 500) {
-    charCountLabel.classList.add("char-count-exceed");
-    messageField.classList.add("error-input-field");
+    charCountLabel.classList.add("input__char-count--exceed");
+    messageField.classList.add("input__field--error");
   } else {
-    charCountLabel.classList.remove("char-count-exceed");
-    messageField.classList.remove("error-input-field");
+    charCountLabel.classList.remove("input__char-count--exceed");
+    messageField.classList.remove("input__field--error");
   }
 }
 
