@@ -46,13 +46,13 @@ body {
   padding: 62px 16px;
 }
 
-.hero-content-wrapper {
+.hero-section__content {
   display: flex;
   flex-direction: column;
   gap: 32px;
 }
 
-.heading {
+.hero-section__content__title {
   font-weight: 600;
   font-size: 36px;
   line-height: 40px;
@@ -66,7 +66,7 @@ body {
   color: #525252;
 }
 
-.hero-features-list {
+.hero-section__content__features {
   list-style: none;
   font-size: 18px;
   line-height: 28px;
@@ -78,13 +78,13 @@ body {
   padding: 0;
 }
 
-.hero-features-list li {
+.hero-section__content__features li {
   display: flex;
   align-items: center;
   gap: 12px;
 }
 
-.hero-actions {
+.hero-section__content__actions {
   display: flex;
   justify-content: space-between;
   gap: 16px;
@@ -119,32 +119,31 @@ body {
   color: #a3a3a3;
   box-shadow: none;
 }
-.btn-primary {
+.btn--primary {
   background: #4338ca;
   color: #ffffff;
 }
-.btn-primary:hover,
-.btn-primary:focus {
+.btn--primary:hover,
+.btn--primary:focus {
   background: #3730a3;
 }
 
-.btn-secondary {
+.btn--secondary {
   background: #ffffff;
   border: 0.5px solid #e6e6e6;
   color: #0a0a0a;
   box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.06);
 }
-.btn-secondary:hover,
-.btn-secondary:focus {
+.btn--secondary:hover,
+.btn--secondary:focus {
   background: #fafafa;
   border: 1px solid #e6e6e6;
 }
-.btn-1,
-.btn-2 {
+.hero-section__content__actions__btn {
   flex: 1 1 0%;
 }
 
-.banner-image {
+.hero-section__banner {
   height: 264px;
 }
 
@@ -154,11 +153,11 @@ body {
     padding: 72px 16px;
   }
 
-  .hero-content-wrapper {
+  .hero-section__content {
     gap: 64px;
   }
 
-  .heading {
+  .hero-section__content__title {
     font-size: 48px;
     line-height: 48px;
   }
@@ -168,12 +167,12 @@ body {
     line-height: 28px;
   }
 
-  .hero-actions {
+  .hero-section__content__actions {
     flex-direction: row;
     justify-content: flex-start;
     gap: 32px;
   }
-  .banner-image {
+  .hero-section__banner {
     height: 526px;
     object-fit: cover;
   }
@@ -183,8 +182,7 @@ body {
     font-size: 18px;
     line-height: 28px;
   }
-  .btn-1,
-  .btn-2 {
+  .hero-section__content__actions__btn {
     width: 213px;
     flex: none;
   }
@@ -197,13 +195,12 @@ body {
     align-items: center;
   }
 
-  .heading {
+  .hero-section__content__title {
     font-size: 60px;
     line-height: 60px;
   }
 
-  .btn-1,
-  .btn-2 {
+  .hero-section__content__actions__btn {
     width: 175.5px;
     flex: none;
   }

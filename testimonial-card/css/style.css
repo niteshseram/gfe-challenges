@@ -50,39 +50,39 @@ body {
   width: 340px;
 }
 
-.testimonial-card-actor {
+.testimonial-card__author {
   display: flex;
   gap: 16px;
   align-items: center;
 }
 
-.actor-image {
+.testimonial-card__author img {
   width: 48px;
   height: 48px;
   border-radius: 50%;
 }
 
-.actor-info {
+.testimonial-card__author__info {
   display: flex;
   flex-direction: column;
   gap: 1px;
 }
 
-.actor-name {
+.testimonial-card__author__info__name {
   font-weight: 600;
   font-size: 18px;
   line-height: 28px;
   color: #171717;
 }
 
-.actor-username {
+.testimonial-card__author__info__username {
   font-weight: 400;
   font-size: 14px;
   line-height: 20px;
   color: #525252;
 }
 
-.testimonial-card-content {
+.testimonial-card__content {
   font-size: 16px;
   line-height: 24px;
   color: #525252;

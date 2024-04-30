@@ -33,7 +33,7 @@
         <div class="cookie-consent-banner__actions__decline">
           <button
             type="button"
-            class="btn btn-danger decline-cookie-btn"
+            class="btn btn--danger btn--decline-cookie"
             onclick="rejectAllCookies()"
           >
             Decline all
@@ -42,14 +42,14 @@
         <div class="cookie-consent-banner__actions__allow">
           <button
             type="button"
-            class="btn btn-primary allow-cookie-btn"
+            class="btn btn--primary btn--allow-cookie"
             onclick="acceptAllCookies()"
           >
             Allow cookies
           </button>
           <button
             type="button"
-            class="btn btn-secondary allow-cookie-btn"
+            class="btn btn--secondary btn--allow-cookie"
             onclick="openManageCookies()"
           >
             Manage cookies
@@ -66,7 +66,7 @@
               <h6>Essentials</h6>
               <label class="switch">
                 <input type="checkbox" checked disabled />
-                <span class="slider round"></span>
+                <span class="switch__slider"></span>
               </label>
             </div>
             <p>
@@ -79,7 +79,7 @@
               <h6>Analytics</h6>
               <label class="switch">
                 <input type="checkbox" checked id="analyticsConsent" />
-                <span class="slider round"></span>
+                <span class="switch__slider"></span>
               </label>
             </div>
             <p>
@@ -93,7 +93,7 @@
               <h6>Marketing</h6>
               <label class="switch">
                 <input type="checkbox" checked id="marketingConsent" />
-                <span class="slider round"></span>
+                <span class="switch__slider"></span>
               </label>
             </div>
             <p>
@@ -106,7 +106,7 @@
               <div class="popup__content__actions__btn__wrapper">
                 <button
                   type="button"
-                  class="btn btn-primary popup__content__actions__btn"
+                  class="btn btn--primary btn-popup-action"
                   onclick="acceptAllCookies()"
                 >
                   Accept all
@@ -115,7 +115,7 @@
               <div class="popup__content__actions__btn__wrapper">
                 <button
                   type="button"
-                  class="btn btn-secondary popup__content__actions__btn"
+                  class="btn btn--secondary btn-popup-action"
                   onclick="saveCookies()"
                 >
                   Save
@@ -124,7 +124,7 @@
             </div>
             <button
               type="button"
-              class="btn btn-danger decline-cookie-btn"
+              class="btn btn--danger btn--popup-decline-cookie"
               onclick="rejectAllCookies()"
             >
               Decline all

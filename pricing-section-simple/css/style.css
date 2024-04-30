@@ -216,12 +216,12 @@ body {
   color: #a3a3a3;
   box-shadow: none;
 }
-.btn-primary {
+.btn--primary {
   background: #4338ca;
   color: #ffffff;
 }
-.btn-primary:hover,
-.btn-primary:focus {
+.btn--primary:hover,
+.btn--primary:focus {
   background: #3730a3;
 }
 

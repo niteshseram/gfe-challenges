@@ -81,10 +81,10 @@ body {
   color: #525252;
   padding: 0 2px;
 }
-.footer__content__icons {
+.footer__content__items--icons {
   gap: 24px;
 }
-.footer__content__icons a {
+.footer__content__items--icons a {
   padding: 0;
   color: #a3a3a3;
 }

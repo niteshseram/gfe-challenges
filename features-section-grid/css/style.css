@@ -51,7 +51,7 @@ body {
   gap: 12px;
 }
 
-.header_supporting-text {
+.header__supporting-text {
   font-weight: 600;
   font-size: 16px;
   line-height: 24px;
@@ -81,7 +81,7 @@ body {
   color: #525252;
 }
 
-.features-list {
+.features-section__features {
   display: grid;
   grid-template-columns: repeat(1, 1fr);
   gap: 32px;
@@ -89,14 +89,14 @@ body {
   padding: 0;
 }
 
-.feature {
+.features-section__features__item {
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 20px;
 }
 
-.feature__icon-wrapper {
+.features-section__features__item__icon {
   width: 48px;
   height: 48px;
 
@@ -145,7 +145,7 @@ body {
     font-size: 20px;
   }
 
-  .features-list {
+  .features-section__features {
     grid-template-columns: repeat(2, 1fr);
   }
 }
@@ -162,7 +162,7 @@ body {
     padding: 0 200px;
   }
 
-  .features-list {
+  .features-section__features {
     grid-template-columns: repeat(3, 1fr);
     grid-row-gap: 48px;
   }

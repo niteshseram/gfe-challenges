@@ -66,7 +66,7 @@ body {
   color: #525252;
 }
 
-.faqs-list {
+.faqs {
   display: flex;
   flex-direction: column;
   gap: 28px;
@@ -103,12 +103,12 @@ body {
   cursor: pointer;
 }
 
-.faq__active-icon svg,
-.faq__inactive-icon svg {
+.faq__accordion__active-icon svg,
+.faq__accordion__inactive-icon svg {
   display: block;
 }
 
-.faq__inactive-icon {
+.faq__accordion__inactive-icon {
   display: none;
 }
 

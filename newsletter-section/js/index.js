@@ -1,7 +1,7 @@
 // Write custom JavaScript here.
 // You may ignore this file and delete if if JavaScript is not required for your challenge.
 const emailField = document.getElementById("email");
-const emailError = document.getElementById("email-error");
+const emailError = document.getElementById("emailError");
 
 const toast = document.getElementById("toaster");
 
@@ -10,12 +10,15 @@ const form = document.getElementById("form");
 emailField.addEventListener("input", function () {
   if (this.validity.valid) {
     emailError.style.display = "none";
+    emailField.classList.remove("input__field--error");
   } else if (this.validity.typeMismatch) {
     emailError.style.display = "block";
     emailError.textContent = "Please enter valid email address.";
+    emailField.classList.add("input__field--error");
   } else if (this.validity.valueMissing) {
     emailError.style.display = "block";
     emailError.textContent = "Email address is required";
+    emailField.classList.add("input__field--error");
   }
 });
 

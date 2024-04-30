@@ -52,7 +52,7 @@ body {
   gap: 12px;
 }
 
-.header_supporting-text {
+.header__supporting-text {
   font-weight: 600;
   font-size: 16px;
   line-height: 24px;
@@ -67,7 +67,7 @@ body {
   gap: 20px;
 }
 
-.header__content_title {
+.header__content__title {
   font-weight: 600;
   font-size: 30px;
   line-height: 36px;
@@ -110,22 +110,22 @@ body {
   color: #a3a3a3;
   box-shadow: none;
 }
-.btn-primary {
+.btn--primary {
   background: #4338ca;
   color: #ffffff;
 }
-.btn-primary:hover,
-.btn-primary:focus {
+.btn--primary:hover,
+.btn--primary:focus {
   background: #3730a3;
 }
-.btn-secondary {
+.btn--secondary {
   background: #ffffff;
   border: 0.5px solid #e6e6e6;
   color: #0a0a0a;
   box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.06);
 }
-.btn-secondary:hover,
-.btn-secondary:focus {
+.btn--secondary:hover,
+.btn--secondary:focus {
   background: #fafafa;
   border: 1px solid #e6e6e6;
 }
@@ -143,7 +143,7 @@ body {
   width: 100%;
 }
 
-.btn-toggle {
+.btn--toggle {
   width: 100%;
 
   border: none;
@@ -281,7 +281,7 @@ body {
     padding: 0 50px;
   }
 
-  .header__content_title {
+  .header__content__title {
     font-size: 48px;
     line-height: 48px;
   }
