@@ -36,13 +36,13 @@ function onSubmit(event) {
   const success = true;
 
   if (success) {
-    toastContent.classList.add("toast__success");
+    toastContent.classList.add("toast__content--success");
     toastContentBadge.innerText = "Success";
     toastContentMessage.innerText =
       "Subscription successful! Please check your email to confirm.";
   } else {
-    toastContent.classList.add("toast__error__content");
-    toastContentBadge.classList.add("toast__error__badge");
+    toastContent.classList.add("toast__content--error");
+    toastContentBadge.classList.add("toast__content__badge--error");
     toastContentBadge.innerText = "Error";
     toastContentMessage.innerText =
       "Failed to subscribe. Please ensure your email is correct or try again later.";

@@ -14,8 +14,8 @@ const premiumPlanPrice = document.getElementById("premiumPlanPrice");
 const premiumPlanLabel = document.getElementById("premiumPlanLabel");
 
 annualPlanBtn.addEventListener("click", function () {
-  annualPlanBtn.classList.add("btn", "btn-secondary");
-  monthlyPlanBtn.classList.remove("btn", "btn-secondary");
+  annualPlanBtn.classList.add("btn", "btn--secondary");
+  monthlyPlanBtn.classList.remove("btn", "btn--secondary");
 
   basicPlanPrice.innerText = "$6.99";
   basicPlanLabel.innerText = "Billed annually ($84)";
@@ -28,8 +28,8 @@ annualPlanBtn.addEventListener("click", function () {
 });
 
 monthlyPlanBtn.addEventListener("click", function () {
-  annualPlanBtn.classList.remove("btn", "btn-secondary");
-  monthlyPlanBtn.classList.add("btn", "btn-secondary");
+  annualPlanBtn.classList.remove("btn", "btn--secondary");
+  monthlyPlanBtn.classList.add("btn", "btn--secondary");
 
   basicPlanPrice.innerText = "$9.99";
   basicPlanLabel.innerText = "Billed monthly";

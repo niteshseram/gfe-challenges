@@ -237,15 +237,15 @@ body {
   border-radius: 9999px;
 }
 
-.toast__error__content {
+.toast__content--error {
   color: #dc2626;
   background: #fef2f2;
 }
-.toast__error__badge {
+.toast__content__badge--error {
   color: #991b1b;
 }
 
-.toast__success {
+.toast__content--success {
   background: #f0fdf4;
   color: #15803d;
 }
