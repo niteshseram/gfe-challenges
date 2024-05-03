@@ -1051,6 +1051,11 @@ hr {
   color: #4338ca;
 }
 
+.link--contact {
+  color: inherit;
+  padding: 0;
+}
+
 .contact-form {
   display: flex;
   flex-direction: column;
