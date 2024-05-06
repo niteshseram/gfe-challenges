@@ -33,7 +33,7 @@ body {
   background: linear-gradient(147.52deg, #f9fafb 8.89%, #d2d6db 100.48%);
 }
 
-.team-section {
+.team {
   background: #ffffff;
   box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.05);
   border-radius: 4px;
@@ -52,7 +52,7 @@ body {
   gap: 12px;
 }
 
-.header_supporting-text {
+.header__supporting-text {
   font-weight: 600;
   font-size: 16px;
   line-height: 24px;
@@ -67,7 +67,7 @@ body {
   gap: 20px;
 }
 
-.header__content_title {
+.header__content__title {
   font-weight: 600;
   font-size: 30px;
   line-height: 36px;
@@ -82,11 +82,9 @@ body {
   color: #525252;
 }
 
-.team-list {
+.team__members {
   display: grid;
-  .team-list {
-    grid-template-columns: repeat(1, 1fr);
-  }
+  grid-template-columns: repeat(1, 1fr);
   grid-row-gap: 48px;
   grid-column-gap: 32px;
 }
@@ -97,14 +95,14 @@ body {
   gap: 24px;
 }
 
-.member__picture {
+.team__members__member__picture {
   height: 296px;
   min-height: 280px;
   width: 100%;
   object-fit: cover;
 }
 
-.member__info {
+.team__members__member__info {
   display: flex;
   flex-direction: column;
   gap: 16px;
@@ -114,20 +112,20 @@ body {
   color: #525252;
 }
 
-.member__info__metadata {
+.team__members__member__info__metadata {
   display: flex;
   flex-direction: column;
   gap: 4px;
 }
 
-.member__info__metadata__name {
+.team__members__member__info__metadata__name {
   font-weight: 600;
   font-size: 20px;
   line-height: 28px;
   color: #171717;
 }
 
-.member__info__metadata__designation {
+.team__members__member__info__metadata__designation {
   font-weight: 500;
   font-size: 18px;
   line-height: 28px;
@@ -135,7 +133,7 @@ body {
 }
 
 @media screen and (min-width: 768px) {
-  .team-section {
+  .team {
     box-shadow: 0px 4px 6px -1px rgba(0, 0, 0, 0.1),
       0px 2px 4px -1px rgba(0, 0, 0, 0.06);
     padding: 64px 32px;
@@ -147,7 +145,7 @@ body {
     line-height: 48px;
   }
 
-  .team-list {
+  .team__members {
     grid-template-columns: repeat(2, 1fr);
     padding-right: 16px;
     grid-row-gap: 64px;
@@ -155,7 +153,7 @@ body {
 }
 
 @media screen and (min-width: 1024px) {
-  .team-section {
+  .team {
     box-shadow: 0px 10px 15px -3px rgba(0, 0, 0, 0.1),
       0px 4px 6px -2px rgba(0, 0, 0, 0.05);
     border-radius: 6px;
@@ -163,7 +161,7 @@ body {
     padding: 96px 64px;
   }
 
-  .team-list {
+  .team__members {
     grid-template-columns: repeat(4, 1fr);
     padding: 0 32px;
   }
