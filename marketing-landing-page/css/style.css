@@ -326,7 +326,7 @@ body {
 .marquee__logos__group {
   display: flex;
   padding: 2px 0px;
-  animation: scroll-x 60s linear infinite;
+  animation: scroll-x 30s linear infinite;
 }
 
 .marquee__logos__group,
@@ -339,7 +339,7 @@ body {
     transform: translateX(0%);
   }
   100% {
-    transform: translateX(calc(-100% - 20px));
+    transform: translateX(calc(-100% - 78.5px));
   }
 }
 
@@ -1561,6 +1561,14 @@ hr {
   .marquee__logos__group,
   .marquee__logos {
     gap: 32px;
+  }
+  @keyframes scroll-x {
+    0% {
+      transform: translateX(0%);
+    }
+    100% {
+      transform: translateX(calc(-100% - 32px));
+    }
   }
 
   /* Features grid styles */
