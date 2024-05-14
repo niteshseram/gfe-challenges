@@ -279,5 +279,3 @@ if (popupElement && cookieConsentBanner && analyticsConsent && marketingConsent)
     cookieConsentBanner.style.display = "none";
   }
 }
-
-

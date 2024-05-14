@@ -233,6 +233,9 @@
     color: #525252;
     font-weight: 500;
   }
+  .link--nav-active {
+    color: #4338ca;
+  }
   
   .link--nav-primary:hover,
   .link--nav-primary:focus {
@@ -1396,72 +1399,121 @@
   }
 
   /* Team styles */
-.team {
-  padding: 48px 16px;
+  .team {
+    padding: 48px 16px;
 
-  display: flex;
-  flex-direction: column;
-  gap: 48px;
-}
-
-.header {
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-}
-
-.team__members {
-  display: grid;
-  .team-list {
-    grid-template-columns: repeat(1, 1fr);
+    display: flex;
+    flex-direction: column;
+    gap: 48px;
   }
-  grid-row-gap: 48px;
-  grid-column-gap: 32px;
-}
 
-.team__members__member {
-  display: flex;
-  flex-direction: column;
-  gap: 24px;
-}
+  .header {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
 
-.team__members__member__picture {
-  height: 296px;
-  min-height: 280px;
-  width: 100%;
-  object-fit: cover;
-}
+  .team__members {
+    display: grid;
+    .team-list {
+      grid-template-columns: repeat(1, 1fr);
+    }
+    grid-row-gap: 48px;
+    grid-column-gap: 32px;
+  }
 
-.team__members__member__info {
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
+  .team__members__member {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+  }
 
-  font-size: 16px;
-  line-height: 24px;
-  color: #525252;
-}
+  .team__members__member__picture {
+    height: 296px;
+    min-height: 280px;
+    width: 100%;
+    object-fit: cover;
+  }
 
-.team__members__member__info__metadata {
-  display: flex;
-  flex-direction: column;
-  gap: 4px;
-}
+  .team__members__member__info {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
 
-.team__members__member__info__metadata__name {
-  font-weight: 600;
-  font-size: 20px;
-  line-height: 28px;
-  color: #171717;
-}
+    font-size: 16px;
+    line-height: 24px;
+    color: #525252;
+  }
 
-.team__members__member__info__metadata__designation {
-  font-weight: 500;
-  font-size: 18px;
-  line-height: 28px;
-  color: #4338ca;
-}
+  .team__members__member__info__metadata {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+
+  .team__members__member__info__metadata__name {
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 28px;
+    color: #171717;
+  }
+
+  .team__members__member__info__metadata__designation {
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 28px;
+    color: #4338ca;
+  }
+
+  /* Not found styles */
+  .notfound {
+    box-shadow: 0px 10px 15px -3px rgba(0, 0, 0, 0.1),
+      0px 4px 6px -2px rgba(0, 0, 0, 0.05);
+    border-radius: 6px;
+  
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+  
+    padding: 214px 12px;
+    background: linear-gradient(360deg, rgba(255, 255, 255, 0) 0%, #ffffff 100%),
+      url("../img/404-bg.jpg");
+    background-position: center;
+    background-size: cover;
+  }
+  
+  .notfound__content {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  
+  .notfound__content__header {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+  
+  .notfound__content__header__supporting-text {
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 24px;
+    color: #4338ca;
+  }
+  
+  .notfound__content__header h2 {
+    font-weight: 600;
+    font-size: 36px;
+    line-height: 40px;
+    color: #171717;
+  }
+  
+  .notfound__content__message {
+    font-size: 18px;
+    line-height: 28px;
+    color: #525252;
+  }
   
   /* Footer styles */
   .footer {
@@ -2061,6 +2113,39 @@
       padding-right: 16px;
       grid-row-gap: 64px;
     }
+
+    /* Not found styles */
+    .notfound {
+      padding: 366px 16px;
+      gap: 64px;
+    }
+  
+    .notfound__content {
+      gap: 24px;
+    }
+  
+    .notfound__content__header {
+      gap: 12px;
+    }
+  
+    .notfound__content__header h2 {
+      font-size: 48px;
+      line-height: 48px;
+    }
+  
+    .notfound__content__message {
+      font-size: 20px;
+      line-height: 28px;
+    }
+  
+    .btn--notfound {
+      height: 60px;
+      font-size: 18px;
+      line-height: 28px;
+    }
+    .notfound-btn-wrapper {
+      width: 173px;
+    }
   
     /* Footer styles */
     .footer {
@@ -2325,6 +2410,24 @@
     .team__members {
       grid-template-columns: repeat(4, 1fr);
       padding: 0 32px;
+    }
+
+    /* Not found styles */
+    .notfound {
+      padding: 232px 96px;
+      background: linear-gradient(
+          90deg,
+          #ffffff 0%,
+          rgba(255, 255, 255, 0) 88.14%
+        ),
+        url("../img/404-bg.jpg");
+      background-position: center;
+      background-size: cover;
+    }
+  
+    .notfound__content__header h2 {
+      font-size: 60px;
+      line-height: 60px;
     }
 
     /* Footer styles */
