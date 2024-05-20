@@ -1285,6 +1285,8 @@
     box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.06);
     border-radius: 8px;
     color: #525252;
+    font-size: 16px;
+    line-height: 24px;
     break-inside: avoid;
   }
 
@@ -1320,11 +1322,6 @@
   .testimonial-card__author__info__username {
     font-size: 14px;
     line-height: 20px;
-  }
-
-  .testimonial-card__content {
-    font-size: 16px;
-    line-height: 24px;
   }
 
   /* Stats styles */

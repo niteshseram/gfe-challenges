@@ -41,8 +41,6 @@ body {
 }
 
 .blog__card {
-  display: flex;
-  flex-direction: column;
   width: 340px;
   background: #ffffff;
   border-radius: 8px;
@@ -53,6 +51,7 @@ body {
   height: 288px;
   width: 100%;
   object-fit: cover;
+  display: block;
 }
 
 .blog__card__content {
