@@ -49,11 +49,10 @@ body {
 }
 
 .badge {
-  display: flex;
-  align-items: center;
-  justify-content: center;
   border-radius: 9999px;
   text-align: center;
+  border-width: 1px;
+  border-style: solid;
 }
 
 /* Size classes */
@@ -79,26 +78,26 @@ body {
 /* Color classes */
 .badge_color_neutral {
   background: #F9FAFB;
-  border: 1px solid #E6E6E6;
+  border-color: #E6E6E6;
   color: #525252;
 }
 .badge_color_danger {
   background: #FEF2F2;
-  border: 1px solid #FECACA;
+  border-color: #FECACA;
   color: #DC2626;
 }
 .badge_color_warning {
   background: #FFFBEB;
-  border: 1px solid #FDE68A;
+  border-color: #FDE68A;
   color: #B45309;
 }
 .badge_color_success {
   background: #F0FDF4;
-  border: 1px solid #BBF7D0;
+  border-color:#BBF7D0;
   color: #15803D;
 }
 .badge_color_brand {
   background: #EEF2FF;
-  border: 1px solid #C7D2FE;
+  border-color: #C7D2FE;
   color: #4338CA;
 }
