@@ -11,6 +11,8 @@ body {
     "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue",
     sans-serif;
   min-height: 100vh;
+  background: linear-gradient(147.52deg, #f9fafb 8.89%, #d2d6db 100.48%);
+  padding: 16px;
 }
 
 .credits {
@@ -27,16 +29,12 @@ body {
   font-weight: bold;
 }
 
-.container {
-  min-height: 100vh;
-  padding: 16px;
-  background: linear-gradient(147.52deg, #f9fafb 8.89%, #d2d6db 100.48%);
-}
-
 .navbar {
   height: 68px;
+  padding: 0 16px;
   max-width: 1216px;
   margin: 0 auto;
+
 
   display: flex;
   align-items: center;
@@ -191,21 +189,26 @@ body {
   width: 100%;
 }
 
-.nav__mobile {
+#slideout-menu{
   height: 100%;
   width: 100%;
   position: fixed;
-  z-index: 1;
+  z-index: 1070;
   top: 0;
-  left: -100%;
+  bottom: 0;
   background-color: #fff;
   overflow-x: hidden;
-  transition: 0.5s;
+  transform: translateX(calc(-100% - 16px));
+  transition: transform 0.3s ease-in-out;
   padding: 32px 16px;
+  width: 300px;
 
   display: flex;
   flex-direction: column;
   gap: 24px;
+}
+#slideout-menu.open {
+  transform: translateX(calc(0px - 16px));
 }
 
 .nav__mobile__header {

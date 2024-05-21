@@ -1,11 +1,11 @@
 // Write custom JavaScript here.
 // You may ignore this file and delete if if JavaScript is not required for your challenge.
-const sideNavbar = document.getElementById("sideNavbar");
+document.getElementById('mobile-menu-button').addEventListener('click', () => {
+  document.getElementById('slideout-menu').classList.toggle('open');
+});
 
-function onOpenNavbar() {
-  sideNavbar.style.left = "0";
-}
-
-function onCloseNavbar() {
-  sideNavbar.style.left = "-100%";
-}
+document
+  .getElementById('mobile-close-menu-button')
+  .addEventListener('click', () => {
+    document.getElementById('slideout-menu').classList.toggle('open');
+  });
