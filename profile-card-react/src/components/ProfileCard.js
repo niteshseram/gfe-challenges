@@ -36,7 +36,7 @@ const ProfileCard = () => {
       className={clsx(
         'bg-white w-[340px] px-[15px] py-[23px]',
         'flex flex-col items-center gap-10',
-        'border border-neutral-200 rounded-lg'
+        'border border-neutral-200 rounded-lg shadow'
       )}>
       <div className="flex flex-col items-center gap-6">
         <img src="./profile.png" alt="Sarah Dole's profile" className="w-16" />
