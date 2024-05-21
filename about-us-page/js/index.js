@@ -2,14 +2,15 @@
 // You may ignore this file and delete if if JavaScript is not required for your challenge.
 
 // Navbar
-const sideNavbar = document.getElementById("sideNavbar");
-function onOpenNavbar() {
-  sideNavbar.style.left = "0";
-}
+document.getElementById('mobile-menu-button').addEventListener('click', () => {
+  document.getElementById('slideout-menu').classList.toggle('open');
+});
 
-function onCloseNavbar() {
-  sideNavbar.style.left = "-100%";
-}
+document
+  .getElementById('mobile-close-menu-button')
+  .addEventListener('click', () => {
+    document.getElementById('slideout-menu').classList.toggle('open');
+  });
 
 // Contact
 const contactNameField = document.getElementById("contactName");
