@@ -56,7 +56,7 @@ body {
 .blog-card__author {
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: center; 
   gap: 24px;
 }
 
@@ -99,6 +99,7 @@ body {
 .blog-card__author__actions {
   display: flex;
   flex-direction: column;
+  align-items: center;
   gap: 24px;
   width: 100%;
 }
@@ -138,11 +139,6 @@ body {
 }
 
 .blog-card__author__actions__socials {
-  display: flex;
-  justify-content: center;
-}
-
-.blog-card__author__actions__socials__btn {
   display: flex;
   gap: 16px;
 }
