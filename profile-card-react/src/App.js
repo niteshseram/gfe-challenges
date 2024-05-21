@@ -1,4 +1,3 @@
-import './App.css';
 import clsx from 'clsx';
 import ProfileCard from './components/ProfileCard';
 
