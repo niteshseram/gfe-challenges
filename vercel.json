@@ -1,8 +1,11 @@
 {
-  "rewrites": [
+  "projects": [
     {
-      "source": "/:match*",
-      "destination": "https://gfe-challenges.vercel.app/:match*"
+      "name": "profile-card-react",
+      "directory": "profile-card-react",
+      "buildCommand": "npm run build",
+      "outputDirectory": "build"
     }
   ]
 }
+  
