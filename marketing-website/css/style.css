@@ -13,7 +13,6 @@
     min-height: 100vh;
     padding: 16px;
     background: linear-gradient(147.52deg, #f9fafb 8.89%, #d2d6db 100.48%);
-    max-width: 1440px;
     margin: 0 auto;
   }
   
@@ -119,8 +118,9 @@
     left: 0;
     right: 0;
     height: 68px;
-    width: calc(100% - 32px);
+    max-width: 1216px;
     margin: 0 auto;
+    padding: 0 16px;
     z-index: 10;
   
     display: flex;
@@ -159,14 +159,16 @@
   
   .navbar__menu-btn,
   .navbar__close-btn {
-    display: block;
     outline: none;
     border: none;
     border-radius: 4px;
-    padding: 0;
+    padding:0;
     cursor: pointer;
     background: none;
-    height: 20px;
+  }
+  .navbar__menu-btn svg,
+  .navbar__close-btn svg {
+    display: block;
   }
   .navbar__menu-btn:focus,
   .navbar__close-btn:focus {
@@ -193,21 +195,26 @@
     gap: 16px;
   }
   
-  .nav__mobile {
+  #slideout-menu{
     height: 100%;
     width: 100%;
     position: fixed;
-    z-index: 10;
+    z-index: 1070;
     top: 0;
-    left: -100%;
+    bottom: 0;
     background-color: #fff;
     overflow-x: hidden;
-    transition: 0.5s;
+    transform: translateX(calc(-100% - 16px));
+    transition: transform 0.3s ease-in-out;
     padding: 32px 16px;
+    width: 300px;
   
     display: flex;
     flex-direction: column;
     gap: 24px;
+  }
+  #slideout-menu.open {
+    transform: translateX(calc(0px - 16px));
   }
   
   .nav__mobile__header {
@@ -248,6 +255,8 @@
   }
   
   .content {
+    max-width: 1440px;
+    margin: 0 auto;
     margin-top: 84px;
     background: #fff;
     box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.05);
@@ -1789,7 +1798,7 @@
   
   @media screen and (min-width: 768px) {
     .navbar {
-      padding: 0 16px;
+      padding: 0 32px;
     }
     .content {
       box-shadow: 0px 4px 6px -1px rgba(0, 0, 0, 0.1),

@@ -25,12 +25,12 @@
       </div>
     </div>
   </div>
-  <nav class="navbar">
+  <header class="navbar">
     <div class="navbar__logo">
       <img src="../img/Logo.png" alt="Logo image" />
       <div>Abstractly</div>
     </div>
-    <div class="navbar__content">
+    <nav class="navbar__content">
       <div class="navbar__content__links">
         <a class="link link--nav-primary" href="/marketing-website/">Home</a>
         <a class="link link--nav-primary link--nav-active" href="/marketing-website/features/">Features</a>
@@ -46,45 +46,44 @@
           See pricing
         </button>
       </div>
-    </div>
-    <button type="button" aria-label="Open navigation menu button" class="navbar__menu-btn" onclick="onOpenNavbar()">
+    </nav>
+    <button id="mobile-menu-button" type="button" aria-label="Open mobile menu" class="navbar__menu-btn">
       <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
         <path d="M2.5 3.33333H17.5V5H2.5V3.33333ZM2.5 9.16667H17.5V10.8333H2.5V9.16667ZM2.5 15H17.5V16.6667H2.5V15Z"
           fill="#525252" />
       </svg>
     </button>
-    <div class="nav__mobile" id="sideNavbar">
-      <div class="nav__mobile__header">
-        <div class="navbar__mobile__header__logo">
-          <img src=".../img/Logo.png" alt="Logo image" />
-          <div>Abstractly</div>
-        </div>
-        <button type="button" aria-label="Close navigation menu button" class="navbar__close-btn"
-          onclick="onCloseNavbar()">
-          <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path
-              d="M10.0006 8.82208L14.1253 4.69727L15.3038 5.87577L11.1791 10.0006L15.3038 14.1253L14.1253 15.3038L10.0006 11.1791L5.87577 15.3038L4.69727 14.1253L8.82208 10.0006L4.69727 5.87577L5.87577 4.69727L10.0006 8.82208Z"
-              fill="#525252" />
-          </svg>
-        </button>
+  </header>
+  <div id="slideout-menu">
+    <div class="nav__mobile__header">
+      <div class="navbar__mobile__header__logo">
+        <img src="../img/Logo.png" alt="Logo image" />
+        <div>Abstractly</div>
       </div>
-      <div class="navbar__content__links">
-        <a class="link link--nav link--nav-active" href="/marketing-website/">Home</a>
-        <a class="link link--nav link--nav-active" href="/marketing-website/features/">Features</a>
-        <a class="link link--nav" href="/marketing-website/pricing/">Pricing</a>
-        <a class="link link--nav" href="/marketing-website/about/">About us</a>
-        <a class="link link--nav" href="/marketing-website/contact/">Contact</a>
-      </div>
-      <div class="navbar__content__actions">
-        <button type="button" class="btn btn--secondary btn--navbar-learn">
-          Learn more
-        </button>
-        <button type="" button class="btn btn--primary btn--navbar-pricing">
-          See pricing
-        </button>
-      </div>
+      <button id="mobile-close-menu-button" type="button" aria-label="Close mobile menu" class="navbar__close-btn">
+        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path
+            d="M10.0006 8.82208L14.1253 4.69727L15.3038 5.87577L11.1791 10.0006L15.3038 14.1253L14.1253 15.3038L10.0006 11.1791L5.87577 15.3038L4.69727 14.1253L8.82208 10.0006L4.69727 5.87577L5.87577 4.69727L10.0006 8.82208Z"
+            fill="#525252" />
+        </svg>
+      </button>
     </div>
-  </nav>
+    <div class="navbar__content__links">
+      <a class="link link--nav link--nav-active" href="/marketing-website/">Home</a>
+      <a class="link link--nav link--nav-active" href="/marketing-website/features/">Features</a>
+      <a class="link link--nav" href="/marketing-website/pricing/">Pricing</a>
+      <a class="link link--nav" href="/marketing-website/about/">About us</a>
+      <a class="link link--nav" href="/marketing-website/contact/">Contact</a>
+    </div>
+    <div class="navbar__content__actions">
+      <button type="button" class="btn btn--secondary btn--navbar-learn">
+        Learn more
+      </button>
+      <button type="" button class="btn btn--primary btn--navbar-pricing">
+        See pricing
+      </button>
+    </div>
+  </div>
   <main class="content">
     <!-- Hero -->
     <section class="hero-features" aria-labelledby="hero-features">
@@ -418,9 +417,7 @@
     <!-- Testimonials -->
     <section class="testimonials" aria-labelledby="testimonials">
       <div class="header">
-        <p
-          class="header__supporting-text header__supporting-text--testimonials"
-        >
+        <p class="header__supporting-text header__supporting-text--testimonials">
           Testimonials
         </p>
         <div class="header__content">
@@ -436,10 +433,7 @@
       <div class="testimonials-list">
         <figure class="testimonial-card">
           <figcaption class="testimonial-card__author">
-            <img
-              src="./img/testimonials/sarah.png"
-              alt="Sarah Dole's profile picture"
-            />
+            <img src="./img/testimonials/sarah.png" alt="Sarah Dole's profile picture" />
             <div class="testimonial-card__author__info">
               <div class="testimonial-card__author__info__name">Sarah Dole</div>
               <div class="testimonial-card__author__info__username">
@@ -457,10 +451,7 @@
         </figure>
         <figure class="testimonial-card">
           <figcaption class="testimonial-card__author">
-            <img
-              src="./img/testimonials/john.png"
-              alt="Marcus Thompson's profile picture"
-            />
+            <img src="./img/testimonials/john.png" alt="Marcus Thompson's profile picture" />
             <div class="testimonial-card__author__info">
               <div class="testimonial-card__author__info__name">
                 John Appleseed
@@ -480,10 +471,7 @@
         </figure>
         <figure class="testimonial-card">
           <figcaption class="testimonial-card__author">
-            <img
-              src="./img/testimonials/jean.png"
-              alt="Jean Gray's profile picture"
-            />
+            <img src="./img/testimonials/jean.png" alt="Jean Gray's profile picture" />
             <div class="testimonial-card__author__info">
               <div class="testimonial-card__author__info__name">Jean Gray</div>
               <div class="testimonial-card__author__info__username">
@@ -500,10 +488,7 @@
         </figure>
         <figure class="testimonial-card">
           <figcaption class="testimonial-card__author">
-            <img
-              src="./img/testimonials/jake.png"
-              alt="Jake Johnson's profile picture"
-            />
+            <img src="./img/testimonials/jake.png" alt="Jake Johnson's profile picture" />
             <div class="testimonial-card__author__info">
               <div class="testimonial-card__author__info__name">
                 Jake Johnson
@@ -523,10 +508,7 @@
         </figure>
         <figure class="testimonial-card">
           <figcaption class="testimonial-card__author">
-            <img
-              src="./img/testimonials/igor.png"
-              alt="Igor Stravinsky's profile picture"
-            />
+            <img src="./img/testimonials/igor.png" alt="Igor Stravinsky's profile picture" />
             <div class="testimonial-card__author__info">
               <div class="testimonial-card__author__info__name">
                 Igor Stravinsky
@@ -546,10 +528,7 @@
         </figure>
         <figure class="testimonial-card">
           <figcaption class="testimonial-card__author">
-            <img
-              src="./img/testimonials/declan.png"
-              alt="Declan Rice's profile picture"
-            />
+            <img src="./img/testimonials/declan.png" alt="Declan Rice's profile picture" />
             <div class="testimonial-card__author__info">
               <div class="testimonial-card__author__info__name">
                 Declan Rice
@@ -569,10 +548,7 @@
         </figure>
         <figure class="testimonial-card">
           <figcaption class="testimonial-card__author">
-            <img
-              src="./img/testimonials/marcus.png"
-              alt="Marcus Thompson's profile picture"
-            />
+            <img src="./img/testimonials/marcus.png" alt="Marcus Thompson's profile picture" />
             <div class="testimonial-card__author__info">
               <div class="testimonial-card__author__info__name">
                 Marcus Thompson
@@ -592,10 +568,7 @@
         </figure>
         <figure class="testimonial-card">
           <figcaption class="testimonial-card__author">
-            <img
-              src="./img/testimonials/oliver.png"
-              alt="Oliver Neverloved's profile picture"
-            />
+            <img src="./img/testimonials/oliver.png" alt="Oliver Neverloved's profile picture" />
             <div class="testimonial-card__author__info">
               <div class="testimonial-card__author__info__name">
                 Oliver Neverloved
@@ -614,10 +587,7 @@
         </figure>
         <figure class="testimonial-card">
           <figcaption class="testimonial-card__author">
-            <img
-              src="./img/testimonials/mark.png"
-              alt="Mark Dennis's profile picture"
-            />
+            <img src="./img/testimonials/mark.png" alt="Mark Dennis's profile picture" />
             <div class="testimonial-card__author__info">
               <div class="testimonial-card__author__info__name">
                 Mark Dennis

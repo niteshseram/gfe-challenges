@@ -1,97 +1,105 @@
 // Navbar
-const sideNavbar = document.getElementById("sideNavbar");
-if (sideNavbar) {
-  function onOpenNavbar() {
-    sideNavbar.style.left = "0";
-  }
+document.getElementById('mobile-menu-button').addEventListener('click', () => {
+  document.getElementById('slideout-menu').classList.toggle('open');
+});
 
-  function onCloseNavbar() {
-    sideNavbar.style.left = "-100%";
-  }
-}
-
-// Pricing tiers
-const monthlyPlanBtn = document.getElementById("monthlyPlanBtn");
-const annualPlanBtn = document.getElementById("annualPlanBtn");
-
-const basicPlanPrice = document.getElementById("basicPlanPrice");
-const basicPlanLabel = document.getElementById("basicPlanLabel");
-
-const standardPlanPrice = document.getElementById("standardPlanPrice");
-const standardPlanLabel = document.getElementById("standardPlanLabel");
-
-const premiumPlanPrice = document.getElementById("premiumPlanPrice");
-const premiumPlanLabel = document.getElementById("premiumPlanLabel");
-
-if (monthlyPlanBtn && annualPlanBtn && basicPlanPrice && basicPlanLabel && standardPlanPrice && standardPlanLabel && premiumPlanPrice && premiumPlanLabel) {
-  annualPlanBtn.addEventListener("click", function () {
-    annualPlanBtn.classList.add("btn", "btn--secondary");
-    monthlyPlanBtn.classList.remove("btn", "btn--secondary");
-
-    basicPlanPrice.innerText = "$6.99";
-    basicPlanLabel.innerText = "Billed annually ($84)";
-
-    standardPlanPrice.innerText = "$15.99";
-    standardPlanLabel.innerText = "Billed annually ($192)";
-
-    premiumPlanPrice.innerText = "$25.99";
-    premiumPlanLabel.innerText = "Billed annually ($312)";
+document
+  .getElementById('mobile-close-menu-button')
+  .addEventListener('click', () => {
+    document.getElementById('slideout-menu').classList.toggle('open');
   });
 
-  monthlyPlanBtn.addEventListener("click", function () {
-    annualPlanBtn.classList.remove("btn", "btn--secondary");
-    monthlyPlanBtn.classList.add("btn", "btn--secondary");
+// Pricing tiers
+const monthlyPlanBtn = document.getElementById('monthlyPlanBtn');
+const annualPlanBtn = document.getElementById('annualPlanBtn');
 
-    basicPlanPrice.innerText = "$9.99";
-    basicPlanLabel.innerText = "Billed monthly";
+const basicPlanPrice = document.getElementById('basicPlanPrice');
+const basicPlanLabel = document.getElementById('basicPlanLabel');
 
-    standardPlanPrice.innerText = "$19.99";
-    standardPlanLabel.innerText = "Billed monthly";
+const standardPlanPrice = document.getElementById('standardPlanPrice');
+const standardPlanLabel = document.getElementById('standardPlanLabel');
 
-    premiumPlanPrice.innerText = "$29.99";
-    premiumPlanLabel.innerText = "Billed monthly";
+const premiumPlanPrice = document.getElementById('premiumPlanPrice');
+const premiumPlanLabel = document.getElementById('premiumPlanLabel');
+
+if (
+  monthlyPlanBtn &&
+  annualPlanBtn &&
+  basicPlanPrice &&
+  basicPlanLabel &&
+  standardPlanPrice &&
+  standardPlanLabel &&
+  premiumPlanPrice &&
+  premiumPlanLabel
+) {
+  annualPlanBtn.addEventListener('click', function () {
+    annualPlanBtn.classList.add('btn', 'btn--secondary');
+    monthlyPlanBtn.classList.remove('btn', 'btn--secondary');
+
+    basicPlanPrice.innerText = '$6.99';
+    basicPlanLabel.innerText = 'Billed annually ($84)';
+
+    standardPlanPrice.innerText = '$15.99';
+    standardPlanLabel.innerText = 'Billed annually ($192)';
+
+    premiumPlanPrice.innerText = '$25.99';
+    premiumPlanLabel.innerText = 'Billed annually ($312)';
+  });
+
+  monthlyPlanBtn.addEventListener('click', function () {
+    annualPlanBtn.classList.remove('btn', 'btn--secondary');
+    monthlyPlanBtn.classList.add('btn', 'btn--secondary');
+
+    basicPlanPrice.innerText = '$9.99';
+    basicPlanLabel.innerText = 'Billed monthly';
+
+    standardPlanPrice.innerText = '$19.99';
+    standardPlanLabel.innerText = 'Billed monthly';
+
+    premiumPlanPrice.innerText = '$29.99';
+    premiumPlanLabel.innerText = 'Billed monthly';
   });
 }
 
 // FAQ
-const accordions = document.getElementsByClassName("faq__accordion__label");
+const accordions = document.getElementsByClassName('faq__accordion__label');
 if (accordions.length > 0) {
   for (let i = 0; i < accordions.length; i++) {
-    accordions[i].addEventListener("click", function () {
+    accordions[i].addEventListener('click', function () {
       const faqContent = this.nextElementSibling;
       const activeIcon = this.lastElementChild.firstElementChild;
       const inactiveIcon = this.lastElementChild.lastElementChild;
-      if (faqContent.style.display === "none") {
-        faqContent.style.display = "block";
-        activeIcon.style.display = "block";
-        inactiveIcon.style.display = "none";
+      if (faqContent.style.display === 'none') {
+        faqContent.style.display = 'block';
+        activeIcon.style.display = 'block';
+        inactiveIcon.style.display = 'none';
       } else {
-        faqContent.style.display = "none";
-        activeIcon.style.display = "none";
-        inactiveIcon.style.display = "block";
+        faqContent.style.display = 'none';
+        activeIcon.style.display = 'none';
+        inactiveIcon.style.display = 'block';
       }
     });
   }
 }
 
 // Newsletter
-const newsletterEmailField = document.getElementById("newsletterEmail");
-const newsletterEmailError = document.getElementById("newsletterEmailError");
-const toast = document.getElementById("toaster");
+const newsletterEmailField = document.getElementById('newsletterEmail');
+const newsletterEmailError = document.getElementById('newsletterEmailError');
+const toast = document.getElementById('toaster');
 
 if (newsletterEmailField && newsletterEmailError && toast) {
-  newsletterEmailField.addEventListener("input", function () {
+  newsletterEmailField.addEventListener('input', function () {
     if (this.validity.valid) {
-      newsletterEmailError.style.display = "none";
-      newsletterEmailField.classList.remove("input__field--error");
+      newsletterEmailError.style.display = 'none';
+      newsletterEmailField.classList.remove('input__field--error');
     } else if (this.validity.typeMismatch) {
-      newsletterEmailError.style.display = "block";
-      newsletterEmailError.textContent = "Please enter a valid email address.";
-      newsletterEmailField.classList.add("input__field--error");
+      newsletterEmailError.style.display = 'block';
+      newsletterEmailError.textContent = 'Please enter a valid email address.';
+      newsletterEmailField.classList.add('input__field--error');
     } else if (this.validity.valueMissing) {
-      newsletterEmailError.style.display = "block";
-      newsletterEmailError.textContent = "Email address is required";
-      newsletterEmailField.classList.add("input__field--error");
+      newsletterEmailError.style.display = 'block';
+      newsletterEmailError.textContent = 'Email address is required';
+      newsletterEmailField.classList.add('input__field--error');
     }
   });
 
@@ -99,8 +107,8 @@ if (newsletterEmailField && newsletterEmailError && toast) {
     event.preventDefault();
 
     //clear all the values after submit
-    newsletterEmailField.value = "";
-    toast.style.display = "flex";
+    newsletterEmailField.value = '';
+    toast.style.display = 'flex';
 
     const toastContent = toast.firstElementChild;
     const toastContentBadge = toastContent.firstElementChild;
@@ -109,127 +117,149 @@ if (newsletterEmailField && newsletterEmailError && toast) {
     const success = true;
 
     if (success) {
-      toastContent.classList.add("toast__content--success");
-      toastContentBadge.innerText = "Success";
+      toastContent.classList.add('toast__content--success');
+      toastContentBadge.innerText = 'Success';
       toastContentMessage.innerText =
-        "Subscription successful! Please check your email to confirm.";
+        'Subscription successful! Please check your email to confirm.';
     } else {
-      toastContent.classList.add("toast__content--error");
-      toastContentBadge.classList.add("toast__content__badge--error");
-      toastContentBadge.innerText = "Error";
+      toastContent.classList.add('toast__content--error');
+      toastContentBadge.classList.add('toast__content__badge--error');
+      toastContentBadge.innerText = 'Error';
       toastContentMessage.innerText =
-        "Failed to subscribe. Please ensure your email is correct or try again later.";
+        'Failed to subscribe. Please ensure your email is correct or try again later.';
     }
   }
 }
 
 // Contact
-const contactNameField = document.getElementById("contactName");
-const contactNameError = document.getElementById("contactNameError");
+const contactNameField = document.getElementById('contactName');
+const contactNameError = document.getElementById('contactNameError');
 
-const contactEmailField = document.getElementById("contactEmail");
-const contactEmailError = document.getElementById("contactEmailError");
+const contactEmailField = document.getElementById('contactEmail');
+const contactEmailError = document.getElementById('contactEmailError');
 
-const contactMessageField = document.getElementById("contactMessage");
-const contactMessageError = document.getElementById("contactMessageError");
+const contactMessageField = document.getElementById('contactMessage');
+const contactMessageError = document.getElementById('contactMessageError');
 
-const contactMessageCharCountValue = document.getElementById("contactMessageCharCountValue");
-const contactMessageCharCountLabel = document.getElementById("contactMessageCharCountLabel");
-const contactForm = document.getElementById("contactForm");
-const contactConfirmation = document.getElementById("contactConfirmation");
+const contactMessageCharCountValue = document.getElementById(
+  'contactMessageCharCountValue'
+);
+const contactMessageCharCountLabel = document.getElementById(
+  'contactMessageCharCountLabel'
+);
+const contactForm = document.getElementById('contactForm');
+const contactConfirmation = document.getElementById('contactConfirmation');
 
-if (contactNameField && contactNameError && contactEmailField && contactEmailError && contactMessageField && contactMessageError && contactMessageCharCountValue && contactMessageCharCountLabel && contactForm && contactConfirmation) {
+if (
+  contactNameField &&
+  contactNameError &&
+  contactEmailField &&
+  contactEmailError &&
+  contactMessageField &&
+  contactMessageError &&
+  contactMessageCharCountValue &&
+  contactMessageCharCountLabel &&
+  contactForm &&
+  contactConfirmation
+) {
   function onMessageChange() {
     const valueLength = contactMessageField.value.length;
 
     contactMessageCharCountValue.innerHTML = valueLength;
 
     if (valueLength > 500) {
-      contactMessageCharCountLabel.classList.add("input__char-count--exceed");
-      contactMessageField.classList.add("input__field--error");
+      contactMessageCharCountLabel.classList.add('input__char-count--exceed');
+      contactMessageField.classList.add('input__field--error');
     } else {
-      contactMessageCharCountLabel.classList.remove("input__char-count--exceed");
-      contactMessageField.classList.remove("input__field--error");
+      contactMessageCharCountLabel.classList.remove(
+        'input__char-count--exceed'
+      );
+      contactMessageField.classList.remove('input__field--error');
     }
   }
 
   // Name validation
-  contactNameField.addEventListener("invalid", function () {
-    contactNameError.style.display = "block";
+  contactNameField.addEventListener('invalid', function () {
+    contactNameError.style.display = 'block';
   });
 
-  contactNameField.addEventListener("input", function () {
+  contactNameField.addEventListener('input', function () {
     if (this.validity.valid) {
-      contactNameError.style.display = "none";
+      contactNameError.style.display = 'none';
     }
   });
 
   // Email validation
-  contactEmailField.addEventListener("invalid", function () {
-    contactEmailError.style.display = "block";
+  contactEmailField.addEventListener('invalid', function () {
+    contactEmailError.style.display = 'block';
     if (this.validity.valueMissing) {
-      contactEmailError.textContent = "Email address is required";
+      contactEmailError.textContent = 'Email address is required';
     } else if (this.validity.typeMismatch) {
-      contactEmailError.textContent = "Please enter a valid email address";
+      contactEmailError.textContent = 'Please enter a valid email address';
     }
   });
-  contactEmailField.addEventListener("input", function () {
+  contactEmailField.addEventListener('input', function () {
     if (this.validity.valid) {
-      contactEmailError.style.display = "none";
+      contactEmailError.style.display = 'none';
     }
   });
 
   // Message validation
-  contactMessageField.addEventListener("invalid", function () {
-    contactMessageError.style.display = "block";
+  contactMessageField.addEventListener('invalid', function () {
+    contactMessageError.style.display = 'block';
   });
-  contactMessageField.addEventListener("input", function () {
+  contactMessageField.addEventListener('input', function () {
     if (this.validity.valid) {
-      contactMessageError.style.display = "none";
+      contactMessageError.style.display = 'none';
     }
   });
 
   function onSubmitContact(event) {
     event.preventDefault();
 
-    contactForm.style.display = "none";
-    contactConfirmation.style.display = "flex";
+    contactForm.style.display = 'none';
+    contactConfirmation.style.display = 'flex';
 
     //clear all the values after submit
-    contactNameField.value = "";
-    contactEmailField.value = "";
-    contactMessageField.value = "";
+    contactNameField.value = '';
+    contactEmailField.value = '';
+    contactMessageField.value = '';
     contactMessageCharCountValue.textContent = 0;
   }
 
   function onSendAnotherMessage() {
-    contactForm.style.display = "flex";
-    contactConfirmation.style.display = "none";
+    contactForm.style.display = 'flex';
+    contactConfirmation.style.display = 'none';
   }
 }
 
 // Footer
-const copyrightYearElement = document.getElementById("copyrightYear");
+const copyrightYearElement = document.getElementById('copyrightYear');
 if (copyrightYearElement) {
   const year = new Date().getFullYear();
   copyrightYearElement.innerText = year;
 }
 
 // Cookie consent
-const popupElement = document.getElementById("popupOverlay");
-const cookieConsentBanner = document.getElementById("cookieConsentBanner");
+const popupElement = document.getElementById('popupOverlay');
+const cookieConsentBanner = document.getElementById('cookieConsentBanner');
 
-const analyticsConsent = document.getElementById("analyticsConsent");
-const marketingConsent = document.getElementById("marketingConsent");
+const analyticsConsent = document.getElementById('analyticsConsent');
+const marketingConsent = document.getElementById('marketingConsent');
 
-if (popupElement && cookieConsentBanner && analyticsConsent && marketingConsent) {
+if (
+  popupElement &&
+  cookieConsentBanner &&
+  analyticsConsent &&
+  marketingConsent
+) {
   function openManageCookies() {
-    popupElement.style.display = "block";
+    popupElement.style.display = 'block';
   }
 
-  popupElement.addEventListener("click", function (event) {
+  popupElement.addEventListener('click', function (event) {
     if (event.target === popupElement) {
-      popupElement.style.display = "none";
+      popupElement.style.display = 'none';
     }
   });
 
@@ -243,8 +273,8 @@ if (popupElement && cookieConsentBanner && analyticsConsent && marketingConsent)
     document.cookie = `analytics=${analytics}; max-age=${expirationTime}; path=/`;
 
     // Hide the cookie consent banner after setting the consent
-    popupElement.style.display = "none";
-    cookieConsentBanner.style.display = "none";
+    popupElement.style.display = 'none';
+    cookieConsentBanner.style.display = 'none';
   }
 
   function acceptAllCookies() {
@@ -262,13 +292,13 @@ if (popupElement && cookieConsentBanner && analyticsConsent && marketingConsent)
   function getCookie(name) {
     const value = `; ${document.cookie}`;
     const parts = value.split(`; ${name}=`);
-    if (parts.length === 2) return parts.pop().split(";").shift();
+    if (parts.length === 2) return parts.pop().split(';').shift();
   }
 
   // Check if there's a previous consent
-  const previousEssentialConsent = getCookie("essential");
-  const previousMarketingConsent = getCookie("marketing");
-  const previousAnalyticsConsent = getCookie("analytics");
+  const previousEssentialConsent = getCookie('essential');
+  const previousMarketingConsent = getCookie('marketing');
+  const previousAnalyticsConsent = getCookie('analytics');
 
   if (
     previousEssentialConsent &&
@@ -276,6 +306,6 @@ if (popupElement && cookieConsentBanner && analyticsConsent && marketingConsent)
     previousAnalyticsConsent
   ) {
     // Hide the cookie consent banner if all consents are previously given
-    cookieConsentBanner.style.display = "none";
+    cookieConsentBanner.style.display = 'none';
   }
 }
