@@ -175,7 +175,7 @@ body {
 .btn--secondary {
   background: #ffffff;
   border: 0.5px solid #e6e6e6;
-  color: #0a0a0a;
+  color: #171717;
   box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.06);
 }
 .btn--secondary:hover,
