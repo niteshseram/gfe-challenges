@@ -110,13 +110,13 @@ input.input__field__left-icon-padding {
 
 .input__field__left-icon{
   inset: 0;
-  padding-left: 13px;
+  padding-left: 14px;
 }
 
 .input__field__right-icon {
   right: 0px;
   padding-left: 8px;
-  padding-right: 13px;
+  padding-right: 14px;
 }
 
 .input__message {
