@@ -38,7 +38,7 @@ body {
 .textarea-variants {
   display: flex;
   flex-direction: column;
-  gap: 48px;
+  gap: 32px;
   width: 340px;
 }
 
