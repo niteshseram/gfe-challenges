@@ -70,8 +70,12 @@ body {
   width: 100%;
 
   resize: none;
-  height: 128px;
+  height: 108px;
 }
+#description-field2 {
+  height: 103px;
+}
+
 .textarea textarea::placeholder {
   color: #737373;
 }
