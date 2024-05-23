@@ -31,7 +31,7 @@ const MobileNavMenu = ({ links }) => {
               'animate-navbar-menu'
             )}>
             <div className="flex items-center justify-between">
-              <img src="./img/stylenest.svg" alt="Logo" class="h-8 w-auto" />
+              <img src="./img/stylenest.svg" alt="Logo" />
               <button
                 onClick={() => setOpenMenu(false)}
                 aria-label="Close mobile menu"
