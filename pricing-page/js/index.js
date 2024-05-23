@@ -61,15 +61,9 @@ for (let i = 0; i < accordions.length; i++) {
     const faqContent = this.nextElementSibling;
     const activeIcon = this.lastElementChild.firstElementChild;
     const inactiveIcon = this.lastElementChild.lastElementChild;
-    if (faqContent.style.display === "none") {
-      faqContent.style.display = "block";
-      activeIcon.style.display = "block";
-      inactiveIcon.style.display = "none";
-    } else {
-      faqContent.style.display = "none";
-      activeIcon.style.display = "none";
-      inactiveIcon.style.display = "block";
-    }
+    faqContent.classList.toggle('open');
+    activeIcon.classList.toggle('open');
+    inactiveIcon.classList.toggle('open');
   });
 }
 

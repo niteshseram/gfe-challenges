@@ -625,18 +625,24 @@ body {
   cursor: pointer;
 }
 
-.faq__accordion__active-icon svg,
-.faq__accordion__inactive-icon svg {
-  display: block;
+.faq__accordion__label:focus {
+  border-radius: 4px;
+  box-shadow: 0px 0px 0px 4px rgba(68, 76, 231, 0.12);
 }
 
-.faq__accordion__inactive-icon {
+.faq__accordion__toggle-icon {
   display: none;
+}
+.faq__accordion__toggle-icon.open{
+  display: block;
 }
 
 .faq__accordion__content {
-  display: block;
+  display: none;
   padding-right: 40px;
+}
+.faq__accordion__content.open {
+  display: block;
 }
 
 hr {
