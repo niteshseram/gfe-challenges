@@ -46,6 +46,8 @@ body {
   display: flex;
   flex-direction: column;
   gap: 6px;
+
+  position: relative;
 }
 
 .input label {
@@ -120,6 +122,9 @@ input.input__field__left-icon-padding {
 }
 
 .input__message {
+  position:absolute;
+  bottom: -26px;
+
   font-size: 14px;
   line-height: 20px;
   color: #737373;
