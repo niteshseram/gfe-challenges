@@ -125,9 +125,6 @@ input.input__field__right-icon-padding {
 }
 
 .input__message {
-  position:absolute;
-  bottom: -26px;
-
   font-size: 14px;
   line-height: 20px;
   color: #737373;
