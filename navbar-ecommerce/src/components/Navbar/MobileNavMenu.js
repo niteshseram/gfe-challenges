@@ -13,6 +13,8 @@ const MobileNavMenu = ({ links }) => {
       <button
         onClick={() => setOpenMenu(!openMenu)}
         aria-label="Open mobile menu"
+        aria-expanded={openMenu ? 'true' : 'false'}
+        aria-controls="slideout-menu"
         type="button"
         className={clsx(
           'text-neutral-600 rounded block lg:hidden',
@@ -25,6 +27,7 @@ const MobileNavMenu = ({ links }) => {
       {openMenu &&
         createPortal(
           <nav
+            id="slideout-menu"
             className={clsx(
               'fixed inset-0 px-4 py-6 z-fixed bg-white max-w-[400px] lg:hidden',
               'flex flex-col gap-6',
