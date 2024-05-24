@@ -100,6 +100,10 @@ body {
 input.input__field__left-icon-padding {
   padding-left: 41px; 
 }
+input.input__field__right-icon-padding {
+  padding-right: 38px; 
+}
+
 .input__field__icon{
   position: absolute;
   pointer-events: none;
@@ -117,7 +121,6 @@ input.input__field__left-icon-padding {
 
 .input__field__right-icon {
   right: 0px;
-  padding-left: 8px;
   padding-right: 14px;
 }
 
