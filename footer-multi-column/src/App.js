@@ -15,9 +15,12 @@ function App() {
       <div
         className={clsx(
           'rounded-md bg-white min-h-[calc(100vh_-_32px)]',
+          'shadow-sm md:shadow-md lg:shadow-lg',
           'flex items-center'
         )}>
-        <Footer />
+        <section className={clsx('w-full', 'md:py-[116px] lg:py-[65px]')}>
+          <Footer />
+        </section>
       </div>
     </main>
   );

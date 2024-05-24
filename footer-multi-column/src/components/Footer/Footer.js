@@ -77,9 +77,10 @@ const Footer = () => {
     <footer
       className={clsx(
         'max-w-[1216px] mx-auto px-4 xl:px-0 w-full',
-        'flex flex-col gap-12 md:gap-16'
+        'flex flex-col gap-12 md:gap-16',
+        'py-12 md:py-16 lg:py-24'
       )}>
-      <div className="grid grid-cols-4 md:grid-cols-6 lg:grid-cols-12 gap-x-8 lg:gap-y-12">
+      <div className="grid grid-cols-4 md:grid-cols-6 lg:grid-cols-12 gap-x-8 lg:gap-y-[66px]">
         <div
           className={clsx(
             'flex flex-col gap-2',
@@ -93,14 +94,14 @@ const Footer = () => {
           </div>
         </div>
 
-        <div className="col-span-4 md:col-span-6 lg:col-span-4 mt-8 md:mt-4 lg:mt-0">
+        <div className="col-span-4 md:col-span-6 lg:col-span-4 mt-8 md:mt-5 lg:mt-0">
           <NewsletterForm />
         </div>
 
         <div
           className={clsx(
-            'flex flex-col gap-8',
-            'col-span-4 mt-12 md:mt-16 lg:mt-0'
+            'flex flex-col gap-6 md:gap-8',
+            'col-span-4 md:col-span-3 lg:col-span-4 mt-12 md:mt-16 lg:mt-0'
           )}>
           <div>
             <img
@@ -113,6 +114,8 @@ const Footer = () => {
             Craft stunning style journeys that weave more joy into every thread.
           </div>
         </div>
+
+        <div className="hidden md:block lg:hidden col-span-3" />
 
         <div
           className={clsx(
@@ -148,7 +151,7 @@ const Footer = () => {
       <div
         className={clsx(
           'flex gap-8 md:items-center flex-col md:flex-row lg:justify-between',
-          'pt-8 border-t border-neutral-200'
+          'pt-[31px] border-t border-neutral-200'
         )}>
         <div className="text-neutral-500">
           &copy; {new Date().getFullYear()} StyleNest, Inc. All rights reserved.
