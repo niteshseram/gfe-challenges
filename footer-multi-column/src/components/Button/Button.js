@@ -89,17 +89,6 @@ const variantDisabledClasses = {
   danger: clsx('disabled:bg-none', 'disabled:text-neutral-400'),
 };
 
-const linkVariantClasses = {
-  primary: clsx(
-    'text-indigo-700',
-    'hover:text-indigo-800 focus:text-indigo-800'
-  ),
-  gray: clsx(
-    'text-neutral-600',
-    'hover:text-neutral-900 focus:text-neutral-900'
-  ),
-};
-
 const Button = ({
   label,
   className,
@@ -123,13 +112,9 @@ const Button = ({
     return (
       <Link
         to={href}
-        className={clsx(
-          commonClasses,
-          linkVariantClasses[variant],
-          spacingClasses[size],
-          'disabled:text-neutral-400',
-          className
-        )}
+        variant={variant}
+        disabled={isDisabled}
+        className={clsx(commonClasses, spacingClasses[size], className)}
         {...props}>
         {StartIcon && (
           <StartIcon
