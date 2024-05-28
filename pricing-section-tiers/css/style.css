@@ -11,6 +11,7 @@ body {
     "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue",
     sans-serif;
   min-height: 100vh;
+  background: linear-gradient(147.52deg, #f9fafb 8.89%, #d2d6db 100.48%);
 }
 
 .credits {
@@ -30,7 +31,8 @@ body {
 .container {
   min-height: 100vh;
   padding: 16px;
-  background: linear-gradient(147.52deg, #f9fafb 8.89%, #d2d6db 100.48%);
+  max-width: 1440px;
+  margin: 0 auto;
 }
 
 .pricing-tiers {
@@ -155,6 +157,7 @@ body {
   font-weight: 500;
   font-size: 16px;
   line-height: 24px;
+  color: #525252;
   white-space: nowrap;
   padding: 0;
   border: 0.5px solid #fff;
@@ -165,6 +168,7 @@ body {
   display: grid;
   gap: 32px;
   grid-template-columns: repeat(4, minmax(0, 1fr));
+  width: 100%;
 }
 
 .pricing-tiers__plan {
