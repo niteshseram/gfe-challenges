@@ -84,7 +84,7 @@ body {
   color: #525252;
 }
 
-.btn {
+button.btn {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -103,21 +103,21 @@ body {
   width: 100%;
   white-space: noWrap;
 }
-.btn:focus {
+button.btn:focus {
   box-shadow: 0px 0px 0px 4px rgba(68, 76, 231, 0.12);
 }
-.btn:disabled {
+button.btn:disabled {
   pointer-events: none;
   background: #f5f5f5;
   color: #a3a3a3;
   box-shadow: none;
 }
-.btn--primary {
+button.btn--primary {
   background: #4338ca;
   color: #ffffff;
 }
-.btn--primary:hover,
-.btn--primary:focus {
+button.btn--primary:hover,
+button.btn--primary:focus {
   background: #3730a3;
 }
 button.btn--secondary {
@@ -126,8 +126,8 @@ button.btn--secondary {
   color: #0a0a0a;
   box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.06);
 }
-.btn--secondary:hover,
-.btn--secondary:focus {
+button.btn--secondary:hover,
+button.btn--secondary:focus {
   background: #fafafa;
   border: 1px solid #e6e6e6;
 }
