@@ -28,18 +28,15 @@
           </div>
         </header>
         <div class="pricing-tiers__content">
-          <div class="pricing-tiers__toggle">
-            <div class="pricing-tiers__toggle__wrapper">
-              <button
-                class="btn--toggle btn btn--secondary"
-                id="monthlyPlanBtn"
-              >
-                Monthly
-              </button>
-            </div>
-            <div class="pricing-tiers__toggle__wrapper">
-              <button class="btn--toggle" id="annualPlanBtn">Annually</button>
-            </div>
+          <div class="pricing-tiers__toggle" role="group" aria-label="Pricing Plan Toggle button">
+            <button
+              class="btn--toggle btn btn--secondary"
+              aria-pressed="true"
+              id="monthlyPlanBtn"
+            >
+              Monthly
+            </button>
+            <button class="btn--toggle" aria-pressed="false" id="annualPlanBtn">Annually</button>
           </div>
           <div class="pricing-tiers__plans">
             <div class="pricing-tiers__plan">
