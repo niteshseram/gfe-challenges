@@ -120,7 +120,7 @@ body {
 .btn--primary:focus {
   background: #3730a3;
 }
-.btn--secondary {
+button.btn--secondary {
   background: #ffffff;
   border: 0.5px solid #e6e6e6;
   color: #0a0a0a;
@@ -162,6 +162,10 @@ body {
   padding: 0;
   border: 0.5px solid #fff;
   height: 44px;
+}
+.btn--toggle:focus {
+    border-radius: 4px;
+    box-shadow: 0px 0px 0px 4px rgba(68, 76, 231, 0.12);
 }
 
 .pricing-tiers__plans {
