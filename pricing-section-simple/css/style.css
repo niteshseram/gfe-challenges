@@ -83,12 +83,14 @@ body {
 }
 
 .pricing__content {
-  display: flex;
-  flex-direction: column;
+  display: grid;
   gap: 32px;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
 }
 
 .pricing__content__features {
+  grid-column: span 4 / span 4;
+
   display: flex;
   flex-direction: column;
   gap: 32px;
@@ -126,6 +128,7 @@ body {
 }
 
 .pricing__content__card {
+  grid-column: span 4 / span 4;
   width: 100%;
   padding: 31px;
   display: flex;
@@ -246,7 +249,12 @@ body {
   }
 
   .pricing__content {
-    gap: 48px;
+    grid-row-gap: 48px;
+    grid-template-columns: repeat(6, minmax(0, 1fr));
+  }
+
+  .pricing__content__features, .pricing__content__card {
+    grid-column: span 6 / span 6;
   }
 
   .pricing__content__features {
@@ -283,9 +291,15 @@ body {
   }
 
   .pricing__content {
-    flex-direction: row;
-    align-items: center;
-    gap: 32px;
+    grid-template-columns: repeat(12, minmax(0, 1fr));
+  }
+
+  .pricing__content__features {
+    grid-column: span 7 / span 7;
+  }
+
+  .pricing__content__card {
+    grid-column: span 5 / span 5;
   }
 
   .pricing__content__features__list {
