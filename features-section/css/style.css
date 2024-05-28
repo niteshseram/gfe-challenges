@@ -84,6 +84,7 @@ body {
 .features-section__content {
   display: grid;
   gap: 32px;
+  grid-row-gap: 48px;
   grid-template-columns: repeat(4, minmax(0, 1fr));
 }
 
