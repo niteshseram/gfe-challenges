@@ -40,6 +40,7 @@
               experience as smooth as possible.
             </p>
           </div>
+
           <div class="contact-section__left__metadata">
             <div class="contact-section__left__metadata__item">
               <div class="contact-section__left__metadata__item_icon">
@@ -109,8 +110,9 @@
                     id="name"
                     required
                     placeholder="Your name"
+                    aria-describedby="name-error"
                   />
-                  <p class="input__error" id="nameError">Name is required</p>
+                  <p class="input__error" id="name-error">Name is required</p>
                 </div>
                 <div class="input input--width">
                   <label class="input__label" for="email">Email</label>
@@ -120,8 +122,9 @@
                     type="email"
                     required
                     placeholder="example@example.com"
+                    aria-describedby="email-error"
                   />
-                  <p class="input__error" id="emailError">
+                  <p class="input__error" id="email-error">
                     Email address is required
                   </p>
                 </div>
@@ -135,8 +138,9 @@
                   required
                   oninput="onMessageChange()"
                   placeholder="Write your message..."
+                  aria-describedby="message-error"
                 ></textarea>
-                <p class="input__error input__error--bottom" id="messageError">
+                <p class="input__error input__error--bottom" id="message-error">
                   Message is required
                 </p>
                 <div class="input__char-count" id="charCountLabel">

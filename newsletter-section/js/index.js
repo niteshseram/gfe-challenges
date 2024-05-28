@@ -40,18 +40,19 @@ async function onSubmit(event) {
   );
   const result = await response.json();
 
-  //clear all the values after submit
-  emailField.value = '';
-  toast.style.display = 'flex';
-
   const toastContent = toast.firstElementChild;
   const toastContentBadge = toastContent.firstElementChild;
   const toastContentMessage = toastContent.lastElementChild;
 
+  // Display toast
+  toast.style.display = 'flex';
   if (response.ok) {
     toastContent.classList.add('toast__content--success');
     toastContentBadge.innerText = 'Success';
     toastContentMessage.innerText = result.message;
+
+    //clear all the values after submit
+    emailField.value = '';
   } else {
     toastContent.classList.add('toast__content--error');
     toastContentBadge.classList.add('toast__content__badge--error');
