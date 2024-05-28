@@ -10,6 +10,7 @@ body {
     "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue",
     sans-serif;
   min-height: 100vh;
+  background: linear-gradient(147.52deg, #f9fafb 8.89%, #d2d6db 100.48%);
 }
 
 .credits {
@@ -30,7 +31,8 @@ body {
   width: 100%;
   min-height: 100vh;
   padding: 16px;
-  background: linear-gradient(147.52deg, #f9fafb 8.89%, #d2d6db 100.48%);
+  max-width: 1440px;
+  margin: 0 auto;
 }
 
 .testimonials-section {

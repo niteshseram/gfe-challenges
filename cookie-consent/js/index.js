@@ -1,18 +1,21 @@
 // Write custom JavaScript here.
 // You may ignore this file and delete if if JavaScript is not required for your challenge.
-const popupElement = document.getElementById("popupOverlay");
-const cookieConsentBanner = document.getElementById("cookieConsentBanner");
+const popupElement = document.getElementById('popup-overlay');
+const cookieConsentBanner = document.getElementById('cookie-consent-banner');
 
-const analyticsConsent = document.getElementById("analyticsConsent");
-const marketingConsent = document.getElementById("marketingConsent");
+const analyticsConsent = document.getElementById('analytics-consent');
+const marketingConsent = document.getElementById('marketing-consent');
 
-function openManageCookies() {
-  popupElement.style.display = "block";
-}
+// Open manager cookie modal
+document
+  .getElementById('manage-cookies')
+  .addEventListener('click', function () {
+    popupElement.style.display = 'block';
+  });
 
-popupElement.addEventListener("click", function (event) {
-  if (event.target === popupOverlay) {
-    popupElement.style.display = "none";
+popupElement.addEventListener('click', function (event) {
+  if (event.target === popupElement) {
+    popupElement.style.display = 'none';
   }
 });
 
@@ -26,21 +29,28 @@ function setCookieConsent(marketing, analytics) {
   document.cookie = `analytics=${analytics}; max-age=${expirationTime}; path=/`;
 
   // Hide the cookie consent banner after setting the consent
-  popupElement.style.display = "none";
-  cookieConsentBanner.style.display = "none";
+  popupElement.style.display = 'none';
+  cookieConsentBanner.style.display = 'none';
 }
 
-function acceptAllCookies() {
-  setCookieConsent(true, true);
-}
+// Accept all cookies
+document
+  .getElementById('accept-all-cookies')
+  .addEventListener('click', function () {
+    setCookieConsent(true, true);
+  });
 
-function rejectAllCookies() {
-  setCookieConsent(false, false);
-}
+// Reject all cookies
+document
+  .getElementById('reject-all-cookies')
+  .addEventListener('click', function () {
+    setCookieConsent(false, false);
+  });
 
-function saveCookies() {
+// Save cookies
+document.getElementById('save-cookies').addEventListener('click', function () {
   setCookieConsent(marketingConsent.checked, analyticsConsent.checked);
-}
+});
 
 function getCookie(name) {
   const value = `; ${document.cookie}`;

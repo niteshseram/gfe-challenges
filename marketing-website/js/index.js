@@ -243,11 +243,11 @@ if (copyrightYearElement) {
 }
 
 // Cookie consent
-const popupElement = document.getElementById('popupOverlay');
-const cookieConsentBanner = document.getElementById('cookieConsentBanner');
+const popupElement = document.getElementById('popup-overlay');
+const cookieConsentBanner = document.getElementById('cookie-consent-banner');
 
-const analyticsConsent = document.getElementById('analyticsConsent');
-const marketingConsent = document.getElementById('marketingConsent');
+const analyticsConsent = document.getElementById('analytics-consent');
+const marketingConsent = document.getElementById('marketing-consent');
 
 if (
   popupElement &&
