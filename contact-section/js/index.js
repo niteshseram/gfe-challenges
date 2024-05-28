@@ -9,23 +9,9 @@ const messageError = document.getElementById('message-error');
 
 const charCountValue = document.getElementById('charCountValue');
 const charCountLabel = document.getElementById('charCountLabel');
-const form = document.getElementById('form');
+const contactForm = document.getElementById('contact-form');
 const confirmation = document.getElementById('confirmation');
 const toast = document.getElementById('toaster');
-
-function onMessageChange() {
-  const valueLength = messageField.value.length;
-
-  charCountValue.innerHTML = valueLength;
-
-  if (valueLength > 500) {
-    charCountLabel.classList.add('input__char-count--exceed');
-    messageField.classList.add('input__field--error');
-  } else {
-    charCountLabel.classList.remove('input__char-count--exceed');
-    messageField.classList.remove('input__field--error');
-  }
-}
 
 // Name validation
 nameField.addEventListener('invalid', function () {
@@ -53,6 +39,20 @@ emailField.addEventListener('input', function () {
   }
 });
 
+message.addEventListener('input', function () {
+  const valueLength = messageField.value.length;
+
+  charCountValue.innerHTML = valueLength;
+
+  if (valueLength > 500) {
+    charCountLabel.classList.add('input__char-count--exceed');
+    messageField.classList.add('input__field--error');
+  } else {
+    charCountLabel.classList.remove('input__char-count--exceed');
+    messageField.classList.remove('input__field--error');
+  }
+});
+
 // Message validation
 messageField.addEventListener('invalid', function () {
   messageError.style.display = 'block';
@@ -63,7 +63,7 @@ messageField.addEventListener('input', function () {
   }
 });
 
-async function onSubmit(event) {
+contactForm.addEventListener('submit', async function (event) {
   event.preventDefault();
 
   const requestOptions = {
@@ -87,7 +87,7 @@ async function onSubmit(event) {
   const toastContentMessage = toastContent.lastElementChild;
 
   if (response.ok) {
-    form.style.display = 'none';
+    contactForm.style.display = 'none';
     confirmation.style.display = 'flex';
 
     //clear all the values after submit
@@ -100,9 +100,11 @@ async function onSubmit(event) {
     toast.style.display = 'flex';
     toastContentMessage.innerText = result.error;
   }
-}
+});
 
-function onSendAnotherMessage() {
-  form.style.display = "flex";
-  confirmation.style.display = "none";
-}
+document
+  .getElementById('send-another-message')
+  .addEventListener('click', function () {
+    contactForm.style.display = 'flex';
+    confirmation.style.display = 'none';
+  });

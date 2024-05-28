@@ -100,7 +100,7 @@
 
         <div class="contact-section__right">
           <!-- Contact form -->
-          <form class="contact-form" id="form" onsubmit="onSubmit(event)">
+          <form class="contact-form" id="contact-form">
             <div class="contact-form__fields">
               <div class="contact-form__fields__name-email">
                 <div class="input input--width">
@@ -136,7 +136,6 @@
                   class="input__field--text-area input__field"
                   rows="4"
                   required
-                  oninput="onMessageChange()"
                   placeholder="Write your message..."
                   aria-describedby="message-error"
                 ></textarea>
@@ -176,7 +175,7 @@
             </div>
             <button
               class="btn btn--secondary btn--send-message"
-              onclick="onSendAnotherMessage()"
+              id="send-another-message"
             >
               Send another message
             </button>

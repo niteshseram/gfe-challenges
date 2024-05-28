@@ -5,7 +5,7 @@ const emailError = document.getElementById('email-error');
 
 const toast = document.getElementById('toaster');
 
-const form = document.getElementById('form');
+const newsletterForm = document.getElementById('newsletter-form');
 
 emailField.addEventListener('input', function () {
   if (this.validity.valid) {
@@ -22,7 +22,7 @@ emailField.addEventListener('input', function () {
   }
 });
 
-async function onSubmit(event) {
+newsletterForm.addEventListener('submit', async function (event) {
   event.preventDefault();
 
   const requestOptions = {
@@ -59,4 +59,4 @@ async function onSubmit(event) {
     toastContentBadge.innerText = 'Error';
     toastContentMessage.innerText = result.error;
   }
-}
+});
