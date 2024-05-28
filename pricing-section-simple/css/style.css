@@ -189,7 +189,7 @@ body {
   text-align: center;
   color: #171717;
 
-  padding: 0 30px;
+  width: 80%;
 }
 
 .btn {
@@ -275,7 +275,7 @@ body {
   }
 
   .pricing__content__card__desc {
-    padding: 0 200px;
+    width: 48%;
   }
 
   .btn {
@@ -308,12 +308,7 @@ body {
     padding: 0 16px;
   }
 
-  .pricing__content__card {
-    min-width: 487px;
-    width: 487px;
-  }
-
   .pricing__content__card__desc {
-    padding: 0 100px;
+    width: 70%;
   }
 }
