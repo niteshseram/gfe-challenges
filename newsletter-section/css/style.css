@@ -11,6 +11,7 @@ body {
     "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue",
     sans-serif;
   min-height: 100vh;
+  background: linear-gradient(147.52deg, #f9fafb 8.89%, #d2d6db 100.48%);
 }
 
 .credits {
@@ -30,7 +31,8 @@ body {
 .container {
   min-height: 100vh;
   padding: 16px;
-  background: linear-gradient(147.52deg, #f9fafb 8.89%, #d2d6db 100.48%);
+  max-width: 1440px;
+  margin: 0 auto;
 }
 
 .newsletter {
@@ -39,11 +41,16 @@ body {
     0px 4px 6px -2px rgba(0, 0, 0, 0.05);
   border-radius: 6px;
 
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 32px;
+  grid-row-gap: 16px;
 
   padding: 32px 12px;
+}
+
+.newsletter__wrapper, .newsletter__banner {
+  grid-column: span 4 / span 4;
 }
 
 .newsletter__wrapper {
@@ -252,8 +259,13 @@ body {
 
 @media screen and (min-width: 768px) {
   .newsletter {
-    gap: 64px;
     padding: 64px 16px;
+    grid-row-gap: 64px;
+    grid-template-columns: repeat(6, minmax(0, 1fr));
+  }
+  
+  .newsletter__wrapper, .newsletter__banner {
+    grid-column: span 6 / span 6;
   }
 
   .newsletter__content {
@@ -297,6 +309,7 @@ body {
     padding: 96px;
     gap: 32px;
     align-items: center;
+    grid-template-columns: repeat(12, minmax(0, 1fr));
   }
 
   .newsletter__banner {

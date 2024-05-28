@@ -25,12 +25,13 @@
       </div>
     </div>
     <div class="container">
-      <section class="newsletter">
+      <section class="newsletter" aria-describedby="newsletter-section">
         <div class="newsletter__wrapper">
           <div class="newsletter__content">
             <h2 class="newsletter__content__title">
               Get the finest curated abstracts delivered weekly to your inbox
             </h2>
+
             <ul class="newsletter__content__features">
               <li>
                 <svg
@@ -96,6 +97,7 @@
               </li>
             </ul>
           </div>
+
           <form class="newsletter__form" onsubmit="onSubmit(event)">
             <div class="newsletter__form__content">
               <div class="newsletter__form__content__input-wrapper">
@@ -105,9 +107,11 @@
                   type="email"
                   required
                   placeholder="Enter your email"
+                  aria-describedby="email-error"
                 />
-                <p class="input__error" id="emailError"></p>
+                <p class="input__error" id="email-error"></p>
               </div>
+
               <p class="newsletter__form__content__message">
                 We only send you the best! No spam.
               </p>
