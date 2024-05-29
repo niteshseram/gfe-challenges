@@ -6,7 +6,7 @@ const cookieConsentBanner = document.getElementById('cookie-consent-banner');
 const analyticsConsent = document.getElementById('analytics-consent');
 const marketingConsent = document.getElementById('marketing-consent');
 
-// Open manager cookie modal
+// Open manage cookie modal
 document
   .getElementById('manage-cookies')
   .addEventListener('click', function () {

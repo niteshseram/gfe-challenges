@@ -322,9 +322,12 @@ if (
   analyticsConsent &&
   marketingConsent
 ) {
-  function openManageCookies() {
-    popupElement.style.display = 'block';
-  }
+  // Open manage cookie modal
+  document
+    .getElementById('manage-cookies')
+    .addEventListener('click', function () {
+      popupElement.style.display = 'block';
+    });
 
   popupElement.addEventListener('click', function (event) {
     if (event.target === popupElement) {
@@ -346,17 +349,26 @@ if (
     cookieConsentBanner.style.display = 'none';
   }
 
-  function acceptAllCookies() {
-    setCookieConsent(true, true);
-  }
+  // Accept all cookies
+  document
+    .getElementById('accept-all-cookies')
+    .addEventListener('click', function () {
+      setCookieConsent(true, true);
+    });
 
-  function rejectAllCookies() {
-    setCookieConsent(false, false);
-  }
+  // Reject all cookies
+  document
+    .getElementById('reject-all-cookies')
+    .addEventListener('click', function () {
+      setCookieConsent(false, false);
+    });
 
-  function saveCookies() {
-    setCookieConsent(marketingConsent.checked, analyticsConsent.checked);
-  }
+  // Save cookies
+  document
+    .getElementById('save-cookies')
+    .addEventListener('click', function () {
+      setCookieConsent(marketingConsent.checked, analyticsConsent.checked);
+    });
 
   function getCookie(name) {
     const value = `; ${document.cookie}`;

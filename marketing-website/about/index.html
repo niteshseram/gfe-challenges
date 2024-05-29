@@ -409,15 +409,15 @@
     </div>
     <div class="cookie-consent-banner__actions">
       <div class="cookie-consent-banner__actions__decline">
-        <button type="button" class="btn btn--danger btn--decline-cookie" onclick="rejectAllCookies()">
+        <button type="button" class="btn btn--danger btn--decline-cookie" id="reject-all-cookies">
           Decline all
         </button>
       </div>
       <div class="cookie-consent-banner__actions__allow">
-        <button type="button" class="btn btn--primary btn--allow-cookie" onclick="acceptAllCookies()">
+        <button type="button" class="btn btn--primary btn--allow-cookie" id="accept-all-cookies">
           Allow cookies
         </button>
-        <button type="button" class="btn btn--secondary btn--allow-cookie" onclick="openManageCookies()">
+        <button type="button" class="btn btn--secondary btn--allow-cookie" id="manage-cookies">
           Manage cookies
         </button>
       </div>
@@ -470,17 +470,17 @@
         <div class="popup__content__actions">
           <div class="popup__content__actions__allow">
             <div class="popup__content__actions__btn__wrapper">
-              <button type="button" class="btn btn--primary btn-popup-action" onclick="acceptAllCookies()">
+              <button type="button" class="btn btn--primary btn-popup-action" id="accept-all-cookies">
                 Accept all
               </button>
             </div>
             <div class="popup__content__actions__btn__wrapper">
-              <button type="button" class="btn btn--secondary btn-popup-action" onclick="saveCookies()">
+              <button type="button" class="btn btn--secondary btn-popup-action" id="save-cookies">
                 Save
               </button>
             </div>
           </div>
-          <button type="button" class="btn btn--danger btn--popup-decline-cookie" onclick="rejectAllCookies()">
+          <button type="button" class="btn btn--danger btn--popup-decline-cookie" id="reject-all-cookies">
             Decline all
           </button>
         </div>
