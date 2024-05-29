@@ -1454,17 +1454,17 @@
 
   .team__members {
     display: grid;
-    .team-list {
-      grid-template-columns: repeat(1, 1fr);
-    }
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 32px;
     grid-row-gap: 48px;
-    grid-column-gap: 32px;
   }
-
+  
   .team__members__member {
     display: flex;
     flex-direction: column;
     gap: 24px;
+  
+    grid-column: span 4 / span 4;
   }
 
   .team__members__member__picture {
@@ -2182,9 +2182,13 @@
     }
   
     .team__members {
-      grid-template-columns: repeat(2, 1fr);
+      grid-template-columns: repeat(6, minmax(0, 1fr));
       padding-right: 16px;
       grid-row-gap: 64px;
+    }
+    
+    .team__members__member {
+      grid-column: span 3 / span 3;
     }
 
     /* Not found styles */
@@ -2493,12 +2497,12 @@
 
      /* Team styles */
     .team {
-      padding: 96px 64px;
+      padding: 96px;
     }
-
+  
     .team__members {
-      grid-template-columns: repeat(4, 1fr);
-      padding: 0 32px;
+      grid-template-columns: repeat(12, minmax(0, 1fr));
+      padding-right: 0;
     }
 
     /* Not found styles */
