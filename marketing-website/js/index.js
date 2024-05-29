@@ -9,6 +9,24 @@ document
     document.getElementById('slideout-menu').classList.toggle('open');
   });
 
+
+// Get stats data
+if(document.getElementById('stats-section')){
+  fetch(
+    'https://www.greatfrontend.com/api/projects/challenges/statistics-metrics'
+  ).then(async response => {
+    if (response.ok) {
+      const { data } = await response.json();
+      document.getElementById('downloads-stats').innerText =
+        data[0].value.toLocaleString();
+      document.getElementById('paid-users-stats').innerText =
+        data[1].value.toLocaleString();
+      document.getElementById('images-stats').innerText =
+        data[2].value.toLocaleString();
+    }
+  });
+}
+
 // Pricing tiers
 const monthlyPlanBtn = document.getElementById('monthlyPlanBtn');
 const annualPlanBtn = document.getElementById('annualPlanBtn');

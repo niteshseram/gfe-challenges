@@ -12,6 +12,21 @@ document
     document.getElementById('slideout-menu').classList.toggle('open');
   });
 
+fetch(
+  'https://www.greatfrontend.com/api/projects/challenges/statistics-metrics'
+).then(async response => {
+  if (response.ok) {
+    const { data } = await response.json();
+    document.getElementById('downloads-stats').innerText =
+      data[0].value.toLocaleString();
+    document.getElementById('paid-users-stats').innerText =
+      data[1].value.toLocaleString();
+    document.getElementById('images-stats').innerText =
+      data[2].value.toLocaleString();
+  }
+});
+
+
 // Contact
 const contactNameField = document.getElementById('contact-name');
 const contactNameError = document.getElementById('contact-name-error');
