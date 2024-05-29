@@ -439,10 +439,10 @@
 
             <div class="pricing-tiers__content">
                 <div class="pricing-tiers__toggle" role="group" aria-label="Pricing plan toggle button">
-                        <button class="btn--toggle btn btn--secondary" aria-pressed="true" id="monthlyPlanBtn">
-                            Monthly
-                        </button>
-                        <button class="btn--toggle" aria-pressed="false" id="annualPlanBtn">Annually</button>
+                    <button class="btn--toggle btn btn--secondary" aria-pressed="true" id="monthlyPlanBtn">
+                        Monthly
+                    </button>
+                    <button class="btn--toggle" aria-pressed="false" id="annualPlanBtn">Annually</button>
                 </div>
                 <div class="pricing-tiers__plans">
                     <div class="pricing-tiers__plan">
@@ -957,12 +957,12 @@
                         </li>
                     </ul>
                 </div>
-                <form class="newsletter__form" onsubmit="onSubmitNewsletter(event)">
+                <form class="newsletter__form" id="newsletter-form">
                     <div class="newsletter__form__content">
                         <div class="newsletter__form__content__input-wrapper">
-                            <input class="input__field" id="newsletterEmail" type="email" required
-                                placeholder="Enter your email" />
-                            <p class="input__error" id="newsletterEmailError"></p>
+                            <input class="input__field" id="newsletter-email" type="email" required
+                                aria-describedby="newsletter-email-error" placeholder="Enter your email" />
+                            <p class="input__error" id="newsletter-email-error"></p>
                         </div>
                         <p class="newsletter__form__content__message">
                             We only send you the best! No spam.

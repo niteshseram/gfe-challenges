@@ -80,52 +80,65 @@ for (let i = 0; i < accordions.length; i++) {
 }
 
 // Newsletter
-const newsletterEmailField = document.getElementById("newsletterEmail");
-const newsletterEmailError = document.getElementById("newsletterEmailError");
+const newsletterEmailField = document.getElementById('newsletter-email');
+const newsletterEmailError = document.getElementById('newsletter-email-error');
+const newsletterForm = document.getElementById('newsletter-form');
 
-const toast = document.getElementById("toaster");
+const toast = document.getElementById('toaster');
 
-newsletterEmailField.addEventListener("input", function () {
+newsletterEmailField.addEventListener('input', function () {
   if (this.validity.valid) {
-    newsletterEmailError.style.display = "none";
-    newsletterEmailField.classList.remove("input__field--error");
+    newsletterEmailError.style.display = 'none';
+    newsletterEmailField.classList.remove('input__field--error');
   } else if (this.validity.typeMismatch) {
-    newsletterEmailError.style.display = "block";
-    newsletterEmailError.textContent = "Please enter valid email address.";
-    newsletterEmailField.classList.add("input__field--error");
+    newsletterEmailError.style.display = 'block';
+    newsletterEmailError.textContent = 'Please enter valid email address.';
+    newsletterEmailField.classList.add('input__field--error');
   } else if (this.validity.valueMissing) {
-    newsletterEmailError.style.display = "block";
-    newsletterEmailError.textContent = "Email address is required";
-    newsletterEmailField.classList.add("input__field--error");
+    newsletterEmailError.style.display = 'block';
+    newsletterEmailError.textContent = 'Email address is required';
+    newsletterEmailField.classList.add('input__field--error');
   }
 });
 
-function onSubmitNewsletter(event) {
+newsletterForm.addEventListener('submit', async function (event) {
   event.preventDefault();
 
-  //clear all the values after submit
-  newsletterEmailField.value = "";
-  toast.style.display = "flex";
+  const requestOptions = {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({
+      email: newsletterEmailField.value,
+    }), // Send the data in JSON format
+  };
+
+  // Make the request
+  const response = await fetch(
+    'https://www.greatfrontend.com/api/projects/challenges/newsletter',
+    requestOptions
+  );
+  const result = await response.json();
 
   const toastContent = toast.firstElementChild;
   const toastContentBadge = toastContent.firstElementChild;
   const toastContentMessage = toastContent.lastElementChild;
 
-  const success = true;
+  // Display toast
+  toast.style.display = 'flex';
+  if (response.ok) {
+    toastContent.classList.add('toast__content--success');
+    toastContentBadge.innerText = 'Success';
+    toastContentMessage.innerText = result.message;
 
-  if (success) {
-    toastContent.classList.add("toast__content--success");
-    toastContentBadge.innerText = "Success";
-    toastContentMessage.innerText =
-      "Subscription successful! Please check your email to confirm.";
+    //clear all the values after submit
+    emailField.value = '';
   } else {
-    toastContent.classList.add("toast__content--error");
-    toastContentBadge.classList.add("toast__content__badge--error");
-    toastContentBadge.innerText = "Error";
-    toastContentMessage.innerText =
-      "Failed to subscribe. Please ensure your email is correct or try again later.";
+    toastContent.classList.add('toast__content--error');
+    toastContentBadge.classList.add('toast__content__badge--error');
+    toastContentBadge.innerText = 'Error';
+    toastContentMessage.innerText = result.error;
   }
-}
+});
 
 // Contact
 const contactNameField = document.getElementById("contactName");

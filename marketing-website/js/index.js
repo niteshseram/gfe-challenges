@@ -89,11 +89,12 @@ if (accordions.length > 0) {
 }
 
 // Newsletter
-const newsletterEmailField = document.getElementById('newsletterEmail');
-const newsletterEmailError = document.getElementById('newsletterEmailError');
+const newsletterEmailField = document.getElementById('newsletter-email');
+const newsletterEmailError = document.getElementById('newsletter-email-error');
+const newsletterForm = document.getElementById('newsletter-form');
 const toast = document.getElementById('toaster');
 
-if (newsletterEmailField && newsletterEmailError && toast) {
+if (newsletterEmailField && newsletterEmailError && newsletterForm && toast) {
   newsletterEmailField.addEventListener('input', function () {
     if (this.validity.valid) {
       newsletterEmailError.style.display = 'none';
@@ -109,32 +110,44 @@ if (newsletterEmailField && newsletterEmailError && toast) {
     }
   });
 
-  function onSubmitNewsletter(event) {
+  newsletterForm.addEventListener('submit', async function (event) {
     event.preventDefault();
 
-    //clear all the values after submit
-    newsletterEmailField.value = '';
-    toast.style.display = 'flex';
+    const requestOptions = {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        email: newsletterEmailField.value,
+      }), // Send the data in JSON format
+    };
+
+    // Make the request
+    const response = await fetch(
+      'https://www.greatfrontend.com/api/projects/challenges/newsletter',
+      requestOptions
+    );
+    const result = await response.json();
 
     const toastContent = toast.firstElementChild;
     const toastContentBadge = toastContent.firstElementChild;
     const toastContentMessage = toastContent.lastElementChild;
 
-    const success = true;
-
-    if (success) {
+    // Display toast
+    toast.style.display = 'flex';
+    if (response.ok) {
       toastContent.classList.add('toast__content--success');
       toastContentBadge.innerText = 'Success';
-      toastContentMessage.innerText =
-        'Subscription successful! Please check your email to confirm.';
+      toastContentMessage.innerText = result.message;
+
+      //clear all the values after submit
+      emailField.value = '';
     } else {
       toastContent.classList.add('toast__content--error');
       toastContentBadge.classList.add('toast__content__badge--error');
       toastContentBadge.innerText = 'Error';
-      toastContentMessage.innerText =
-        'Failed to subscribe. Please ensure your email is correct or try again later.';
+      toastContentMessage.innerText = result.error;
     }
-  }
+  });
 }
 
 // Contact

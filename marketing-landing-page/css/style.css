@@ -832,11 +832,16 @@ hr {
 
 /* Newsletter styles*/
 .newsletter {
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
-
   padding: 32px 12px;
+
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 32px;
+  grid-row-gap: 16px;
+}
+
+.newsletter__wrapper, .newsletter__banner {
+  grid-column: span 4 / span 4;
 }
 
 .newsletter__wrapper {
@@ -917,7 +922,6 @@ hr {
   background: #fafafa;
   border: 1px solid #e6e6e6;
   border-radius: 4px;
-  height: 40px;
   padding: 9px 13px;
 
   font-family: inherit;
@@ -960,7 +964,7 @@ hr {
 }
 
 .toast {
-  z-index: 1;
+  z-index: 20;
   position: fixed;
   left: 0;
   right: 0;
@@ -1463,8 +1467,14 @@ hr {
 
   /* Newsletter styles */
   .newsletter {
-    gap: 64px;
     padding: 64px 16px;
+
+    grid-row-gap: 64px;
+    grid-template-columns: repeat(6, minmax(0, 1fr));
+  }
+
+  .newsletter__wrapper, .newsletter__banner {
+    grid-column: span 6 / span 6;
   }
 
   .newsletter__content {
@@ -1686,10 +1696,9 @@ hr {
 
   /* Newsletter styles */
   .newsletter {
-    flex-direction: row;
     padding: 96px;
-    gap: 32px;
     align-items: center;
+    grid-template-columns: repeat(12, minmax(0, 1fr));
   }
 
   .newsletter__banner {
