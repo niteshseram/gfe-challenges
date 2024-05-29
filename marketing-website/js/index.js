@@ -35,6 +35,8 @@ if (
   annualPlanBtn.addEventListener('click', function () {
     annualPlanBtn.classList.add('btn', 'btn--secondary');
     monthlyPlanBtn.classList.remove('btn', 'btn--secondary');
+    annualPlanBtn.setAttribute('aria-pressed', 'true');
+    monthlyPlanBtn.setAttribute('aria-pressed', 'false');
 
     basicPlanPrice.innerText = '$6.99';
     basicPlanLabel.innerText = 'Billed annually ($84)';
@@ -49,6 +51,8 @@ if (
   monthlyPlanBtn.addEventListener('click', function () {
     annualPlanBtn.classList.remove('btn', 'btn--secondary');
     monthlyPlanBtn.classList.add('btn', 'btn--secondary');
+    annualPlanBtn.setAttribute('aria-pressed', 'false');
+    monthlyPlanBtn.setAttribute('aria-pressed', 'true');
 
     basicPlanPrice.innerText = '$9.99';
     basicPlanLabel.innerText = 'Billed monthly';

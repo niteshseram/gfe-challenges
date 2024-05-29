@@ -426,8 +426,8 @@
 
         <!-- Pricing tiers -->
         <section id="pricingTiers" class="pricing-tiers" aria-labelledby="pricing-tiers">
-            <div class="header header--pricing-tiers">
-                <p class="header__supporting-text">Pricing Tiers</p>
+            <header class="header header--pricing-tiers">
+                <div class="header__supporting-text">Pricing Tiers</div>
                 <div class="header__content">
                     <h2 class="header__content__title">Fit for all your needs</h2>
                     <p class="header__content__subtitle">
@@ -435,17 +435,14 @@
                         grow - our flexible options have your journey mapped out.
                     </p>
                 </div>
-            </div>
+            </header>
+
             <div class="pricing-tiers__content">
-                <div class="pricing-tiers__toggle">
-                    <div class="pricing-tiers__toggle__wrapper">
-                        <button class="btn--toggle btn btn--secondary" id="monthlyPlanBtn">
+                <div class="pricing-tiers__toggle" role="group" aria-label="Pricing plan toggle button">
+                        <button class="btn--toggle btn btn--secondary" aria-pressed="true" id="monthlyPlanBtn">
                             Monthly
                         </button>
-                    </div>
-                    <div class="pricing-tiers__toggle__wrapper">
-                        <button class="btn--toggle" id="annualPlanBtn">Annually</button>
-                    </div>
+                        <button class="btn--toggle" aria-pressed="false" id="annualPlanBtn">Annually</button>
                 </div>
                 <div class="pricing-tiers__plans">
                     <div class="pricing-tiers__plan">
