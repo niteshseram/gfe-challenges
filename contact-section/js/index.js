@@ -7,8 +7,8 @@ const emailError = document.getElementById('email-error');
 const messageField = document.getElementById('message');
 const messageError = document.getElementById('message-error');
 
-const charCountValue = document.getElementById('charCountValue');
-const charCountLabel = document.getElementById('charCountLabel');
+const charCountValue = document.getElementById('char-count-value');
+const charCountLabel = document.getElementById('char-count-label');
 const contactForm = document.getElementById('contact-form');
 const confirmation = document.getElementById('confirmation');
 const toast = document.getElementById('toaster');
@@ -39,7 +39,7 @@ emailField.addEventListener('input', function () {
   }
 });
 
-message.addEventListener('input', function () {
+messageField.addEventListener('input', function () {
   const valueLength = messageField.value.length;
 
   charCountValue.innerHTML = valueLength;
@@ -83,9 +83,6 @@ contactForm.addEventListener('submit', async function (event) {
   );
   const result = await response.json();
 
-  const toastContent = toast.firstElementChild;
-  const toastContentMessage = toastContent.lastElementChild;
-
   if (response.ok) {
     contactForm.style.display = 'none';
     confirmation.style.display = 'flex';
@@ -95,8 +92,10 @@ contactForm.addEventListener('submit', async function (event) {
     emailField.value = '';
     messageField.value = '';
     charCountValue.textContent = 0;
-    // Display toast
   } else {
+    // Display toast
+    const toastContent = toast.firstElementChild;
+    const toastContentMessage = toastContent.lastElementChild;
     toast.style.display = 'flex';
     toastContentMessage.innerText = result.error;
   }

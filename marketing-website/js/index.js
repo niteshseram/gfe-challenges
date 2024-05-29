@@ -151,23 +151,23 @@ if (newsletterEmailField && newsletterEmailError && newsletterForm && toast) {
 }
 
 // Contact
-const contactNameField = document.getElementById('contactName');
-const contactNameError = document.getElementById('contactNameError');
+const contactNameField = document.getElementById('contact-name');
+const contactNameError = document.getElementById('contact-name-error');
 
-const contactEmailField = document.getElementById('contactEmail');
-const contactEmailError = document.getElementById('contactEmailError');
+const contactEmailField = document.getElementById('contact-email');
+const contactEmailError = document.getElementById('contact-email-error');
 
-const contactMessageField = document.getElementById('contactMessage');
-const contactMessageError = document.getElementById('contactMessageError');
+const contactMessageField = document.getElementById('contact-message');
+const contactMessageError = document.getElementById('contact-message-error');
 
 const contactMessageCharCountValue = document.getElementById(
-  'contactMessageCharCountValue'
+  'contact-message-char-count-value'
 );
 const contactMessageCharCountLabel = document.getElementById(
-  'contactMessageCharCountLabel'
+  'contact-message-char-count-label'
 );
-const contactForm = document.getElementById('contactForm');
-const contactConfirmation = document.getElementById('contactConfirmation');
+const contactForm = document.getElementById('contact-form');
+const contactConfirmation = document.getElementById('contact-confirmation');
 
 if (
   contactNameField &&
@@ -181,7 +181,7 @@ if (
   contactForm &&
   contactConfirmation
 ) {
-  function onMessageChange() {
+  contactMessageField.addEventListener('input', function () {
     const valueLength = contactMessageField.value.length;
 
     contactMessageCharCountValue.innerHTML = valueLength;
@@ -195,7 +195,7 @@ if (
       );
       contactMessageField.classList.remove('input__field--error');
     }
-  }
+  });
 
   // Name validation
   contactNameField.addEventListener('invalid', function () {
@@ -233,23 +233,55 @@ if (
     }
   });
 
-  function onSubmitContact(event) {
+  contactForm.addEventListener('submit', async function (event) {
     event.preventDefault();
 
-    contactForm.style.display = 'none';
-    contactConfirmation.style.display = 'flex';
+    const requestOptions = {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        email: contactEmailField.value,
+        name: contactNameField.value,
+        message: contactMessageField.value,
+      }), // Send the data in JSON format
+    };
 
-    //clear all the values after submit
-    contactNameField.value = '';
-    contactEmailField.value = '';
-    contactMessageField.value = '';
-    contactMessageCharCountValue.textContent = 0;
-  }
+    // Make the request
+    const response = await fetch(
+      'https://www.greatfrontend.com/api/projects/challenges/contact',
+      requestOptions
+    );
+    const result = await response.json();
 
-  function onSendAnotherMessage() {
-    contactForm.style.display = 'flex';
-    contactConfirmation.style.display = 'none';
-  }
+    if (response.ok) {
+      contactForm.style.display = 'none';
+      contactConfirmation.style.display = 'flex';
+
+      //clear all the values after submit
+      contactNameField.value = '';
+      contactEmailField.value = '';
+      contactMessageField.value = '';
+      contactMessageCharCountValue.textContent = 0;
+    } else {
+      // Display toast
+      const toastContent = toast.firstElementChild;
+      const toastContentBadge = toastContent.firstElementChild;
+      const toastContentMessage = toastContent.lastElementChild;
+
+      toastContent.classList.add('toast__content--error');
+      toastContentBadge.classList.add('toast__content__badge--error');
+      toastContentBadge.innerText = 'Error';
+      toast.style.display = 'flex';
+      toastContentMessage.innerText = result.error;
+    }
+  });
+
+  document
+    .getElementById('send-another-message')
+    .addEventListener('click', function () {
+      contactForm.style.display = 'flex';
+      contactConfirmation.style.display = 'none';
+    });
 }
 
 // Footer
