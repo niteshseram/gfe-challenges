@@ -188,7 +188,7 @@ contactForm.addEventListener('submit', async function (event) {
     toastContent.classList.add('toast__content--error');
     toastContentBadge.classList.add('toast__content__badge--error');
     toastContentBadge.innerText = 'Error';
-    toast.style.display = 'flex';
+    toast.style.display = 'block';
     toastContentMessage.innerText = result.error;
   }
 });

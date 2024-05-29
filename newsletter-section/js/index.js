@@ -44,7 +44,7 @@ newsletterForm.addEventListener('submit', async function (event) {
   const toastContentMessage = toastContent.lastElementChild;
 
   // Display toast
-  toast.style.display = 'flex';
+  toast.style.display = 'block';
   if (response.ok) {
     toastContent.classList.add('toast__content--success');
     toastContentBadge.innerText = 'Success';

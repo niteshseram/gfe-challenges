@@ -208,7 +208,9 @@ body {
 
 .toast {
   z-index: 20;
-  position: absolute;
+  position: fixed;
+  left: 0;
+  right: 0;
   width: 100%;
   top: 40px;
   display: none;

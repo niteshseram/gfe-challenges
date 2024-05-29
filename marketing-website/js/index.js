@@ -151,7 +151,7 @@ if (newsletterEmailField && newsletterEmailError && newsletterForm && toast) {
     const toastContentMessage = toastContent.lastElementChild;
 
     // Display toast
-    toast.style.display = 'flex';
+    toast.style.display = 'block';
     if (response.ok) {
       toastContent.classList.add('toast__content--success');
       toastContentBadge.innerText = 'Success';
@@ -289,7 +289,7 @@ if (
       toastContent.classList.add('toast__content--error');
       toastContentBadge.classList.add('toast__content__badge--error');
       toastContentBadge.innerText = 'Error';
-      toast.style.display = 'flex';
+      toast.style.display = 'block';
       toastContentMessage.innerText = result.error;
     }
   });

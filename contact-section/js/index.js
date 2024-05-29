@@ -96,7 +96,7 @@ contactForm.addEventListener('submit', async function (event) {
     // Display toast
     const toastContent = toast.firstElementChild;
     const toastContentMessage = toastContent.lastElementChild;
-    toast.style.display = 'flex';
+    toast.style.display = 'block';
     toastContentMessage.innerText = result.error;
   }
 });
