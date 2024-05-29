@@ -9,9 +9,8 @@ document
     document.getElementById('slideout-menu').classList.toggle('open');
   });
 
-
 // Get stats data
-if(document.getElementById('stats-section')){
+if (document.getElementById('stats-section')) {
   fetch(
     'https://www.greatfrontend.com/api/projects/challenges/statistics-metrics'
   ).then(async response => {
@@ -95,7 +94,7 @@ if (accordions.length > 0) {
         ariaExpandedValue = 'true';
       }
       accordions[i].setAttribute('aria-expanded', ariaExpandedValue);
-      
+
       const faqContent = this.nextElementSibling;
       const activeIcon = this.lastElementChild.firstElementChild;
       const inactiveIcon = this.lastElementChild.lastElementChild;
@@ -316,6 +315,39 @@ const cookieConsentBanner = document.getElementById('cookie-consent-banner');
 const analyticsConsent = document.getElementById('analytics-consent');
 const marketingConsent = document.getElementById('marketing-consent');
 
+function getCookie(name) {
+  const value = `; ${document.cookie}`;
+  const parts = value.split(`; ${name}=`);
+  if (parts.length === 2) return parts.pop().split(';').shift();
+}
+
+function loadScript() {
+  const previousEssentialConsent = getCookie('essential');
+  const previousMarketingConsent = getCookie('marketing');
+  const previousAnalyticsConsent = getCookie('analytics');
+
+  if (previousEssentialConsent === 'true') {
+    addScript('js/essentials.js');
+  }
+  if (previousMarketingConsent === 'true') {
+    addScript('js/marketing.js');
+  }
+  if (previousAnalyticsConsent === 'true') {
+    addScript('js/analytics.js');
+  }
+}
+
+function addScript(src) {
+  let script = document.createElement('script');
+  script.src = src;
+  script.type = 'text/javascript';
+  script.onload = () => console.log(`${src} has been loaded successfully.`);
+  document.head.appendChild(script);
+}
+
+// load script on first load
+loadScript();
+
 if (
   popupElement &&
   cookieConsentBanner &&
@@ -347,6 +379,9 @@ if (
     // Hide the cookie consent banner after setting the consent
     popupElement.style.display = 'none';
     cookieConsentBanner.style.display = 'none';
+
+    //load the scripts after setting cookies
+    loadScript();
   }
 
   // Accept all cookies
@@ -369,12 +404,6 @@ if (
     .addEventListener('click', function () {
       setCookieConsent(marketingConsent.checked, analyticsConsent.checked);
     });
-
-  function getCookie(name) {
-    const value = `; ${document.cookie}`;
-    const parts = value.split(`; ${name}=`);
-    if (parts.length === 2) return parts.pop().split(';').shift();
-  }
 
   // Check if there's a previous consent
   const previousEssentialConsent = getCookie('essential');
