@@ -324,6 +324,7 @@ body {
 
 .faq__accordion__toggle-icon {
   display: none;
+  height: 24px;
 }
 .faq__accordion__toggle-icon.open{
   display: block;
