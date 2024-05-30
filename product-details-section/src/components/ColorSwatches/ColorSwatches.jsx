@@ -6,7 +6,7 @@ const ColorSwatches = ({ color, selectedColor, onClick, outOfStock }) => {
       key={color}
       aria-label={color}
       className={clsx(
-        'p-[9.33px]',
+        'size-[56.67px] flex items-center justify-center',
         'rounded-full',
         outOfStock ? 'pointer-events-none' : 'cursor-pointer'
       )}>

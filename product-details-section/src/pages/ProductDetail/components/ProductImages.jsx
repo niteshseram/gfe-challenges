@@ -27,7 +27,7 @@ const ProductImages = () => {
             onClick={() => setSelectedPreview(index)}
             className={clsx(
               'rounded-lg shrink-0 block',
-              'w-20 h-30 md:h-[190px] md:w-[188px] lg:w-40 object-cover',
+              'w-20 h-[120px] md:h-[190px] md:w-[188px] lg:w-40 object-cover',
               'cursor-pointer',
               index === selectedPreview && 'border-[3px] border-indigo-600'
             )}

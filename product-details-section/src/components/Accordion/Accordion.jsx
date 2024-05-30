@@ -24,7 +24,7 @@ const AccordionTrigger = ({ children }) => {
         'w-full',
         'flex gap-6 justify-between items-center',
         'focus:outline-none',
-        'text-left text-lg text-neutral-900'
+        'text-left text-lg text-neutral-900 font-medium'
       )}
       onClick={() => setIsOpen(!isOpen)}
       aria-expanded={isOpen}

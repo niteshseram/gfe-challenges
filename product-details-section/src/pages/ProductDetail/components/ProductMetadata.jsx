@@ -13,13 +13,15 @@ import InfoSection from './InfoSection';
 import { useProductDetailsContext } from './ProductDetailsContext';
 
 const ProductMetadata = () => {
-  const isMobileAndBelow = useMediaQuery('(max-width: 768px)');
+  const isMobileAndBelow = useMediaQuery('(max-width: 767px)');
   const { product, getInventoryData, itemQuantity } =
     useProductDetailsContext();
 
   const { name, description, reviews, rating } = product;
   const inventoryData = useMemo(() => getInventoryData(), [getInventoryData]);
   const { discount_percentage, list_price, sale_price, stock } = inventoryData;
+  const isRatingFloat = Number(rating) === rating && rating % 1 !== 0;
+  const roundedRating = isRatingFloat ? parseFloat(rating.toFixed(1)) : rating;
 
   return (
     <div>
@@ -50,8 +52,8 @@ const ProductMetadata = () => {
             </div>
           )}
           <div className={clsx('flex items-center gap-2 flex-wrap', 'mt-3')}>
-            <div className="text-xl text-neutral-900">{rating ?? 0}</div>
-            <StarRating value={rating ?? 0} />
+            <div className="text-xl text-neutral-900">{roundedRating ?? 0}</div>
+            <StarRating value={roundedRating ?? 0} />
             {reviews > 0 ? (
               <Button
                 label={`See all ${reviews} reviews`}
@@ -92,7 +94,7 @@ const ProductMetadata = () => {
           <Button
             label="Add to Cart"
             size={isMobileAndBelow ? 'xl' : '2xl'}
-            isDisabled={itemQuantity === 0}
+            isDisabled={itemQuantity === 0 || stock === 0}
           />
         </form>
       </section>

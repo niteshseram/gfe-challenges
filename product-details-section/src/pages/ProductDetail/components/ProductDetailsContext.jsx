@@ -22,7 +22,7 @@ const ProductDetailsContextProvider = ({ children }) => {
   const [isProductLoading, setIsProductLoading] = useState(false);
   const [selectedColor, setSelectedColor] = useState(null);
   const [selectedSize, setSelectedSize] = useState(null);
-  const [itemQuantity, setItemQuantity] = useState(0);
+  const [itemQuantity, setItemQuantity] = useState(1);
 
   const getProduct = useCallback(async () => {
     setIsProductLoading(true);
