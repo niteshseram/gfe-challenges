@@ -3,7 +3,7 @@ import {
   AccordionContent,
   AccordionItem,
   AccordionTrigger,
-} from '../../../components/Accordion';
+} from 'src/components/Accordion';
 
 import { useProductDetailsContext } from './ProductDetailsContext';
 
@@ -18,7 +18,7 @@ const InfoSection = () => {
           <AccordionItem key={item.title} id={item.title}>
             <AccordionTrigger>{item.title}</AccordionTrigger>
             <AccordionContent>
-              <ul className="list-disc list-inside pl-2">
+              <ul className="list-disc ml-4 pl-2">
                 {item.description.map(descItem => (
                   <li key={descItem}>{descItem}</li>
                 ))}

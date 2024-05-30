@@ -96,6 +96,13 @@ const ProductDetailsContextProvider = ({ children }) => {
     return data;
   }, [product, selectedColor, selectedSize]);
 
+  const getSelectedColorImages = useCallback(() => {
+    const images = product.images?.filter(
+      image => image.color === selectedColor
+    );
+    return images;
+  }, [product, selectedColor]);
+
   useEffect(() => {
     getProduct();
   }, [getProduct]);
@@ -129,6 +136,7 @@ const ProductDetailsContextProvider = ({ children }) => {
       getUnavailableColors,
       getUnavailableSizes,
       getInventoryData,
+      getSelectedColorImages,
     };
   }, [
     product,
@@ -143,6 +151,7 @@ const ProductDetailsContextProvider = ({ children }) => {
     getUnavailableColors,
     getUnavailableSizes,
     getInventoryData,
+    getSelectedColorImages,
   ]);
 
   return (

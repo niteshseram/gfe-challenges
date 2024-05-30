@@ -1,16 +1,16 @@
 import clsx from 'clsx';
 import { useMediaQuery } from 'usehooks-ts';
+import { useMemo } from 'react';
 
-import Badge from '../../../components/Badge';
-import Button from '../../../components/Button';
+import Badge from 'src/components/Badge';
+import Button from 'src/components/Button';
+import StarRating from 'src/components/StartRating';
 import AvailableColors from './AvailableColors';
 import AvailableSizes from './AvailableSizes';
 import ProductQuantity from './ProductQuantity';
 import InfoSection from './InfoSection';
 
 import { useProductDetailsContext } from './ProductDetailsContext';
-import StarRating from '../../../components/StartRating/StarRating';
-import { useMemo } from 'react';
 
 const ProductMetadata = () => {
   const isMobileAndBelow = useMediaQuery('(max-width: 768px)');

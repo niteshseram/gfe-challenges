@@ -12,10 +12,10 @@ const ProductDetail = () => {
 
   return (
     <>
-      <div className="flex-1">
+      <div className="col-span-4 md:col-span-6">
         <ProductImages />
       </div>
-      <div className="flex-1">
+      <div className="col-span-4 md:col-span-6">
         <ProductMetadata />
       </div>
     </>

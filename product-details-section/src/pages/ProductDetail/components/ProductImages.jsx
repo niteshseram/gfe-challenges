@@ -4,8 +4,10 @@ import clsx from 'clsx';
 import { useProductDetailsContext } from './ProductDetailsContext';
 
 const ProductImages = () => {
-  const { product } = useProductDetailsContext();
+  const { product, getSelectedColorImages } = useProductDetailsContext();
   const [selectedPreview, setSelectedPreview] = useState(0);
+
+  const images = getSelectedColorImages();
 
   return (
     <div className="flex flex-col gap-6">
@@ -16,7 +18,7 @@ const ProductImages = () => {
         className="h-[400px] md:h-[800px] w-full object-cover rounded-lg"
       />
       <div className="flex gap-4 overflow-x-auto">
-        {product.images.map((image, index) => (
+        {images.map((image, index) => (
           <img
             key={image.image_url + index}
             src={image.image_url}

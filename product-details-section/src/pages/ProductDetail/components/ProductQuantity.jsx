@@ -1,4 +1,4 @@
-import CartControl from '../../../components/CartControl';
+import CartControl from 'src/components/CartControl';
 import { useProductDetailsContext } from './ProductDetailsContext';
 
 const ProductQuantity = ({ availableStock }) => {
