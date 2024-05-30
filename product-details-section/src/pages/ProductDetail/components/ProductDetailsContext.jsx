@@ -8,10 +8,7 @@ import {
 } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 
-const ProductDetailsContext = createContext({
-  product: null,
-  isProductLoading: false,
-});
+const ProductDetailsContext = createContext();
 
 export const useProductDetailsContext = () => useContext(ProductDetailsContext);
 

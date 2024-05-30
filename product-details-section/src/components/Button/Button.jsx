@@ -47,7 +47,7 @@ const iconOnlySizeClasses = {
 
 const iconSizeClasses = {
   md: 'size-5',
-  l: 'size-5',
+  lg: 'size-5',
   xl: 'size-5',
   '2xl': 'size-6',
 };

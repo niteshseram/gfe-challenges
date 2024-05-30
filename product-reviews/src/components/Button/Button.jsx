@@ -1,7 +1,5 @@
 import clsx from 'clsx';
 
-import Link from '../Link';
-
 const paddingClasses = {
   md: 'px-3.5 py-2.5',
   lg: 'px-4 py-2.5',
@@ -107,31 +105,6 @@ const Button = ({
     'focus:outline-none focus-visible:ring-4 focus-visible:ring-indigo-600/[.12]',
     'transition-colors'
   );
-
-  if (href) {
-    return (
-      <Link
-        to={href}
-        variant={variant}
-        disabled={isDisabled}
-        className={clsx(commonClasses, spacingClasses[size], className)}
-        {...props}>
-        {StartIcon && (
-          <StartIcon
-            className={clsx('size-6 shrink-0', iconClassName)}
-            aria-hidden="true"
-          />
-        )}
-        {label}
-        {EndIcon && (
-          <EndIcon
-            className={clsx('size-6 shrink-0', iconClassName)}
-            aria-hidden="true"
-          />
-        )}
-      </Link>
-    );
-  }
 
   const children = isLabelHidden ? (
     (
