@@ -4,7 +4,7 @@ import { useMemo } from 'react';
 
 import Badge from 'src/components/Badge';
 import Button from 'src/components/Button';
-import StarRating from 'src/components/StartRating';
+import Rating from 'src/components/Rating';
 import AvailableColors from './AvailableColors';
 import AvailableSizes from './AvailableSizes';
 import ProductQuantity from './ProductQuantity';
@@ -53,7 +53,7 @@ const ProductMetadata = () => {
           )}
           <div className={clsx('flex items-center gap-2 flex-wrap', 'mt-3')}>
             <div className="text-xl text-neutral-900">{roundedRating ?? 0}</div>
-            <StarRating value={roundedRating ?? 0} />
+            <Rating value={roundedRating ?? 0} />
             {reviews > 0 ? (
               <Button
                 label={`See all ${reviews} reviews`}

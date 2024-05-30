@@ -2,7 +2,7 @@ import { useState } from 'react';
 import Star from './Star';
 import clsx from 'clsx';
 
-const StarRating = ({ value, max = 5, onChange }) => {
+const Rating = ({ value, max = 5, onChange }) => {
   const [hoveredIndex, setHoveredIndex] = useState(null);
 
   const readOnlyMode = !onChange;
@@ -29,4 +29,4 @@ const StarRating = ({ value, max = 5, onChange }) => {
   );
 };
 
-export default StarRating;
+export default Rating;
