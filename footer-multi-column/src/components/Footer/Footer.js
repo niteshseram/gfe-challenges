@@ -125,7 +125,7 @@ const Footer = () => {
           <div className="text-sm text-neutral-500">SHOP CATEGORIES</div>
           <div className="flex flex-col gap-3">
             {shopCategories.map(category => (
-              <Link to={category.href} key={category.title}>
+              <Link to={category.href} key={category.title} variant="gray">
                 {category.title}
               </Link>
             ))}
@@ -140,7 +140,7 @@ const Footer = () => {
           <div className="text-sm text-neutral-500">SHOP COLLECTIONS</div>
           <div className="flex flex-col gap-3">
             {shopCollections.map(collection => (
-              <Link to={collection.href} key={collection.title}>
+              <Link to={collection.href} key={collection.title} variant="gray">
                 {collection.title}
               </Link>
             ))}
