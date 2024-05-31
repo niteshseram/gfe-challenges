@@ -62,6 +62,7 @@ const ProductReviewsContextProvider = ({ children }) => {
 
   useEffect(() => {
     getReviews(isInitialLoading);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [currentPage, selectedRating, getReviews]);
 
   const loadMoreReviews = useCallback(() => {
