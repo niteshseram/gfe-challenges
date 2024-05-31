@@ -205,10 +205,15 @@ const ProductSpecificationSection = () => {
               </span>
               <span className=" text-neutral-600">{data.description}</span>
             </div>
-            <div className="flex flex-wrap gap-4 md:gap-y-8 md:gap-x-12 lg:gap-8">
+            <div
+              className={clsx(
+                'flex flex-wrap',
+                'gap-4 md:gap-y-8 md:gap-x-12 lg:gap-8',
+                'pb-1 md:pb-0'
+              )}>
               {data.items.map(({ label, icon: Icon }) => (
                 <div
-                  className="w-full md:w-80 lg:w-[282px] flex items-center gap-4"
+                  className="w-full md:w-80 lg:w-[282px] flex items-center gap-2 md:gap-4"
                   key={label}>
                   <div
                     className={clsx(

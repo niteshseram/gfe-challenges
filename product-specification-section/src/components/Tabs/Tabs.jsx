@@ -22,7 +22,7 @@ const Tabs = ({ label, tabs, value, onSelect }) => {
               ),
               className: clsx(
                 'px-2 pb-[11px] whitespace-nowrap z-10 transition',
-                isSelected && '-mb-px',
+                isSelected ? '-mb-px' : '',
                 isSelected && 'border border-x-0 border-t-0 border-b-indigo-600'
               ),
               onClick: () => onSelect?.(tabItemValue),
