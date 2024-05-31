@@ -26,7 +26,7 @@ const Reviews = () => {
           <div
             className={clsx(
               'flex-1 w-full',
-              'px-6 md:px-8 lg:pl-0 lg:pr-8',
+              'px-4 md:px-8 lg:pl-0 lg:pr-8',
               'lg:overflow-y-auto'
             )}>
             <ReviewsList />
