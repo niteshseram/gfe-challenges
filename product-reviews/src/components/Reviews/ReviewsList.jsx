@@ -46,7 +46,7 @@ const ReviewsList = () => {
 
   return (
     <div className="flex flex-col gap-12 pb-6">
-      <div className="flex flex-col gap-8">
+      <div className="flex flex-col gap-6 md:gap-8">
         {reviews.map(review => (
           <div
             key={review.user.user_id + review.created_at}
@@ -65,7 +65,7 @@ const ReviewsList = () => {
                 <Rating value={review.rating} />
               </div>
             </div>
-            <p>{review.content}</p>
+            {review.content && <p>{review.content}</p>}
           </div>
         ))}
       </div>
