@@ -1,4 +1,5 @@
 import clsx from 'clsx';
+import { RiChatSmile3Line } from 'react-icons/ri';
 
 import Avatar from '../Avatar';
 import Rating from '../Rating';
@@ -9,9 +10,39 @@ import { useProductReviewsContext } from './ProductReviewsContext';
 import { formatDate } from 'src/utils';
 
 const ReviewsList = () => {
-  const { reviews, pagination, loadMoreReviews, isFetchingMore } =
+  const { reviews, pagination, loadMoreReviews, isFetchingMore, currentPage } =
     useProductReviewsContext();
   const moreReviewsCount = pagination.total - reviews.length;
+
+  if (reviews.length === 0) {
+    return (
+      <div class="flex flex-col justify-center items-center gap-5 h-full">
+        <div
+          class={clsx(
+            'size-12 bg-white rounded-full shadow',
+            'flex items-center justify-center',
+            'text-indigo-700'
+          )}>
+          <RiChatSmile3Line className="size-6" />
+        </div>
+        <div
+          class={clsx(
+            "flex flex-col items-center gap-2', 'text-neutral-900 text-center"
+          )}>
+          <span class="font-medium text-xl">No reviews yet!</span>
+          <span>Be the first to review this product</span>
+        </div>
+      </div>
+    );
+  }
+
+  if (currentPage === 1 && isFetchingMore) {
+    return (
+      <div className="flex flex-col justify-center items-center gap-5 h-full">
+        Loading...
+      </div>
+    );
+  }
 
   return (
     <div className="flex flex-col gap-12 pb-6">

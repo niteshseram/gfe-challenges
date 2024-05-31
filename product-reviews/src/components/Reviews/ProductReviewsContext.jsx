@@ -35,8 +35,10 @@ const ProductReviewsContextProvider = ({ children }) => {
       } else {
         setIsFetchingMore(true);
       }
+
+      // TODO(challenge):  Replace with production API
       const data = await fetch(
-        `http://localhost:3000/api/projects/challenges/e-commerce/products/voyager-hoodie/reviews?page=${currentPage}&per_page=${limit}${
+        `https://dev.greatfrontend.com/api/projects/challenges/e-commerce/products/voyager-hoodie/reviews?page=${currentPage}&per_page=${limit}${
           selectedRating ? `&rating=${selectedRating}` : ''
         }`
       );

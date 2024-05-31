@@ -105,7 +105,8 @@ const Button = ({
   const commonClasses = clsx(
     'inline-flex items-center justify-center rounded font-medium outine-none border-none cursor-pointer',
     'focus:outline-none focus-visible:ring-4 focus-visible:ring-indigo-600/[.12]',
-    'transition-colors'
+    'transition-colors',
+    'text-nowrap'
   );
 
   if (href) {
