@@ -2,13 +2,13 @@ import { useState } from 'react';
 import Star from './Star';
 import clsx from 'clsx';
 
-const Rating = ({ value, max = 5, onChange }) => {
+const Rating = ({ value, max = 5, onChange, className }) => {
   const [hoveredIndex, setHoveredIndex] = useState(null);
 
   const readOnlyMode = !onChange;
 
   return (
-    <div className="flex items-center gap-1">
+    <div className={clsx('flex items-center gap-1', className)}>
       {Array.from({ length: max }).map((_, index) => (
         <span
           key={index}

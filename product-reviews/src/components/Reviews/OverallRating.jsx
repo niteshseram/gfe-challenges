@@ -51,7 +51,7 @@ return (
         <span className="font-semibold text-base text-neutral-900">
           {aggregateRating.rating}
         </span>
-        <Rating value={4.5} />
+        <Rating value={4.5} className="gap-2" />
         {hasReviews && (
           <span className="text-sm text-neutral-600">
             Based on {aggregateRating.total} reviews
@@ -82,7 +82,8 @@ return (
             aria-pressed={selectedRating === rating ? 'true' : 'false'}
             aria-label={`Filter by ${rating} stars`}
             onClick={() => onRatingSelect(rating)}>
-            <span className={clsx('w-[120px]', 'text-left font-medium')}>
+            <span
+              className={clsx('w-[120px]', 'px-0.5', 'text-left font-medium')}>
               {name}
             </span>
             <ProgressBar value={ratingPercentage} color={color} />

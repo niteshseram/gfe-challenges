@@ -53,14 +53,14 @@ const iconSizeClasses = {
 const variantClasses = {
   primary: clsx(
     'bg-indigo-700',
-    'shadow',
+    'shadow-btn',
     'text-white',
     'hover:bg-indigo-800 focus:bg-indigo-800'
   ),
   secondary: clsx(
     'border border-neutral-200',
     'bg-white',
-    'shadow',
+    'shadow-btn',
     'text-neutral-900',
     'hover:bg-neutral-50 focus:bg-neutral-50'
   ),
