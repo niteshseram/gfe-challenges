@@ -35,7 +35,7 @@ const Modal = ({ isOpen, onClose, children }) => {
         <div
           className={clsx(
             'flex flex-col justify-center items-end gap-4 self-stretch',
-            'px-8 py-6'
+            'p-6 lg:px-8'
           )}>
           <button
             aria-label="Close modal"
