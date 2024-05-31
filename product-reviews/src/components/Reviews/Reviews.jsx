@@ -11,7 +11,7 @@ const Reviews = () => {
   return (
     <div
       className={clsx(
-        'h-[calc(100vh_-_168px)] md:h-[calc(100vh_-_232px)]',
+        'h-[calc(100vh_-_232px)]',
         'flex flex-col lg:flex-row gap-10 lg:gap-8'
       )}>
       {isInitialLoading || !reviews ? (

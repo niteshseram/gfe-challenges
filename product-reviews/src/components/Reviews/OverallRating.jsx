@@ -53,7 +53,7 @@ return (
         </span>
         <Rating value={4.5} className="gap-2" />
         {hasReviews && (
-          <span className="text-sm text-neutral-600">
+          <span className="text-sm text-neutral-600 text-nowrap">
             Based on {aggregateRating.total} reviews
           </span>
         )}

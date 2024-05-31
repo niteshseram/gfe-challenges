@@ -23,7 +23,7 @@ const Modal = ({ isOpen, onClose, children }) => {
         'fixed inset-0  z-modal',
         'bg-neutral-950 bg-opacity-70',
         'flex items-center justify-center',
-        'py-12 md:py-20'
+        'py-20'
       )}
       role="dialog"
       aria-modal="true">
@@ -44,11 +44,7 @@ const Modal = ({ isOpen, onClose, children }) => {
             <RiCloseLine className="size-6" />
           </button>
         </div>
-        <div
-          className={clsx(
-            'max-h-[calc(100vh_-_96px)] md:max-h-[calc(100vh_-_160px)]',
-            'overflow-y-auto'
-          )}>
+        <div className={clsx('max-h-[calc(100vh_-_160px)]', 'overflow-y-auto')}>
           {children}
         </div>
       </div>

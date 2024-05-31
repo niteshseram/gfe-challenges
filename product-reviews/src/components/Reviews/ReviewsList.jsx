@@ -58,7 +58,7 @@ const ReviewsList = () => {
                   <span className="font-semibold text-base text-neutral-900">
                     {review.user.name}
                   </span>
-                  <span className="text-xs">
+                  <span className="text-xs text-nowrap">
                     {formatDate(new Date(review.created_at))}
                   </span>
                 </div>
