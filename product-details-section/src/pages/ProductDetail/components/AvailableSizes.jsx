@@ -2,6 +2,14 @@ import clsx from 'clsx';
 
 import { useProductDetailsContext } from './ProductDetailsContext';
 
+const SIZE_MAP = {
+  xs: 'XS',
+  sm: 'S',
+  md: 'M',
+  lg: 'L',
+  xl: 'XL',
+};
+
 const AvailableSizes = () => {
   const {
     selectedSize,
@@ -62,7 +70,7 @@ const AvailableSizes = () => {
                   }
                 }}
               />
-              <span>{size}</span>
+              <span>{SIZE_MAP[size]}</span>
             </label>
           );
         })}

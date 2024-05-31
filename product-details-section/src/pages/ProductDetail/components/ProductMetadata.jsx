@@ -23,6 +23,8 @@ const ProductMetadata = () => {
   const isRatingFloat = Number(rating) === rating && rating % 1 !== 0;
   const roundedRating = isRatingFloat ? parseFloat(rating.toFixed(1)) : rating;
 
+  const hasDiscount = !!discount_percentage;
+
   return (
     <div>
       <section
@@ -33,16 +35,16 @@ const ProductMetadata = () => {
           <div className="mt-5">
             <div className="inline-flex gap-2 items-end">
               <span className="text-3xl font-medium text-neutral-600">
-                ${sale_price}
+                ${hasDiscount ? sale_price : list_price}
               </span>
-              {!!list_price && (
+              {hasDiscount && (
                 <span className="text-lg font-medium text-neutral-400 line-through">
                   ${list_price}
                 </span>
               )}
             </div>
           </div>
-          {!!discount_percentage && (
+          {hasDiscount && (
             <div className="mt-2">
               <Badge
                 label={`${discount_percentage}% OFF`}
@@ -51,6 +53,7 @@ const ProductMetadata = () => {
               />
             </div>
           )}
+
           <div className={clsx('flex items-center gap-2 flex-wrap', 'mt-3')}>
             <div className="text-xl text-neutral-900">{roundedRating ?? 0}</div>
             <Rating value={roundedRating ?? 0} />
@@ -76,8 +79,10 @@ const ProductMetadata = () => {
             )}
           </div>
         </div>
+
         <p className="text-neutral-600">{description}</p>
       </section>
+
       <section aria-labelledby="product-options" className="mt-8">
         <form className="flex flex-col gap-8">
           <AvailableColors />
@@ -98,6 +103,7 @@ const ProductMetadata = () => {
           />
         </form>
       </section>
+
       <InfoSection />
     </div>
   );
