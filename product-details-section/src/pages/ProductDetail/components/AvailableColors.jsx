@@ -2,6 +2,7 @@ import { useMemo } from 'react';
 
 import ColorSwatches from 'src/components/ColorSwatches';
 import { useProductDetailsContext } from './ProductDetailsContext';
+import { COLORS } from 'src/constants';
 
 const AvailableColors = () => {
   const { selectedColor, setSelectedColor, product, getUnavailableColors } =
@@ -19,7 +20,7 @@ const AvailableColors = () => {
         {colors.map(color => (
           <ColorSwatches
             key={color}
-            color={color}
+            color={COLORS[color]}
             outOfStock={unavailableColors.includes(color)}
             selectedColor={selectedColor}
             onClick={setSelectedColor}
