@@ -22,7 +22,7 @@ const AvailableColors = () => {
             key={color}
             color={COLORS[color].value}
             outOfStock={unavailableColors.includes(color)}
-            selectedColor={selectedColor}
+            selected={selectedColor === color}
             onClick={setSelectedColor}
           />
         ))}
