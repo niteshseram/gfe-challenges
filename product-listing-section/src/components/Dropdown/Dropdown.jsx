@@ -7,7 +7,7 @@ import {
   useRef,
   useState,
 } from 'react';
-import { RiArrowDropDownLine } from 'react-icons/ri';
+import { RiArrowDownSLine } from 'react-icons/ri';
 
 import Button from '../Button';
 
@@ -71,7 +71,7 @@ const Dropdown = ({ children }) => {
           aria-expanded="true"
           aria-haspopup="true"
           variant="secondary"
-          endIcon={RiArrowDropDownLine}
+          endIcon={RiArrowDownSLine}
         />
       </div>
 
