@@ -1,6 +1,7 @@
 import clsx from 'clsx';
 
 import { useProductDetailsContext } from './ProductDetailsContext';
+import { getUnavailableSizes } from '../utils';
 
 const SIZE_MAP = {
   xs: 'XS',
@@ -11,13 +12,8 @@ const SIZE_MAP = {
 };
 
 const AvailableSizes = () => {
-  const {
-    selectedSize,
-    setSelectedSize,
-    selectedColor,
-    product,
-    getUnavailableSizes,
-  } = useProductDetailsContext();
+  const { selectedSize, setSelectedSize, selectedColor, product } =
+    useProductDetailsContext();
   const { sizes } = product;
   const unavailableSizes = getUnavailableSizes({
     product,

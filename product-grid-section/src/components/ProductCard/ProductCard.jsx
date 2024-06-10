@@ -1,8 +1,12 @@
 import clsx from 'clsx';
+import { useMemo } from 'react';
+
 import Link from '../Link';
-import { COLORS } from 'src/constants';
 import ColorSwatches from '../ColorSwatches';
-import { useCallback, useMemo } from 'react';
+
+import { COLORS } from 'src/constants';
+
+import { getUnavailableColors } from 'src/pages/ProductDetail/utils';
 
 const ProductCard = ({ product }) => {
   const { images, name, inventory, colors } = product;
@@ -10,26 +14,9 @@ const ProductCard = ({ product }) => {
 
   const hasDiscount = !!discount_percentage;
 
-  const getUnavailableColors = useCallback(() => {
-    const colorsInStock = new Set();
-    const allColors = new Set(product.colors);
-
-    product.inventory.forEach(item => {
-      if (item.stock > 0) {
-        colorsInStock.add(item.color);
-      }
-    });
-
-    const unavailableColors = [...allColors].filter(
-      color => !colorsInStock.has(color)
-    );
-
-    return unavailableColors;
-  }, [product]);
-
   const unavailableColors = useMemo(
-    () => getUnavailableColors(),
-    [getUnavailableColors]
+    () => getUnavailableColors(product),
+    [product]
   );
 
   return (

@@ -2,10 +2,10 @@ import { useState } from 'react';
 import clsx from 'clsx';
 
 import { useProductDetailsContext } from './ProductDetailsContext';
+import { getSelectedColorImages } from '../utils';
 
 const ProductImages = () => {
-  const { product, selectedColor, getSelectedColorImages } =
-    useProductDetailsContext();
+  const { product, selectedColor } = useProductDetailsContext();
   const [selectedPreview, setSelectedPreview] = useState(0);
 
   const images = getSelectedColorImages({ product, color: selectedColor });

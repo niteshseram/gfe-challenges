@@ -3,14 +3,15 @@ import { useMemo } from 'react';
 import ColorSwatches from 'src/components/ColorSwatches';
 import { useProductDetailsContext } from './ProductDetailsContext';
 import { COLORS } from 'src/constants';
+import { getUnavailableColors } from '../utils';
 
 const AvailableColors = () => {
-  const { selectedColor, setSelectedColor, product, getUnavailableColors } =
+  const { selectedColor, setSelectedColor, product } =
     useProductDetailsContext();
   const { colors } = product;
   const unavailableColors = useMemo(
     () => getUnavailableColors(product),
-    [product, getUnavailableColors]
+    [product]
   );
 
   return (

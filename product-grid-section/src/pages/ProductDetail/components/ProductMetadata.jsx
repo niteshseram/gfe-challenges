@@ -11,22 +11,18 @@ import ProductQuantity from './ProductQuantity';
 import InfoSection from './InfoSection';
 
 import { useProductDetailsContext } from './ProductDetailsContext';
+import { getInventoryData } from '../utils';
 
 const ProductMetadata = () => {
   const isMobileAndBelow = useMediaQuery('(max-width: 767px)');
-  const {
-    product,
-    selectedColor,
-    selectedSize,
-    getInventoryData,
-    itemQuantity,
-  } = useProductDetailsContext();
+  const { product, selectedColor, selectedSize, itemQuantity } =
+    useProductDetailsContext();
 
   const { name, description, reviews, rating } = product;
   const inventoryData = useMemo(
     () =>
       getInventoryData({ product, color: selectedColor, size: selectedSize }),
-    [getInventoryData, selectedColor, selectedSize, product]
+    [selectedColor, selectedSize, product]
   );
   const { discount_percentage, list_price, sale_price, stock } = inventoryData;
   const isRatingFloat = Number(rating) === rating && rating % 1 !== 0;
