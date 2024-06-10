@@ -33,59 +33,70 @@ const ProductListingContextProvider = ({ children }) => {
     onSortChange,
   } = useProductFilters();
 
-  const getProducts = useCallback(async () => {
-    setIsProductsLoading(true);
+  const getProducts = useCallback(
+    async ({ colors, collections, ratings, categories, sort }) => {
+      setIsProductsLoading(true);
 
-    let queryString = '';
-    if (
-      selectedColors.size > 0 ||
-      selectedCollections.size > 0 ||
-      selectedRating.size > 0 ||
-      selectedCategory.size > 0
-    ) {
-      queryString = [
-        ...Array.from(selectedColors).map(
-          color => `${COLORS_OPTIONS.key}=${encodeURIComponent(color)}`
-        ),
-        ...Array.from(selectedCollections).map(
-          collection =>
-            `${COLLECTIONS_OPTIONS.key}=${encodeURIComponent(collection)}`
-        ),
-        ...Array.from(selectedRating).map(
-          rating => `${RATING_OPTIONS.key}=${encodeURIComponent(rating)}`
-        ),
-        ...Array.from(selectedCategory).map(
-          category => `${CATEGORY_OPTIONS.key}=${encodeURIComponent(category)}`
-        ),
-      ].join('&');
-    }
+      let queryString = '';
+      if (
+        colors.size > 0 ||
+        collections.size > 0 ||
+        ratings.size > 0 ||
+        categories.size > 0
+      ) {
+        queryString = [
+          ...Array.from(colors).map(
+            color => `${COLORS_OPTIONS.key}=${encodeURIComponent(color)}`
+          ),
+          ...Array.from(collections).map(
+            collection =>
+              `${COLLECTIONS_OPTIONS.key}=${encodeURIComponent(collection)}`
+          ),
+          ...Array.from(ratings).map(
+            rating => `${RATING_OPTIONS.key}=${encodeURIComponent(rating)}`
+          ),
+          ...Array.from(categories).map(
+            category =>
+              `${CATEGORY_OPTIONS.key}=${encodeURIComponent(category)}`
+          ),
+        ].join('&');
+      }
 
-    queryString = `${queryString ? `${queryString}&` : ''}sort=${
-      selectedSort.value
-    }&direction=${selectedSort.direction}`;
+      queryString = `${queryString ? `${queryString}&` : ''}sort=${
+        sort.value
+      }&direction=${sort.direction}`;
 
-    const data = await fetch(
-      `https://www.greatfrontend.com/api/projects/challenges/e-commerce/products${
-        queryString ? `?${queryString}` : ''
-      }`
-    );
-    const result = await data.json();
+      const data = await fetch(
+        `https://www.greatfrontend.com/api/projects/challenges/e-commerce/products${
+          queryString ? `?${queryString}` : ''
+        }`
+      );
+      const result = await data.json();
 
-    if (!result.error) {
-      setProducts(result.data);
-    }
-    setIsProductsLoading(false);
+      if (!result.error) {
+        setProducts(result.data);
+      }
+      setIsProductsLoading(false);
+    },
+    []
+  );
+
+  useEffect(() => {
+    getProducts({
+      colors: selectedColors,
+      categories: selectedCategory,
+      collections: selectedCollections,
+      ratings: selectedRating,
+      sort: selectedSort,
+    });
   }, [
+    getProducts,
     selectedColors,
     selectedCategory,
     selectedCollections,
     selectedRating,
     selectedSort,
   ]);
-
-  useEffect(() => {
-    getProducts();
-  }, [getProducts]);
 
   const value = useMemo(() => {
     return {
