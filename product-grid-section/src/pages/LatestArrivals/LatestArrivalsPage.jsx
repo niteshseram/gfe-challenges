@@ -32,7 +32,7 @@ const LatestArrivalsPage = () => {
         'flex flex-col gap-8',
         'h-full'
       )}>
-      <div className="flex justify-between items-start">
+      <div className="flex justify-between items-center md:items-start">
         <div className="font-semibold text-2xl md:text-3xl">
           Latest Arrivals
         </div>
