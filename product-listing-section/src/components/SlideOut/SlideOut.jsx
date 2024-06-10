@@ -39,30 +39,36 @@ const SlideOut = ({
             <div
               id="slideout"
               className={clsx(
-                'fixed inset-0 p-6 z-fixed bg-white max-w-[360px]',
-                'flex flex-col gap-6',
+                'fixed inset-0 z-fixed bg-white max-w-[360px]',
                 'animate-slideout',
                 'overflow-auto',
                 className
               )}>
               <div
                 className={clsx(
-                  'flex items-center',
-                  !!title ? 'justify-between' : 'justify-end'
+                  'z-sticky sticky top-0 bg-white p-6',
+                  'flex flex-col gap-6'
                 )}>
-                {title}
-                <button
-                  onClick={onClose}
-                  aria-label="Close sideout"
-                  type="button"
+                <div
                   className={clsx(
-                    'text-neutral-600 rounded',
-                    'focus:outline-none focus-visible:ring-4 focus-visible:ring-indigo-600/[.12]'
+                    'flex items-center',
+                    !!title ? 'justify-between' : 'justify-end'
                   )}>
-                  <RiCloseLine className="size-5" />
-                </button>
+                  {title}
+                  <button
+                    onClick={onClose}
+                    aria-label="Close sideout"
+                    type="button"
+                    className={clsx(
+                      'text-neutral-600 rounded',
+                      'focus:outline-none focus-visible:ring-4 focus-visible:ring-indigo-600/[.12]'
+                    )}>
+                    <RiCloseLine className="size-5" />
+                  </button>
+                </div>
+                <div className="h-[1px] bg-neutral-200 w-full" />
               </div>
-              {children}
+              <div className="px-6 pb-6">{children}</div>
             </div>
           </div>,
           document.body

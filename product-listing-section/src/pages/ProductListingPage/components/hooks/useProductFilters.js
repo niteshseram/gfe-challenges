@@ -11,7 +11,10 @@ export default function useProductFilters() {
   const [selectedCategory, setSelectedCategory] = useState(new Set());
   const [selectedColors, setSelectedColors] = useState(new Set());
   const [selectedRating, setSelectedRating] = useState(new Set());
-  const [selectedSort, setSelectedSort] = useState('newest');
+  const [selectedSort, setSelectedSort] = useState({
+    value: 'created',
+    direction: 'desc',
+  });
 
   const onSelect = (type, value) => {
     let newSelectedItems;
@@ -46,13 +49,28 @@ export default function useProductFilters() {
     }
   };
 
+  const resetFilters = () => {
+    setSelectedCollections(new Set());
+    setSelectedCategory(new Set());
+    setSelectedColors(new Set());
+    setSelectedRating(new Set());
+  };
+
+  const filterCount =
+    selectedCollections.size +
+    selectedCategory.size +
+    selectedColors.size +
+    selectedRating.size;
+
   return {
     selectedCollections,
     selectedCategory,
     selectedColors,
     selectedRating,
     selectedSort,
+    filterCount,
     onSelect,
+    resetFilters,
     onSortChange: setSelectedSort,
   };
 }

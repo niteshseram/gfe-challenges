@@ -22,7 +22,7 @@ const ProductListingPage = () => {
             )}>
             <div
               className={clsx(
-                'col-span-4 md:col-span-6 lg:col-span-3 lg:py-4 lg:pr-12',
+                'col-span-4 md:col-span-6 lg:col-span-3 lg:pt-4 lg:pr-12',
                 'flex justify-between'
               )}>
               <Filter />
@@ -30,6 +30,7 @@ const ProductListingPage = () => {
                 <SortByFilter />
               </div>
             </div>
+
             <div
               className={clsx(
                 'col-span-4 md:col-span-6  lg:col-span-9',
@@ -38,9 +39,10 @@ const ProductListingPage = () => {
               <div className="hidden lg:block">
                 <SortByFilter />
               </div>
+
               <div
                 className={clsx(
-                  'w-full',
+                  'w-full h-full',
                   'grid grid-cols-4 md:grid-cols-6 lg:grid-cols-9 gap-8'
                 )}>
                 <ProductListingSection />

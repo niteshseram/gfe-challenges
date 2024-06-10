@@ -7,6 +7,12 @@ import {
   useState,
 } from 'react';
 import useProductFilters from './hooks/useProductFilters';
+import {
+  CATEGORY_OPTIONS,
+  COLLECTIONS_OPTIONS,
+  COLORS_OPTIONS,
+  RATING_OPTIONS,
+} from 'src/constants';
 
 const ProductListingContext = createContext();
 
@@ -21,14 +27,47 @@ const ProductListingContextProvider = ({ children }) => {
     selectedColors,
     selectedRating,
     selectedSort,
+    filterCount,
     onSelect,
+    resetFilters,
     onSortChange,
   } = useProductFilters();
 
   const getProducts = useCallback(async () => {
     setIsProductsLoading(true);
+
+    let queryString = '';
+    if (
+      selectedColors.size > 0 ||
+      selectedCollections.size > 0 ||
+      selectedRating.size > 0 ||
+      selectedCategory.size > 0
+    ) {
+      queryString = [
+        ...Array.from(selectedColors).map(
+          color => `${COLORS_OPTIONS.key}=${encodeURIComponent(color)}`
+        ),
+        ...Array.from(selectedCollections).map(
+          collection =>
+            `${COLLECTIONS_OPTIONS.key}=${encodeURIComponent(collection)}`
+        ),
+        ...Array.from(selectedRating).map(
+          rating => `${RATING_OPTIONS.key}=${encodeURIComponent(rating)}`
+        ),
+        ...Array.from(selectedCategory).map(
+          category => `${CATEGORY_OPTIONS.key}=${encodeURIComponent(category)}`
+        ),
+      ].join('&');
+    }
+
+    queryString = `${queryString ? `${queryString}&` : ''}sort=${
+      selectedSort.value
+    }&direction=${selectedSort.direction}`;
+
     const data = await fetch(
-      `https://www.greatfrontend.com/api/projects/challenges/e-commerce/products`
+      `https://www.greatfrontend.com/api/projects/challenges/e-commerce/products${
+        queryString ? `?${queryString}` : ''
+      }`
     );
     const result = await data.json();
 
@@ -36,7 +75,13 @@ const ProductListingContextProvider = ({ children }) => {
       setProducts(result.data);
     }
     setIsProductsLoading(false);
-  }, []);
+  }, [
+    selectedColors,
+    selectedCategory,
+    selectedCollections,
+    selectedRating,
+    selectedSort,
+  ]);
 
   useEffect(() => {
     getProducts();
@@ -52,7 +97,9 @@ const ProductListingContextProvider = ({ children }) => {
       selectedColors,
       selectedRating,
       selectedSort,
+      filterCount,
       onSelect,
+      resetFilters,
       onSortChange,
     };
   }, [
@@ -64,7 +111,9 @@ const ProductListingContextProvider = ({ children }) => {
     selectedColors,
     selectedRating,
     selectedSort,
+    filterCount,
     onSelect,
+    resetFilters,
     onSortChange,
   ]);
 

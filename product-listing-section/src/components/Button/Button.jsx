@@ -72,6 +72,7 @@ const variantClasses = {
     'text-white',
     'hover:bg-red-700 focus:bg-red-700 focus:outline-none focus-visible:ring-4 focus-visible:ring-red-600/[.12]'
   ),
+  link: clsx('text-indigo-700', 'hover:text-indigo-800 focus:text-indigo-800'),
 };
 
 const variantDisabledClasses = {
@@ -87,6 +88,7 @@ const variantDisabledClasses = {
   ),
   tertiary: clsx('disabled:bg-none', 'disabled:text-neutral-400'),
   danger: clsx('disabled:bg-none', 'disabled:text-neutral-400'),
+  link: clsx('disabled:text-neutral-400'),
 };
 
 const Button = ({
@@ -103,7 +105,7 @@ const Button = ({
   ...props
 }) => {
   const commonClasses = clsx(
-    'inline-flex items-center justify-center rounded font-medium outine-none border-none cursor-pointer',
+    'inline-flex items-center justify-center rounded font-medium outline-none border-none cursor-pointer',
     'focus:outline-none focus-visible:ring-4 focus-visible:ring-indigo-600/[.12]',
     'transition-colors',
     'text-nowrap'
@@ -168,10 +170,11 @@ const Button = ({
     <button
       className={clsx(
         commonClasses,
-        heightClasses[size],
-        variant === 'secondary'
-          ? secondaryVariantPaddingClasses[size]
-          : paddingClasses[size],
+        variant !== 'link' && heightClasses[size],
+        variant !== 'link' &&
+          (variant === 'secondary'
+            ? secondaryVariantPaddingClasses[size]
+            : paddingClasses[size]),
         fontSizeClasses[size],
         spacingClasses[size],
         isLabelHidden && iconOnlySizeClasses[size],

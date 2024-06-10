@@ -13,7 +13,7 @@ export const COLORS = {
 
 export const COLLECTIONS_OPTIONS = {
   title: 'Collections',
-  key: 'collections',
+  key: 'collection',
   items: [
     {
       name: 'Latest arrivals',
@@ -55,7 +55,7 @@ export const CATEGORY_OPTIONS = {
 
 export const COLORS_OPTIONS = {
   title: 'Colors',
-  key: 'colors',
+  key: 'color',
   items: [
     {
       color: COLORS.white.value,
@@ -130,22 +130,27 @@ export const RATING_OPTIONS = {
 export const SORT_OPTIONS = [
   {
     name: 'Newest',
-    value: 'newest',
+    value: 'created',
+    direction: 'desc',
   },
   {
     name: 'Best rating',
     value: 'rating',
+    direction: 'desc',
   },
   {
     name: 'Most popular',
-    value: 'popular',
+    value: 'popularity',
+    direction: 'desc',
   },
   {
     name: 'Price: Low to high',
-    value: '+price',
+    value: 'price',
+    direction: 'asc',
   },
   {
     name: 'Price: High to low',
-    value: '-price',
+    value: 'price',
+    direction: 'desc',
   },
 ];

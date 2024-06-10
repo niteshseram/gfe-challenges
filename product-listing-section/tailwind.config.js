@@ -4,6 +4,7 @@ module.exports = {
   theme: {
     extend: {
       zIndex: {
+        sticky: 1020,
         fixed: 1030,
         dropdown: 1000,
       },

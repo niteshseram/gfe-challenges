@@ -1,10 +1,49 @@
 import clsx from 'clsx';
-import { useEffect, useId, useRef, useState } from 'react';
+import {
+  createContext,
+  useContext,
+  useEffect,
+  useId,
+  useRef,
+  useState,
+} from 'react';
 import { RiArrowDropDownLine } from 'react-icons/ri';
 
 import Button from '../Button';
 
-const Dropdown = ({ value, options, children, onSelect }) => {
+const DropdownContext = createContext();
+
+const DropdownItem = ({ children, isSelected, onSelect }) => {
+  const { setIsOpen, isOpen } = useContext(DropdownContext);
+  const handleOptionClick = () => {
+    setIsOpen(false);
+    if (onSelect) {
+      onSelect();
+    }
+  };
+
+  return (
+    <div
+      onClick={handleOptionClick}
+      className={clsx(
+        'block text-sm',
+        'cursor-pointer',
+        'rounded',
+        'hover:bg-neutral-50',
+        'border-none outline-none',
+        'focus:ring focus:ring-indigo-200',
+        'p-2',
+        isSelected ? 'text-indigo-700 font-medium' : 'text-neutral-600'
+      )}
+      role="menuitem"
+      tabIndex={isOpen ? 0 : -1}
+      id="menu-item-0">
+      {children}
+    </div>
+  );
+};
+
+const Dropdown = ({ children }) => {
   const id = useId();
   const [isOpen, setIsOpen] = useState(false);
   const dropdownRef = useRef(null);
@@ -20,13 +59,6 @@ const Dropdown = ({ value, options, children, onSelect }) => {
       document.removeEventListener('mousedown', handleClickOutside);
     };
   }, []);
-
-  const handleOptionClick = value => {
-    setIsOpen(false);
-    if (onSelect) {
-      onSelect(value);
-    }
-  };
 
   return (
     <div className="relative inline-block text-left" ref={dropdownRef}>
@@ -55,40 +87,14 @@ const Dropdown = ({ value, options, children, onSelect }) => {
         aria-orientation="vertical"
         aria-labelledby={id}
         tabIndex={-1}>
-        {children ? (
-          children
-        ) : (
-          <div className="flex flex-col gap-2 p-2" role="none">
-            {options.map(option => {
-              const isSelected = option.value === value;
-              return (
-                <div
-                  key={option.value}
-                  onClick={() => handleOptionClick(option.value)}
-                  className={clsx(
-                    'block text-sm',
-                    'cursor-pointer',
-                    'rounded',
-                    'hover:bg-neutral-50',
-                    'border-none outline-none',
-                    'focus:ring focus:ring-indigo-200',
-                    'p-2',
-                    isSelected
-                      ? 'text-indigo-700 font-medium'
-                      : 'text-neutral-600'
-                  )}
-                  role="menuitem"
-                  tabIndex={isOpen ? 0 : -1}
-                  id="menu-item-0">
-                  {option.name}
-                </div>
-              );
-            })}
-          </div>
-        )}
+        <div className="flex flex-col gap-2 p-2" role="none">
+          <DropdownContext.Provider value={{ isOpen, setIsOpen }}>
+            {children}
+          </DropdownContext.Provider>
+        </div>
       </div>
     </div>
   );
 };
 
-export default Dropdown;
+export { Dropdown, DropdownItem };

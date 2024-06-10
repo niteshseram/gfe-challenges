@@ -47,9 +47,11 @@ const ProductCard = ({ product }) => {
         src={images[0].image_url}
         alt={`${name}'s product preview`}
         loading="lazy"
-        className={clsx('h-[300px] w-full object-cover rounded-lg')}
+        className={clsx(
+          'h-[225px] md:h-[300px] w-full object-cover rounded-lg'
+        )}
       />
-      <div className="flex flex-col">
+      <div className={clsx('flex flex-col', 'min-h-[152px]')}>
         <span className="text-xs text-neutral-600 mb-0.5">
           {COLORS[color]?.label}
         </span>
