@@ -17,7 +17,7 @@ const ProductListingPage = () => {
           <div
             className={clsx(
               'w-full',
-              'px-4 py-12 md:py-16 lg:p-24',
+              'px-4 py-12 md:py-18 lg:px-24 lg:py-[104px]',
               'grid grid-cols-4 md:grid-cols-6 lg:grid-cols-12 gap-8'
             )}>
             <div
