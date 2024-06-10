@@ -31,11 +31,13 @@ const AccordionTrigger = ({ children }) => {
       aria-controls={`accordion-content-${id}`}
       id={`accordion-header-${id}`}>
       <span>{children}</span>
-      {isOpen ? (
-        <RiSubtractLine className="size-5 text-neutral-600" />
-      ) : (
-        <RiAddLine className="size-5 text-neutral-600" />
-      )}
+      <div className="p-0.5" aria-hidden="true">
+        {isOpen ? (
+          <RiSubtractLine className="size-5 text-neutral-600" />
+        ) : (
+          <RiAddLine className="size-5 text-neutral-600" />
+        )}
+      </div>
     </button>
   );
 };
