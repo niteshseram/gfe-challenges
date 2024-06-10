@@ -121,14 +121,14 @@ const Button = ({
         {...props}>
         {StartIcon && (
           <StartIcon
-            className={clsx('size-5 shrink-0', iconClassName)}
+            className={clsx('size-5 p-0.5 shrink-0', iconClassName)}
             aria-hidden="true"
           />
         )}
         {label}
         {EndIcon && (
           <EndIcon
-            className={clsx('size-5 shrink-0', iconClassName)}
+            className={clsx('size-5 p-0.5 shrink-0', iconClassName)}
             aria-hidden="true"
           />
         )}
@@ -152,14 +152,14 @@ const Button = ({
     <>
       {StartIcon && (
         <StartIcon
-          className={clsx('size-5 shrink-0', iconClassName)}
+          className={clsx('size-5 p-0.5 shrink-0', iconClassName)}
           aria-hidden="true"
         />
       )}
       {label}
       {EndIcon && (
         <EndIcon
-          className={clsx('size-5 shrink-0', iconClassName)}
+          className={clsx('size-5 p-0.5 shrink-0', iconClassName)}
           aria-hidden="true"
         />
       )}
