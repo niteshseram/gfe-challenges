@@ -87,11 +87,9 @@ const ColorSwatches = ({
             height="28"
             viewBox="0 0 28 28"
             fill="none"
+            className={clsx(color === '#fff' ? 'fill-black' : 'fill-white')}
             xmlns="http://www.w3.org/2000/svg">
-            <path
-              d="M11.6673 17.6993L22.3918 6.97485L24.0417 8.62477L11.6673 20.9991L4.24268 13.5745L5.89259 11.9246L11.6673 17.6993Z"
-              fill="white"
-            />
+            <path d="M11.6673 17.6993L22.3918 6.97485L24.0417 8.62477L11.6673 20.9991L4.24268 13.5745L5.89259 11.9246L11.6673 17.6993Z" />
           </svg>
         )}
         {outOfStock && (
