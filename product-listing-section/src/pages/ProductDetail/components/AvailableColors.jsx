@@ -13,6 +13,8 @@ const AvailableColors = () => {
     [product, getUnavailableColors]
   );
 
+  console.log(selectedColor);
+
   return (
     <fieldset aria-label="Choose a color">
       <legend className="text-sm text-neutral-500">Available Colors</legend>
@@ -23,7 +25,7 @@ const AvailableColors = () => {
             color={COLORS[color].value}
             outOfStock={unavailableColors.includes(color)}
             selected={selectedColor === color}
-            onClick={setSelectedColor}
+            onClick={() => setSelectedColor(color)}
           />
         ))}
       </div>
