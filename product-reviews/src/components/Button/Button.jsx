@@ -52,6 +52,7 @@ const iconSizeClasses = {
 
 const variantClasses = {
   primary: clsx(
+    'border-none',
     'bg-indigo-700',
     'shadow-btn',
     'text-white',
@@ -64,8 +65,13 @@ const variantClasses = {
     'text-neutral-900',
     'hover:bg-neutral-50 focus:bg-neutral-50'
   ),
-  tertiary: clsx('text-indigo-700', 'hover:bg-neutral-50 focus:bg-neutral-50'),
+  tertiary: clsx(
+    'border-none',
+    'text-indigo-700',
+    'hover:bg-neutral-50 focus:bg-neutral-50'
+  ),
   danger: clsx(
+    'border-none',
     'bg-red-600',
     'text-white',
     'hover:bg-red-700 focus:bg-red-700 focus:outline-none focus-visible:ring-4 focus-visible:ring-red-600/[.12]'
@@ -101,7 +107,7 @@ const Button = ({
   ...props
 }) => {
   const commonClasses = clsx(
-    'inline-flex items-center justify-center rounded font-medium outine-none border-none cursor-pointer',
+    'inline-flex items-center justify-center rounded font-medium outline-none cursor-pointer',
     'focus:outline-none focus-visible:ring-4 focus-visible:ring-indigo-600/[.12]',
     'transition-colors',
     'text-nowrap'

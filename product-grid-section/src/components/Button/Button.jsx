@@ -114,7 +114,18 @@ const Button = ({
     'inline-flex items-center justify-center rounded font-medium outline-none cursor-pointer',
     'focus:outline-none focus-visible:ring-4 focus-visible:ring-indigo-600/[.12]',
     'transition-colors',
-    'text-nowrap'
+    'text-nowrap',
+    variant !== 'link' && heightClasses[size],
+    variant !== 'link' &&
+      (variant === 'secondary'
+        ? secondaryVariantPaddingClasses[size]
+        : paddingClasses[size]),
+    fontSizeClasses[size],
+    spacingClasses[size],
+    isLabelHidden && iconOnlySizeClasses[size],
+    variantClasses[variant],
+    variantDisabledClasses[variant],
+    isDisabled && 'pointer-events-none'
   );
 
   if (href) {
@@ -123,7 +134,7 @@ const Button = ({
         to={href}
         variant={variant}
         disabled={isDisabled}
-        className={clsx(commonClasses, spacingClasses[size], className)}
+        className={clsx(commonClasses, className)}
         {...props}>
         {StartIcon && (
           <StartIcon
@@ -174,21 +185,7 @@ const Button = ({
 
   return (
     <button
-      className={clsx(
-        commonClasses,
-        variant !== 'link' && heightClasses[size],
-        variant !== 'link' &&
-          (variant === 'secondary'
-            ? secondaryVariantPaddingClasses[size]
-            : paddingClasses[size]),
-        fontSizeClasses[size],
-        spacingClasses[size],
-        isLabelHidden && iconOnlySizeClasses[size],
-        variantClasses[variant],
-        variantDisabledClasses[variant],
-        isDisabled && 'pointer-events-none',
-        className
-      )}
+      className={clsx(commonClasses, className)}
       disabled={isDisabled}
       {...props}>
       {children}
