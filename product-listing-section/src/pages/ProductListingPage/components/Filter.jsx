@@ -57,7 +57,7 @@ const Filter = () => {
         <AccordionItem id={CATEGORY_OPTIONS.key}>
           <AccordionTrigger>{CATEGORY_OPTIONS.title}</AccordionTrigger>
           <AccordionContent>
-            <div className="flex flex-col gap-4 lg:gap-6">
+            <div className="flex flex-col gap-4">
               {CATEGORY_OPTIONS.items.map(({ name, value }) => (
                 <CheckboxInput
                   label={name}

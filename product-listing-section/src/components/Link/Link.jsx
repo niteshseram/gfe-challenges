@@ -24,7 +24,8 @@ const Link = ({
     <RouterLink
       {...props}
       className={clsx(
-        'font-medium px-0.5 rounded',
+        'font-medium rounded',
+        variant !== 'unstyled' && 'px-0.5',
         linkVariantClasses[variant],
         {
           'pointer-events-none text-neutral-400': disabled,

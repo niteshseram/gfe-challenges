@@ -32,9 +32,9 @@ const AccordionTrigger = ({ children }) => {
       id={`accordion-header-${id}`}>
       <span>{children}</span>
       {isOpen ? (
-        <RiSubtractLine className="size-5 text-neutral-400" />
+        <RiSubtractLine className="size-5 text-neutral-600" />
       ) : (
-        <RiAddLine className="size-5 text-neutral-400" />
+        <RiAddLine className="size-5 text-neutral-600" />
       )}
     </button>
   );
