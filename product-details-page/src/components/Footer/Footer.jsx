@@ -80,7 +80,7 @@ const Footer = () => {
         'flex flex-col gap-12 md:gap-16',
         'px-4 py-12 md:py-16 lg:p-24'
       )}>
-      <div className="grid grid-cols-4 md:grid-cols-6 lg:grid-cols-12 gap-x-8 lg:gap-y-[66px]">
+      <div className="grid grid-cols-4 md:grid-cols-6 lg:grid-cols-12 gap-x-4 md:gap-x-8 lg:gap-y-[66px]">
         <div
           className={clsx(
             'flex flex-col gap-2',
