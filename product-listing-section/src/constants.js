@@ -25,7 +25,7 @@ export const COLLECTIONS_OPTIONS = {
     },
     {
       name: 'Cozy Comfort',
-      value: 'comfort',
+      value: 'cozy',
     },
     {
       name: 'Fresh Fusion',
