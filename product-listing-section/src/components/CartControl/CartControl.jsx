@@ -3,7 +3,7 @@ import { RiAddFill, RiSubtractFill } from 'react-icons/ri';
 import Tooltip from '../Tooltip';
 
 const CartControl = ({ quantity, decrement, increment, availableStock }) => {
-  const disabledDecrement = quantity === 0;
+  const disabledDecrement = quantity === 1;
   const disabledIncrement = quantity > availableStock;
 
   return (
@@ -26,14 +26,14 @@ const CartControl = ({ quantity, decrement, increment, availableStock }) => {
         disabled={disabledDecrement}
         onClick={decrement}
         aria-label="Decrease quantity">
-        <RiSubtractFill className="size-5 shrink-0" />
+        <RiSubtractFill className="size-5 p-0.5 shrink-0" />
       </button>
       <span
         className="flex-1 text-center font-medium text-sm text-neutral-600"
         aria-live="polite">
         {quantity}
       </span>
-      <Tooltip content="Insuffient stock" show={disabledIncrement}>
+      <Tooltip content="Insufficient stock" show={disabledIncrement}>
         <button
           type="button"
           className={clsx(
@@ -44,7 +44,7 @@ const CartControl = ({ quantity, decrement, increment, availableStock }) => {
           disabled={disabledIncrement}
           onClick={increment}
           aria-label="Increase quantity">
-          <RiAddFill className="size-5 shrink-0" />
+          <RiAddFill className="size-5 p-0.5 shrink-0" />
         </button>
       </Tooltip>
     </div>
