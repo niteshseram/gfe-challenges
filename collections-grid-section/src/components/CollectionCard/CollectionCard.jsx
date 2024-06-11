@@ -52,7 +52,7 @@ const CollectionCard = ({
         className="absolute inset-0 bg-collection hover:bg-collection-hover transition-all duration-300">
         <div
           className={clsx(
-            'absolute left-4 bottom-4',
+            'absolute inset-x-4 bottom-4',
             'flex flex-col',
             'text-white'
           )}>
