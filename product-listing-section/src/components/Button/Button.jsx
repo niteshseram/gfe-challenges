@@ -78,7 +78,11 @@ const variantClasses = {
     'text-white',
     'hover:bg-red-700 focus:bg-red-700 focus:outline-none focus-visible:ring-4 focus-visible:ring-red-600/[.12]'
   ),
-  link: clsx('text-indigo-700', 'hover:text-indigo-800 focus:text-indigo-800'),
+  link: clsx(
+    'text-indigo-700',
+    'hover:text-indigo-800 focus:text-indigo-800',
+    'rounded focus:outline-none focus-visible:ring-4 focus-visible:ring-indigo-600/[.12]'
+  ),
 };
 
 const variantDisabledClasses = {

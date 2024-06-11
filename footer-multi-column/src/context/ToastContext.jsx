@@ -39,15 +39,15 @@ const ToastContextProvider = ({ children }) => {
       type,
       message,
     });
+    setTimeout(() => {
+      setToast({
+        show: false,
+        type: '',
+        message: '',
+      });
+    }, 10000);
   }, []);
 
-  setTimeout(() => {
-    setToast({
-      show: false,
-      type: '',
-      message: '',
-    });
-  }, 20000);
 
   const value = useMemo(() => {
     return {

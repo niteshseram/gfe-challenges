@@ -20,9 +20,8 @@ const ProductMetadata = () => {
   const { name, description, reviews, rating } = product;
   const inventoryData = useMemo(() => getInventoryData(), [getInventoryData]);
   const { discount_percentage, list_price, sale_price, stock } = inventoryData;
-  const isRatingFloat = Number(rating) === rating && rating % 1 !== 0;
-  const roundedRating = isRatingFloat ? parseFloat(rating.toFixed(1)) : rating;
 
+  const roundedRating = Math.round(rating * 10) / 10;
   const hasDiscount = !!discount_percentage;
 
   return (
