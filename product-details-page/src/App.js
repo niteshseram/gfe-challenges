@@ -16,12 +16,12 @@ function App() {
       <CartContextProvider>
         <Routes>
           <Route path="/" element={<Layout />}>
+            <Route path="/products" element={<ProductListingPage />} />
+            <Route path="/latest" element={<LatestArrivalsPage />} />
             <Route
               path="/products/:productId"
               element={<ProductDetailPage />}
             />
-            <Route path="/products" element={<ProductListingPage />} />
-            <Route path="/latest" element={<LatestArrivalsPage />} />
           </Route>
         </Routes>
       </CartContextProvider>

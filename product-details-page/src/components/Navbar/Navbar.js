@@ -25,12 +25,12 @@ const Navbar = ({ className }) => {
         'flex justify-between gap-4 lg:gap-20 items-center',
         className
       )}>
-      <Link class="w-[163px]" variant="unstyled" to="/">
+      <Link className="w-[163px]" variant="unstyled" to="/">
         <img src="/stylenest.svg" alt="Stylenest's Logo" />
       </Link>
       <nav className={clsx('hidden flex-1 gap-8', 'lg:flex')}>
         {links.map(link => (
-          <Link to={link.href} variant="gray" type="nav">
+          <Link to={link.href} variant="gray" type="nav" end>
             {link.name}
           </Link>
         ))}
