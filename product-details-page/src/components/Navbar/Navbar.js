@@ -10,7 +10,7 @@ const links = [
     href: '/products',
   },
   {
-    name: 'Latest Arrivals',
+    name: 'Latest arrivals',
     href: '/latest',
   },
 ];

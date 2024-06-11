@@ -11,7 +11,7 @@ const CartControl = ({ quantity, decrement, increment, availableStock }) => {
       className={clsx(
         'w-[125px] h-9',
         'flex justify-center items-center gap-3',
-        'p-0.5',
+        'py-0.5 px-[5px]',
         'bg-neutral-50 rounded-md border border-neutral-200'
       )}
       role="group"
