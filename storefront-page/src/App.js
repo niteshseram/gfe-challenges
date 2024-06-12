@@ -9,6 +9,7 @@ import ProductDetailPage from './pages/ProductDetail';
 import ToastContextProvider from './context/ToastContext';
 import LatestArrivalsPage from './pages/LatestArrivals';
 import CartContextProvider from './context/CartContext';
+import StorefrontPage from './pages/Storefront';
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
       <CartContextProvider>
         <Routes>
           <Route path="/" element={<Layout />}>
+            <Route path="/" element={<StorefrontPage />} />
             <Route path="/products" element={<ProductListingPage />} />
             <Route path="/latest" element={<LatestArrivalsPage />} />
             <Route

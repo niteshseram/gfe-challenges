@@ -18,18 +18,22 @@ export const COLLECTIONS_OPTIONS = {
     {
       name: 'Latest arrivals',
       value: 'latest',
+      href: '/products?collectionId=latest',
     },
     {
       name: 'Urban Oasis',
       value: 'urban',
+      href: '/products?collectionId=urban',
     },
     {
       name: 'Cozy Comfort',
       value: 'cozy',
+      href: '/products?collectionId=cozy',
     },
     {
       name: 'Fresh Fusion',
       value: 'fresh',
+      href: '/products?collectionId=fresh',
     },
   ],
 };
@@ -41,14 +45,17 @@ export const CATEGORY_OPTIONS = {
     {
       name: 'Unisex',
       value: 'unisex',
+      href: '/products?categoryId=unisex',
     },
     {
       name: 'Women',
       value: 'women',
+      href: '/products?categoryId=women',
     },
     {
       name: 'Men',
       value: 'men',
+      href: '/products?categoryId=men',
     },
   ],
 };

@@ -136,7 +136,7 @@ const Button = ({
     return (
       <Link
         to={href}
-        variant={variant}
+        variant="unstyled"
         disabled={isDisabled}
         className={clsx(commonClasses, className)}
         {...props}>

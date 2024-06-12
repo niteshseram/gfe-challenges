@@ -9,40 +9,7 @@ import {
 
 import Link from '../ui/Link';
 import NewsletterForm from './NewsletterForm';
-
-const shopCategories = [
-  {
-    title: 'Unisex',
-    href: '#',
-  },
-  {
-    title: 'Women',
-    href: '#',
-  },
-  {
-    title: 'Men',
-    href: '#',
-  },
-];
-
-const shopCollections = [
-  {
-    title: 'Latest arrivals',
-    href: '#',
-  },
-  {
-    title: 'Urban Oasis',
-    href: '#',
-  },
-  {
-    title: 'Cozy Comfort',
-    href: '#',
-  },
-  {
-    title: 'Fresh Fusion',
-    href: '#',
-  },
-];
+import { CATEGORY_OPTIONS, COLLECTIONS_OPTIONS } from 'src/constants';
 
 const footerSocials = [
   {
@@ -80,7 +47,7 @@ const Footer = () => {
         'flex flex-col gap-12 md:gap-16',
         'px-4 py-12 md:py-16 lg:p-24'
       )}>
-      <div className="grid grid-cols-4 md:grid-cols-6 lg:grid-cols-12 gap-x-4 md:gap-x-8 gap-y-8 lg:gap-y-[66px]">
+      <div className="grid grid-cols-4 md:grid-cols-6 lg:grid-cols-12 gap-x-4 md:gap-x-8 lg:gap-y-[66px]">
         <div
           className={clsx(
             'flex flex-col gap-2',
@@ -124,9 +91,9 @@ const Footer = () => {
           )}>
           <div className="text-sm text-neutral-500">SHOP CATEGORIES</div>
           <div className="flex flex-col gap-3">
-            {shopCategories.map(category => (
-              <Link to={category.href} key={category.title} variant="gray">
-                {category.title}
+            {CATEGORY_OPTIONS.items.map(category => (
+              <Link to={category.href} key={category.name} variant="gray">
+                {category.name}
               </Link>
             ))}
           </div>
@@ -139,9 +106,9 @@ const Footer = () => {
           )}>
           <div className="text-sm text-neutral-500">SHOP COLLECTIONS</div>
           <div className="flex flex-col gap-3">
-            {shopCollections.map(collection => (
-              <Link to={collection.href} key={collection.title} variant="gray">
-                {collection.title}
+            {COLLECTIONS_OPTIONS.items.map(collection => (
+              <Link to={collection.href} key={collection.name} variant="gray">
+                {collection.name}
               </Link>
             ))}
           </div>

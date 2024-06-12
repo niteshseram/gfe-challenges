@@ -1,4 +1,5 @@
-import { useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
+import { useLocation } from 'react-router-dom';
 import {
   CATEGORY_OPTIONS,
   COLLECTIONS_OPTIONS,
@@ -7,8 +8,19 @@ import {
 } from 'src/constants';
 
 export default function useProductFilters() {
-  const [selectedCollections, setSelectedCollections] = useState(new Set());
-  const [selectedCategory, setSelectedCategory] = useState(new Set());
+  const { search } = useLocation();
+  const isMounted = useRef(false);
+
+  const query = new URLSearchParams(search);
+  const collectionId = query.get('collectionId');
+  const categoryId = query.get('categoryId');
+
+  const [selectedCollections, setSelectedCollections] = useState(
+    collectionId ? new Set().add(collectionId) : new Set()
+  );
+  const [selectedCategory, setSelectedCategory] = useState(
+    categoryId ? new Set().add(categoryId) : new Set()
+  );
   const [selectedColors, setSelectedColors] = useState(new Set());
   const [selectedRating, setSelectedRating] = useState(new Set());
   const [selectedSort, setSelectedSort] = useState({
@@ -61,6 +73,23 @@ export default function useProductFilters() {
     selectedCategory.size +
     selectedColors.size +
     selectedRating.size;
+
+  useEffect(() => {
+    // only run after mounted when the collectionId or categoryId query param change
+    if (isMounted.current) {
+      if (collectionId) {
+        // Reset every filters when we query params is changed
+        resetFilters();
+        setSelectedCollections(new Set().add(collectionId));
+      }
+      if (categoryId) {
+        // Reset every filters when we query params is changed
+        resetFilters();
+        setSelectedCategory(new Set().add(categoryId));
+      }
+    }
+    isMounted.current = true;
+  }, [collectionId, categoryId]);
 
   return {
     selectedCollections,
