@@ -3,6 +3,12 @@ module.exports = {
   content: ['./src/**/*.{js,jsx,ts,tsx}'],
   theme: {
     extend: {
+      backgroundImage: {
+        collection:
+          'linear-gradient(360deg, rgba(0, 0, 0, 0.4) -9.37%, rgba(0, 0, 0, 0.132) 100%)',
+        'collection-hover':
+          'linear-gradient(360deg, rgba(0, 0, 0, 0.6) -9.37%, rgba(0, 0, 0, 0.198) 100%)',
+      },
       zIndex: {
         sticky: 1020,
         fixed: 1030,
@@ -21,7 +27,7 @@ module.exports = {
       boxShadow: {
         input:
           '0px 0px 0px 1px #444ce7, 0px 1px 2px rgba(16, 24, 40, 0.05), 0px 0px 0px 4px rgba(68, 76, 231, 0.12)',
-        btn: '0px 1px 2px 0 rgb(0 0 0 / 0.06), 0px 1px 3px 0 rgb(0 0 0 / 0.10)',
+        custom: '0px 1px 2px 0 rgb(0 0 0 / 0.06), 0px 1px 3px 0 rgb(0 0 0 / 0.10)',
       },
     },
   },

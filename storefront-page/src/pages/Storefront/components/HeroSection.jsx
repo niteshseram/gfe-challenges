@@ -14,7 +14,7 @@ const HeroSection = () => {
       )}>
       <div
         className={clsx(
-          'col-span-4 md:col-span-5',
+          'col-span-4 md:col-span-6 lg:col-span-5',
           'flex flex-col justify-center gap-8 md:gap-16'
         )}>
         <div className="flex flex-col justify-center gap-4 md:gap-6">

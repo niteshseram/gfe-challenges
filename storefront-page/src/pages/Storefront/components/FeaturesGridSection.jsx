@@ -57,8 +57,9 @@ const FeaturesGridSection = () => {
               'flex flex-col justify-center items-center gap-5'
             )}>
             <div
+              aria-hidden="true"
               className={clsx(
-                'w-12 h-12 bg-white rounded-full shadow',
+                'w-12 h-12 bg-white rounded-full shadow-custom',
                 'flex items-center justify-center'
               )}>
               <Icon className="size-6 text-indigo-700" />

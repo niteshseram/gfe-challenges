@@ -7,7 +7,8 @@ module.exports = {
         modal: 1055,
       },
       boxShadow: {
-        btn: '0px 1px 2px 0 rgb(0 0 0 / 0.06), 0px 1px 3px 0 rgb(0 0 0 / 0.10)',
+        custom:
+          '0px 1px 2px 0 rgb(0 0 0 / 0.06), 0px 1px 3px 0 rgb(0 0 0 / 0.10)',
       },
     },
   },
