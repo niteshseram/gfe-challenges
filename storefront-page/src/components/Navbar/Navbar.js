@@ -1,8 +1,8 @@
 import clsx from 'clsx';
 
-import Link from '../ui/Link';
-import CartButton from '../CartButton';
-import MobileNavMenu from './MobileNavMenu';
+import Link from 'src/components/ui/Link';
+import CartButton from 'src/components/CartButton';
+import MobileNavMenu from 'src/components/Navbar/MobileNavMenu';
 
 const links = [
   {
@@ -20,7 +20,8 @@ const Navbar = ({ className }) => {
     <div
       className={clsx(
         'z-sticky sticky top-0',
-        'max-w-[1216px] mx-auto h-[68px] lg:h-[60px]',
+        'max-w-[1216px] mx-auto',
+        'h-[68px] lg:h-14',
         'py-3 px-4 md:px-8 xl:px-0',
         'flex justify-between gap-4 lg:gap-20 items-center',
         className

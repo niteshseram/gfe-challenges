@@ -20,7 +20,8 @@ const Navbar = ({ className }) => {
     <div
       className={clsx(
         'z-sticky sticky top-0',
-        'max-w-[1216px] mx-auto h-[68px] lg:h-[60px]',
+        'max-w-[1216px] mx-auto',
+        'h-[68px] lg:h-[60px]',
         'py-3 px-4 md:px-8 xl:px-0',
         'flex justify-between gap-4 lg:gap-20 items-center',
         className
