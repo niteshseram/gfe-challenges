@@ -29,7 +29,7 @@ const LatestArrivalsSection = ({ className }) => {
   return (
     <section
       className={clsx(
-        'px-4 py-12 md:py-[72px] lg:p-24',
+        'px-4 py-12 md:py-16 lg:p-24',
         'flex flex-col gap-8',
         'h-full',
         className
