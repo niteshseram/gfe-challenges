@@ -23,10 +23,10 @@ const Navbar = ({ className }) => {
         'max-w-[1216px] mx-auto',
         'h-[68px] lg:h-14',
         'py-3 px-4 md:px-8 xl:px-0',
-        'flex justify-between gap-4 lg:gap-20 items-center',
+        'flex justify-between gap-4 lg:gap-[103px] items-center',
         className
       )}>
-      <Link className="w-[163px]" variant="unstyled" to="/">
+      <Link variant="unstyled" to="/">
         <img src="/stylenest.svg" alt="Stylenest's Logo" />
       </Link>
       <nav className={clsx('hidden flex-1 gap-8', 'lg:flex')}>
