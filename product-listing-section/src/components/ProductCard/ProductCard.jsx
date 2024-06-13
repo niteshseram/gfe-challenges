@@ -1,10 +1,14 @@
 import clsx from 'clsx';
-import Link from '../Link';
-import { COLORS } from 'src/constants';
-import ColorSwatches from '../ColorSwatches';
 import { useCallback, useMemo } from 'react';
+import { useNavigate } from 'react-router-dom';
+
+import Link from '../Link';
+import ColorSwatches from '../ColorSwatches';
+
+import { COLORS } from 'src/constants';
 
 const ProductCard = ({ product }) => {
+  const navigate = useNavigate();
   const { images, name, inventory, colors } = product;
   const { discount_percentage, sale_price, list_price, color } = inventory[0];
 
@@ -32,9 +36,21 @@ const ProductCard = ({ product }) => {
     [getUnavailableColors]
   );
 
+  const redirectUrl = `/products/${product.product_id}`;
+
+  const handleKeyDown = useCallback(
+    event => {
+      if (event.key === 'Enter') {
+        navigate(redirectUrl);
+      }
+    },
+    [navigate, redirectUrl]
+  );
+
   return (
     <div
       tabIndex={0}
+      onKeyDown={handleKeyDown}
       className={clsx(
         'w-full relative',
         'group',
@@ -56,7 +72,7 @@ const ProductCard = ({ product }) => {
           {COLORS[color]?.label}
         </span>
         <Link
-          to={`/products/${product.product_id}`}
+          to={redirectUrl}
           tabIndex={-1}
           variant="unstyled"
           className={clsx(
