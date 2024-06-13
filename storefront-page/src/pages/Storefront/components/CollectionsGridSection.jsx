@@ -27,6 +27,7 @@ const CollectionsGridSection = () => {
 
   return (
     <section
+      aria-describedby="collections-section"
       className={clsx('px-4 py-12 md:py-16 lg:p-24', 'flex flex-col gap-8')}>
       <div className="font-semibold text-3xl">Our Collections</div>
       {isFetching ? (

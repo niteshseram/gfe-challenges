@@ -7,6 +7,7 @@ const HeroSection = () => {
 
   return (
     <section
+      aria-describedby="hero-section"
       className={clsx(
         'px-4 py-12 md:py-16 lg:p-24',
         'grid grid-cols-4 md:grid-cols-6 lg:grid-cols-12',

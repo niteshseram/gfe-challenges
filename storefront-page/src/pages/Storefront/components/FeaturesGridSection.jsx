@@ -25,6 +25,7 @@ const FEATURES = [
 const FeaturesGridSection = () => {
   return (
     <section
+      aria-describedby="features-section"
       className={clsx(
         'px-4 py-12 md:py-16 lg:p-24',
         'flex flex-col gap-12 md:gap-16'
