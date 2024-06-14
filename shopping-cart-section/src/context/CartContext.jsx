@@ -41,7 +41,7 @@ const CartContextProvider = ({ children }) => {
 
     // TODO: update this api with production API
     const data = await fetch(
-      `http://dev.greatfrontend.com/api/projects/challenges/e-commerce/cart-sample`
+      `https://dev.greatfrontend.com/api/projects/challenges/e-commerce/cart-sample`
     );
     const result = await data.json();
 
