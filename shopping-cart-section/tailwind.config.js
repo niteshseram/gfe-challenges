@@ -3,11 +3,18 @@ module.exports = {
   content: ['./src/**/*.{js,jsx,ts,tsx}'],
   theme: {
     extend: {
+      backgroundImage: {
+        collection:
+          'linear-gradient(360deg, rgba(0, 0, 0, 0.4) -9.37%, rgba(0, 0, 0, 0.132) 100%)',
+        'collection-hover':
+          'linear-gradient(360deg, rgba(0, 0, 0, 0.6) -9.37%, rgba(0, 0, 0, 0.198) 100%)',
+      },
       zIndex: {
         sticky: 1020,
         fixed: 1030,
         dropdown: 1000,
         toast: 1090,
+        modal: 1055,
       },
       animation: {
         slideout: 'slideout 0.4s ease-out',

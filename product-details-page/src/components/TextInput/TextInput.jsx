@@ -62,8 +62,9 @@ const TextInput = ({
             'bg-neutral-50',
             'rounded',
             'text-sm text-neutral-900 placeholder:text-neutral-500 disabled:text-neutral-400 disabled:placeholder:text-neutral-400',
-            'focus:outline-none focus:shadow-input',
-            hasError && 'focus:shadow-input-error',
+            'focus:outline-none',
+            'focus:ring-4 focus:ring-offset-0 focus:ring-indigo-600/[.12] focus:border-indigo-600',
+            hasError && 'focus:ring-red-600/[.12] focus:border-red-600',
             'disabled:pointer-events-none',
             StartIcon && 'pl-[41px]',
             EndIcon && 'pr-[38px]'

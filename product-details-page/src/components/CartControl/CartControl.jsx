@@ -5,7 +5,7 @@ import Tooltip from '../Tooltip';
 
 const CartControl = ({ quantity, decrement, increment, availableStock }) => {
   const disabledDecrement = quantity === 1;
-  const disabledIncrement = quantity > availableStock;
+  const disabledIncrement = quantity >= availableStock;
 
   return (
     <div
