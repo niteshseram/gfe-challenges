@@ -1,14 +1,15 @@
 import clsx from 'clsx';
+import { useState } from 'react';
 
 import CartControl from 'src/components/CartControl';
 import Button from 'src/components/ui/Button';
 import Link from 'src/components/ui/Link';
+import ConfirmModal from 'src/components/ui/ConfirmModal';
 
 import { useCartContext } from 'src/context/CartContext';
 
 import { COLORS, SIZE } from 'src/constants';
-import { useState } from 'react';
-import ConfirmModal from 'src/components/ui/ConfirmModal';
+import { formatPrice } from '../utils';
 
 const CartItemsSection = ({ className }) => {
   const { cartItems, incrementQuantity, decrementQuantity, removeFromCart } =
@@ -106,11 +107,14 @@ const CartItemsSection = ({ className }) => {
                   </div>
                   <div className="flex justify-end items-center gap-2">
                     <span className="font-medium text-lg text-right text-neutral-900">
-                      ${hasDiscount ? total_sale_price : total_list_price}
+                      $
+                      {hasDiscount
+                        ? formatPrice(total_sale_price)
+                        : formatPrice(total_list_price)}
                     </span>
                     {hasDiscount && (
                       <span className="text-xs line-through text-neutral-600">
-                        ${total_list_price}
+                        ${formatPrice(total_list_price)}
                       </span>
                     )}
                   </div>

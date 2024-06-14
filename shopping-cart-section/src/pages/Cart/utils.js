@@ -107,3 +107,6 @@ export const mergeSampleAndStorageCartItems = sampleCartItems => {
   // Convert the map back to an array
   return Array.from(mergedMap.values());
 };
+
+export const formatPrice = price =>
+  Number.isInteger(price) ? price : price.toFixed(2);
