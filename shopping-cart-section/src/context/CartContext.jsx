@@ -36,9 +36,9 @@ const CartContextProvider = ({ children }) => {
   const getCartItems = useCallback(async () => {
     setIsFetching(true);
 
-    // TODO: update this localhost api with real API
+    // TODO: update this api with production API
     const data = await fetch(
-      `http://localhost:3000/api/projects/challenges/e-commerce/cart-sample`
+      `http://dev.greatfrontend.com/api/projects/challenges/e-commerce/cart-sample`
     );
     const result = await data.json();
 
