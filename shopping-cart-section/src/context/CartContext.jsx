@@ -110,10 +110,17 @@ const CartContextProvider = ({ children }) => {
             cartItem.unit.sku === item.unit.sku
         );
 
-        acc.push({
-          ...item,
-          quantity: product ? product.stock : item.quantity,
-        });
+        if (product) {
+          // if there is stock then update the quantity, otherwise remove it
+          if (product.stock > 0) {
+            acc.push({
+              ...item,
+              quantity: product.stock,
+            });
+          }
+        } else {
+          acc.push(item);
+        }
 
         setShowStockChangedModal(false);
 
