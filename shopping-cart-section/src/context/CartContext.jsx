@@ -6,7 +6,10 @@ import {
   useMemo,
   useCallback,
 } from 'react';
-import { getStockChangedData } from 'src/pages/Cart/utils';
+import {
+  getStockChangedData,
+  mergeSampleAndStorageCartItems,
+} from 'src/pages/Cart/utils';
 
 const CartContext = createContext();
 
@@ -43,8 +46,9 @@ const CartContextProvider = ({ children }) => {
     const result = await data.json();
 
     if (!result.error) {
-      updateCartItems(result.items);
-      checkForStockChanged(result.items);
+      const finalCartItems = mergeSampleAndStorageCartItems(result.items);
+      updateCartItems(finalCartItems);
+      checkForStockChanged(finalCartItems);
     }
     setIsFetching(false);
   }, [checkForStockChanged]);

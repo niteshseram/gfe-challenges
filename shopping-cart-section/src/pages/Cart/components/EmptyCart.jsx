@@ -27,7 +27,12 @@ const EmptyCart = () => {
           <span className="font-medium text-xl">Your cart is empty</span>
           <span>Let's go explore some products</span>
         </div>
-        <Button size="xl" label="Explore products" endIcon={RiArrowRightLine} />
+        <Button
+          size="xl"
+          label="Explore products"
+          endIcon={RiArrowRightLine}
+          href="/products"
+        />
       </div>
       <img
         src="/img/empty-cart.png"

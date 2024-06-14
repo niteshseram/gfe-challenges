@@ -86,3 +86,24 @@ export const getStockChangedData = items => {
     setTimeout(() => resolve(filteredProducts), 250);
   });
 };
+
+
+export const mergeSampleAndStorageCartItems = sampleCartItems => {
+  // Retrieve cart from localStorage
+  const storedCartItems = JSON.parse(localStorage.getItem('cart')) || [];
+  const mergedMap = new Map();
+
+  // Add items from the sample cart items to the map
+  sampleCartItems.forEach(item => {
+    mergedMap.set(item.unit.sku, item);
+  });
+  console.log(storedCartItems, sampleCartItems, mergedMap);
+
+  // Add items from the local storage to the map (overwrites duplicates from sampleCartItems)
+  storedCartItems.forEach(item => {
+    mergedMap.set(item.unit.sku, item);
+  });
+
+  // Convert the map back to an array
+  return Array.from(mergedMap.values());
+};
