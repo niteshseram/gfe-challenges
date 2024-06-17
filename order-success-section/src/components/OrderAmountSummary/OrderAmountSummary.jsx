@@ -10,7 +10,7 @@ const OrderAmountSummary = ({
   className,
   type = 'cart',
 }) => {
-  const isCartView = (type = 'cart');
+  const isCartView = type === 'cart';
 
   return (
     <dl className={clsx('flex flex-col gap-4', className)}>

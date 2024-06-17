@@ -118,6 +118,7 @@ const OrderSuccessPage = () => {
                   discountCode={orderData.summary.discount_code}
                   discountAmount={orderData.summary.discount}
                   className={clsx('py-[31.5px] gap-6')}
+                  type="order"
                 />
 
                 <div
