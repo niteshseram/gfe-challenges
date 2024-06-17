@@ -50,7 +50,7 @@ export const getStockChangedData = items => {
         image_url:
           'https://vaqybtnqyonvlwtskzmv.supabase.co/storage/v1/object/public/e-commerce-track-images/elemental-sneakers/elemental-sneakers-3.jpg',
       },
-      stock: 3,
+      stock: 20,
     },
     {
       product: {
@@ -64,29 +64,36 @@ export const getStockChangedData = items => {
         image_url:
           'https://vaqybtnqyonvlwtskzmv.supabase.co/storage/v1/object/public/e-commerce-track-images/azure-attitude-shades/azure-attitude-shades-1.jpg',
       },
-      stock: 2,
+      stock: 10,
     },
   ];
-  const filteredProducts = products.reduce((acc, item) => {
-    const product = items.find(
-      cartItem =>
-        cartItem.product.product_id === item.product.product_id &&
-        cartItem.unit.sku === item.unit.sku &&
-        cartItem.quantity > item.stock
+
+  // To check if the cart is completely empty after stock changed
+  let isCartEmpty = true;
+  const filteredProducts = items.reduce((acc, item) => {
+    const product = products.find(
+      product =>
+        product.product.product_id === item.product.product_id &&
+        product.unit.sku === item.unit.sku &&
+        item.quantity > product.stock
     );
     if (product) {
       acc.push({
-        ...item,
-        cartQuantity: product ? product.quantity : item.quantity,
+        ...product,
+        cartQuantity: item.quantity,
       });
+      if (isCartEmpty) {
+        isCartEmpty = product.stock === 0;
+      }
+    } else {
+      isCartEmpty = false;
     }
     return acc;
   }, []);
   return new Promise(resolve => {
-    setTimeout(() => resolve(filteredProducts), 250);
+    setTimeout(() => resolve({ products: filteredProducts, isCartEmpty }), 250);
   });
 };
-
 
 export const mergeSampleAndStorageCartItems = sampleCartItems => {
   // Retrieve cart from localStorage
