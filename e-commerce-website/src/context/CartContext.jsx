@@ -17,11 +17,7 @@ const CartContextProvider = ({ children }) => {
   const navigate = useNavigate();
   const [cartItems, setCartItems] = useState([]);
   const [stockChangedItems, setStockChangedItems] = useState([]);
-  const [discount, setDiscount] = useState({
-    coupon_code: 'GR8FRNTND24',
-    discount_amount: 5,
-    discount_percentage: null,
-  });
+  const [discount, setDiscount] = useState();
   const [isFetching, setIsFetching] = useState(true);
   const [checkingStock, setCheckingStock] = useState(false);
   const [showStockChangedModal, setShowStockChangedModal] = useState(false);
@@ -66,6 +62,31 @@ const CartContextProvider = ({ children }) => {
     getCartItems();
   }, [getCartItems]);
 
+  const addToCart = useCallback(
+    item => {
+      const existingItem = cartItems.find(
+        cartItem =>
+          cartItem.product.product_id === item.product.product_id &&
+          cartItem.unit.sku === item.unit.sku
+      );
+
+      let updatedCart;
+      if (existingItem) {
+        updatedCart = cartItems.map(cartItem =>
+          cartItem.product.product_id === item.product.product_id &&
+          cartItem.unit.sku === item.unit.sku
+            ? item
+            : cartItem
+        );
+      } else {
+        updatedCart = [...cartItems, item];
+      }
+      console.log(updatedCart);
+      updateCartItems(updatedCart);
+    },
+    [cartItems]
+  );
+
   const removeFromCart = useCallback(
     item => {
       const updatedCart = cartItems.filter(
@@ -88,8 +109,7 @@ const CartContextProvider = ({ children }) => {
       updatedCart = cartItems.map(cartItem => {
         if (
           cartItem.product.product_id === item.product.product_id &&
-          cartItem.unit.color === item.unit.color &&
-          cartItem.unit.size === item.unit.size
+          cartItem.unit.sku === item.unit.sku
         ) {
           const finalQuantity = increment
             ? item.quantity + 1
@@ -157,6 +177,7 @@ const CartContextProvider = ({ children }) => {
       acknowledgeStockChanged,
       checkForStockChanged,
       setDiscount,
+      addToCart,
       removeFromCart,
       incrementQuantity: item => changeQuantity(item, true),
       decrementQuantity: item => changeQuantity(item, false),
@@ -173,6 +194,7 @@ const CartContextProvider = ({ children }) => {
       acknowledgeStockChanged,
       checkForStockChanged,
       setDiscount,
+      addToCart,
       removeFromCart,
       changeQuantity,
     ]

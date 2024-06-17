@@ -11,7 +11,7 @@ import InfoSection from './InfoSection';
 
 import { useProductDetailsContext } from './ProductDetailsContext';
 import { useCartContext } from 'src/context/CartContext';
-import { getInventoryData } from '../utils';
+import { getInventoryData, getSelectedColorImages } from '../utils';
 import ProductReviews from './ProductReviews';
 
 const ProductMetadata = () => {
@@ -27,6 +27,7 @@ const ProductMetadata = () => {
       getInventoryData({ product, color: selectedColor, size: selectedSize }),
     [selectedColor, selectedSize, product]
   );
+  const images = getSelectedColorImages({ product, color: selectedColor });
   const { discount_percentage, list_price, sale_price, stock } = inventoryData;
 
   const roundedRating = Math.round(rating * 10) / 10;
@@ -36,10 +37,23 @@ const ProductMetadata = () => {
     e.preventDefault();
 
     const item = {
-      id: product.product_id,
+      product: {
+        product_id: product.product_id,
+        name: product.name,
+        description: product.description,
+      },
       quantity: itemQuantity,
-      color: selectedColor,
-      size: selectedSize,
+      unit: {
+        color: inventoryData.color,
+        size: inventoryData.size,
+        sku: inventoryData.sku,
+        stock: inventoryData.stock,
+        sale_price: inventoryData.sale_price,
+        list_price: inventoryData.list_price,
+        image_url: images[0].image_url,
+      },
+      total_sale_price: itemQuantity * inventoryData.sale_price,
+      total_list_price: itemQuantity * inventoryData.list_price,
     };
     addToCart(item);
   };
@@ -94,6 +108,7 @@ const ProductMetadata = () => {
 
           <Button
             label="Add to Cart"
+            type="submit"
             size={isMobileAndBelow ? 'xl' : '2xl'}
             isDisabled={itemQuantity === 0 || stock === 0}
           />
