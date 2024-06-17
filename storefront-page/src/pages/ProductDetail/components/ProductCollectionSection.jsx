@@ -28,7 +28,9 @@ const ProductCollectionSection = () => {
   return (
     <section
       className={clsx('px-4 py-12 md:py-16 lg:p-24', 'flex flex-col gap-8')}>
-      <span class="font-semibold text-2xl md:text-3xl">In this collection</span>
+      <span className="font-semibold text-2xl md:text-3xl">
+        In this collection
+      </span>
       {isCollectionProductsLoading ? (
         <div>Loading...</div>
       ) : (
