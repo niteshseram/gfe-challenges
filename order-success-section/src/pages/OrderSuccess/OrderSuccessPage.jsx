@@ -6,6 +6,7 @@ import OrderProductCard from 'src/components/OrderProductCard';
 
 import Button from 'src/components/ui/Button';
 import { Visa } from '../Checkout/components/PaymentCard';
+import { formatInternationalPhoneNumber } from 'src/utils';
 
 const OrderSuccessPage = () => {
   const [orderData, setOrderData] = useState(null);
@@ -49,9 +50,18 @@ const OrderSuccessPage = () => {
             src="/img/order-success-1.png"
             alt="Order success banner"
             className={clsx(
-              'block lg:hidden',
+              'hidden md:block lg:hidden',
+              'col-span-6',
+              'w-full h-full'
+            )}
+          />
+          <img
+            src="/img/order-success-2.png"
+            alt="Order success banner"
+            className={clsx(
+              'block md:hidden',
               'col-span-4 md:col-span-6',
-              'object-cover w-full h-[196px] md:h-full'
+              'w-full h-[196px]'
             )}
           />
           <div
@@ -76,6 +86,7 @@ const OrderSuccessPage = () => {
                 variant="link"
                 size="lg"
                 endIcon={RiFileCopy2Line}
+                iconClassName="!p-0"
                 onClick={() => {
                   try {
                     navigator.clipboard.writeText(orderData.order_id);
@@ -127,7 +138,11 @@ const OrderSuccessPage = () => {
                   )}>
                   <span>Shipping address</span>
                   <div className={clsx('flex flex-col', 'text-sm')}>
-                    <span>{orderData.shipping_details.phone}</span>
+                    <span>
+                      {formatInternationalPhoneNumber(
+                        orderData.shipping_details.phone
+                      )}
+                    </span>
                     <span>{orderData.shipping_details.address.line1}</span>
                     {orderData.shipping_details.address.line2 && (
                       <span>{orderData.shipping_details.address.line2}</span>

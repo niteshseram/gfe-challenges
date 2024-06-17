@@ -116,3 +116,30 @@ export const mergeSampleAndStorageCartItems = sampleCartItems => {
 
 export const formatPrice = price =>
   Number.isInteger(price) ? price : price.toFixed(2);
+
+
+export const formatInternationalPhoneNumber = phoneNumber => {
+  // Remove all non-digit characters
+  phoneNumber = phoneNumber.replace(/\D/g, '');
+
+  // Check if the number has a country code
+  if (phoneNumber.length > 10) {
+    // Extract country code and the rest of the number
+    const countryCode = phoneNumber.slice(0, phoneNumber.length - 10);
+    const mainNumber = phoneNumber.slice(-10);
+
+    // Format the main number
+    const formattedMainNumber = mainNumber.replace(
+      /(\d{3})(\d{3})(\d{4})/,
+      '($1) $2-$3'
+    );
+
+    return `+${countryCode} ${formattedMainNumber}`;
+  } else if (phoneNumber.length === 10) {
+    // Format the number
+    return phoneNumber.replace(/(\d{3})(\d{3})(\d{4})/, '($1) $2-$3');
+  } else {
+    // If the number is not 10 digits or does not include a valid country code, return the original input
+    return phoneNumber;
+  }
+};
