@@ -18,7 +18,7 @@ function App() {
           <Route path="/" element={<Layout />}>
             <Route path="/cart" element={<CartPage />} />
             <Route path="/checkout" element={<CheckoutPage />} />
-            <Route path="/order" element={<OrderSuccessPage />} />
+            <Route path="/order-success" element={<OrderSuccessPage />} />
           </Route>
         </Routes>
       </CartContextProvider>

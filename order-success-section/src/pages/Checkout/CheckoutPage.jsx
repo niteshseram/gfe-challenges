@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import clsx from 'clsx';
+import { useNavigate } from 'react-router-dom';
 import { RiArrowLeftSLine } from 'react-icons/ri';
 
 import Button from 'src/components/ui/Button';
@@ -13,6 +14,7 @@ import { useCartContext } from 'src/context/CartContext';
 import { FIELD_NAME } from 'src/constants';
 
 const CheckoutPage = () => {
+  const navigate = useNavigate();
   const { checkForStockChanged, cartItems } = useCartContext();
   const toast = useToast();
 
@@ -49,10 +51,13 @@ const CheckoutPage = () => {
         hasErrors = true;
       }
     });
-    console.log(hasErrors);
-    toast.error(
-      'We faced a problem processing your checkout. Please try again or contact us.'
-    );
+    if (hasErrors) {
+      toast.error(
+        'We faced a problem processing your checkout. Please try again or contact us.'
+      );
+    } else {
+      navigate('/order-success');
+    }
   };
 
   return (
