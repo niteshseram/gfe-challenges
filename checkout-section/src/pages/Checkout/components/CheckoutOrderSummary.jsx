@@ -1,10 +1,13 @@
 import clsx from 'clsx';
 import { useMemo } from 'react';
 import { RiLockLine } from 'react-icons/ri';
+
 import Badge from 'src/components/ui/Badge';
 import Button from 'src/components/ui/Button';
-import { COLORS, SIZE } from 'src/constants';
+
 import { useCartContext } from 'src/context/CartContext';
+
+import { COLORS, SIZE } from 'src/constants';
 import { formatPrice, getFinalAmount, getSubtotal } from 'src/pages/Cart/utils';
 
 const CheckoutOrderSummary = ({ className }) => {
@@ -90,6 +93,7 @@ const CheckoutOrderSummary = ({ className }) => {
             );
           })}
         </ul>
+
         <dl
           className={clsx(
             'py-8',
@@ -105,7 +109,7 @@ const CheckoutOrderSummary = ({ className }) => {
             <span className="font-semibold text-lg">FREE</span>
           </div>
           {discount && (
-            <div className="flex items-center gap-2 justify-between">
+            <div className="flex gap-2 justify-between md:items-center">
               <div className="flex items-center flex-col md:flex-row gap-x-8 gap-y-2">
                 <span className="text-neutral-600">Coupon discount</span>
                 <Badge label={discount.coupon_code} variant="brand" size="lg" />
@@ -119,11 +123,13 @@ const CheckoutOrderSummary = ({ className }) => {
             </div>
           )}
         </dl>
+
         <div className={clsx('flex gap-4 justify-between', 'pt-8')}>
           <span className="font-medium text-2xl">Total</span>
           <span className="font-semibold text-4xl">${finalAmount}</span>
         </div>
       </div>
+
       <Button
         type="submit"
         label="Confirm order"

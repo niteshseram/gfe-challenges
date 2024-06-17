@@ -39,7 +39,7 @@ const DeliveryMethodCard = ({ method, isSelected, onSelect }) => {
         'flex flex-col gap-2 grow',
         'min-h-[120px]',
         'bg-white hover:bg-neutral-50',
-        'p-4 rounded-lg',
+        'p-[15px] rounded-lg',
         'flex-1',
         isSelected
           ? 'border border-indigo-600'

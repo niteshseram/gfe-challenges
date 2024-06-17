@@ -5,12 +5,16 @@ import { RiArrowLeftSLine } from 'react-icons/ri';
 import Button from 'src/components/ui/Button';
 import CheckoutFormSection from './components/CheckoutFormSection';
 import CheckoutOrderSummary from './components/CheckoutOrderSummary';
-import { FIELD_NAME } from 'src/constants';
-import { useCartContext } from 'src/context/CartContext';
 import StockChangedModal from '../Cart/components/StockChangedModal';
+
+import { useToast } from 'src/context/ToastContext';
+import { useCartContext } from 'src/context/CartContext';
+
+import { FIELD_NAME } from 'src/constants';
 
 const CheckoutPage = () => {
   const { checkForStockChanged, cartItems } = useCartContext();
+  const toast = useToast();
 
   const [formData, setFormData] = useState({
     email: { value: '', error: '', required: true },
@@ -46,6 +50,9 @@ const CheckoutPage = () => {
       }
     });
     console.log(hasErrors);
+    toast.error(
+      'We faced a problem processing your checkout. Please try again or contact us.'
+    );
   };
 
   return (
@@ -70,7 +77,7 @@ const CheckoutPage = () => {
         onSubmit={onSubmit}
         className={clsx(
           'grid grid-cols-4 md:grid-cols-6 lg:grid-cols-12',
-          'gap-x-4 md:gap-x-8 gap-y-16'
+          'gap-x-4 md:gap-x-8 gap-y-8'
         )}>
         <CheckoutFormSection
           className="col-span-4 md:col-span-6 lg:col-span-6"
