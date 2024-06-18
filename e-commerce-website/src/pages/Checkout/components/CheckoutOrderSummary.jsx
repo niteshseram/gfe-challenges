@@ -45,9 +45,9 @@ const CheckoutOrderSummary = ({ className }) => {
 
         <OrderAmountSummary
           subtotal={subtotal}
-          discountCode={discount.coupon_code}
-          discountAmount={discount.discount_amount}
-          discountPercentage={discount.discount_percentage}
+          discountCode={discount?.coupon_code}
+          discountAmount={discount?.discount_amount?.toFixed(2)}
+          discountPercentage={discount?.discount_percentage}
           className={clsx('py-8', 'lg:flex-1', 'h-full md:h-[247px] lg:h-full')}
         />
 

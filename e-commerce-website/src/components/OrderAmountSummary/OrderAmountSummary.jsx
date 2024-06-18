@@ -11,12 +11,13 @@ const OrderAmountSummary = ({
   type = 'cart',
 }) => {
   const isCartView = type === 'cart';
+  console.log(subtotal);
 
   return (
     <dl className={clsx('flex flex-col gap-4', className)}>
       <div className="flex items-center gap-2 justify-between">
         <span className="text-neutral-600">Subtotal</span>
-        <span className="font-semibold text-lg">${subtotal.toFixed(2)}</span>
+        <span className="font-semibold text-lg">${subtotal}</span>
       </div>
       <div className="flex items-center gap-2 justify-between">
         <span className="text-neutral-600">Shipping</span>
@@ -33,10 +34,7 @@ const OrderAmountSummary = ({
             <Badge label={discountCode} variant="brand" size="lg" />
           </div>
           <span className="font-semibold text-lg">
-            -
-            {discountAmount
-              ? `$${discountAmount.toFixed(2)}`
-              : `${discountPercentage}%`}
+            -{discountAmount ? `$${discountAmount}` : `${discountPercentage}%`}
           </span>
         </div>
       )}

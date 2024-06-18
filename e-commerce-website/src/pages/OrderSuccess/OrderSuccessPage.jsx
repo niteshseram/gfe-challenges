@@ -114,9 +114,9 @@ const OrderSuccessPage = () => {
                   ))}
                 </ul>
                 <OrderAmountSummary
-                  subtotal={orderData.summary.subtotal}
-                  discountCode={orderData.summary.discount_code}
-                  discountAmount={orderData.summary.discount}
+                  subtotal={orderData.summary.subtotal.toFixed(2)}
+                  discountCode={orderData.summary?.discount_code}
+                  discountAmount={orderData.summary?.discount?.toFixed(2)}
                   className={clsx('py-[31.5px] gap-6')}
                   type="order"
                 />
