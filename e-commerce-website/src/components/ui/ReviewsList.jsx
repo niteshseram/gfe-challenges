@@ -4,6 +4,7 @@ import { RiChatSmile3Line } from 'react-icons/ri';
 import Avatar from '../Avatar';
 import Rating from '../Rating';
 import Button from '../Button';
+import IconWrapper from '../IconWrapper';
 
 import { useProductReviewsContext } from './ProductReviewsContext';
 
@@ -17,14 +18,7 @@ const ReviewsList = () => {
   if (reviews.length === 0) {
     return (
       <div class="flex flex-col justify-center items-center gap-5 h-full">
-        <div
-          class={clsx(
-            'size-12 bg-white rounded-full shadow',
-            'flex items-center justify-center',
-            'text-indigo-700'
-          )}>
-          <RiChatSmile3Line className="size-6" />
-        </div>
+        <IconWrapper icon={RiChatSmile3Line} />
         <div
           class={clsx(
             "flex flex-col items-center gap-2', 'text-neutral-900 text-center"

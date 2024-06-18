@@ -20,6 +20,7 @@ import {
 } from 'react-icons/ri';
 
 import Tabs from '../ui/Tabs';
+import IconWrapper from '../IconWrapper';
 
 const TABS = [
   { label: 'Sustainability', value: 'sustainability' },
@@ -214,14 +215,7 @@ const ProductSpecificationSection = () => {
                 <div
                   className="w-full md:w-80 lg:w-[282px] flex items-center gap-2 md:gap-4"
                   key={label}>
-                  <div
-                    className={clsx(
-                      'size-12 bg-white rounded-full shadow',
-                      'flex items-center justify-center',
-                      'shrink-0'
-                    )}>
-                    <Icon className="size-6 text-indigo-700" />
-                  </div>
+                  <IconWrapper icon={Icon} />
                   <span className="text-neutral-600">{label}</span>
                 </div>
               ))}

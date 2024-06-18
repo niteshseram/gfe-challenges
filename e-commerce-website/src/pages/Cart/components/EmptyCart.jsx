@@ -1,5 +1,7 @@
 import clsx from 'clsx';
 import { RiArrowRightLine, RiShoppingCart2Line } from 'react-icons/ri';
+
+import IconWrapper from 'src/components/IconWrapper';
 import Button from 'src/components/ui/Button';
 
 const EmptyCart = () => {
@@ -15,13 +17,7 @@ const EmptyCart = () => {
           'h-[372px] md:h-[400px] lg:h-full',
           'flex flex-col justify-center items-center gap-5'
         )}>
-        <div
-          className={clsx(
-            'size-12 bg-white rounded-full shadow-custom',
-            'flex items-center justify-center'
-          )}>
-          <RiShoppingCart2Line className="size-6 text-indigo-700" />
-        </div>
+        <IconWrapper icon={RiShoppingCart2Line} />
         <div
           className={clsx('flex flex-col items-center gap-2', 'text-center')}>
           <span className="font-medium text-xl">Your cart is empty</span>

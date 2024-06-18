@@ -3,6 +3,7 @@ import clsx from 'clsx';
 
 import ProductCard from 'src/components/ProductCard';
 import Button from 'src/components/ui/Button';
+import IconWrapper from 'src/components/IconWrapper';
 
 import { useProductListingContext } from './ProductListingContext';
 
@@ -30,13 +31,7 @@ const ProductListingSection = () => {
           'col-span-4 md:col-span-6 lg:col-span-9',
           'flex items-center justify-center flex-col gap-5'
         )}>
-        <div
-          className={clsx(
-            'size-12 bg-white rounded-full shadow',
-            'flex items-center justify-center'
-          )}>
-          <RiTShirt2Line className="size-6 text-indigo-700" />
-        </div>
+        <IconWrapper icon={RiTShirt2Line} />
         <div
           className={clsx(
             'flex flex-col items-center gap-2',
