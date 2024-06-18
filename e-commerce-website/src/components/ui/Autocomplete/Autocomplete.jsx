@@ -41,7 +41,7 @@ const Autocomplete = ({ value, onSelect, options, ...props }) => {
       {options.length > 0 && (
         <div
           className={clsx(
-            'absolute right-0 z-dropdown mt-2 w-full origin-top-right max-h-50',
+            'absolute right-0 z-dropdown mt-2 w-full origin-top-right max-h-50 overflow-y-auto',
             'border border-[#e6e6e6]',
             'rounded-lg bg-white shadow-lg',
             'transition ease-in-out duration-300 transform origin-top',
@@ -64,7 +64,7 @@ const Autocomplete = ({ value, onSelect, options, ...props }) => {
                   'border-none outline-none',
                   'focus:ring focus:ring-indigo-200',
                   'p-2',
-                  value === item.id
+                  value === item.id || value === item.name
                     ? 'text-indigo-700 font-medium'
                     : 'text-neutral-600'
                 )}
