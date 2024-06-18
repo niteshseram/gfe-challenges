@@ -6,7 +6,8 @@ import CheckoutFormContentSection from './CheckoutFormContentSection';
 import DeliveryMethodCard from './DeliveryMethodCard';
 import { MasterCard } from './PaymentCard';
 
-import { FIELD_NAME } from 'src/constants';
+import { COUNTRIES, FIELD_NAME, STATES } from 'src/constants';
+import CountriesStatesAutocomplete from './CountriesStatesAutocomplete';
 
 const CheckoutFormSection = ({ className, formData, setFormData }) => {
   const {
@@ -84,6 +85,19 @@ const CheckoutFormSection = ({ className, formData, setFormData }) => {
     }));
   };
 
+  const onSelectCountry = value => {
+    setFormData(prevState => ({
+      ...prevState,
+      country: { value },
+    }));
+  };
+  const onSelectState = value => {
+    setFormData(prevState => ({
+      ...prevState,
+      state: { value },
+    }));
+  };
+
   return (
     <section
       aria-describedby="checkout-form"
@@ -104,13 +118,13 @@ const CheckoutFormSection = ({ className, formData, setFormData }) => {
       <CheckoutFormContentSection
         title="Shipping Information"
         className="py-10">
-        <TextInput
+        <CountriesStatesAutocomplete
           value={country.value}
+          OPTIONS={COUNTRIES}
           label="Country / Region"
           name="country"
-          onChange={onChange}
+          onSelect={item => onSelectCountry(item.id)}
           endIcon={RiArrowDownSLine}
-          isDisabled={true}
           required={country.required}
         />
         <div className="flex flex-col md:flex-row gap-6 md:gap-8">
@@ -164,15 +178,17 @@ const CheckoutFormSection = ({ className, formData, setFormData }) => {
             errorMessage={city.error}
             required={city.required}
           />
-          <TextInput
+          <CountriesStatesAutocomplete
+            OPTIONS={STATES[country.value] ?? []}
             endIcon={RiArrowDownSLine}
             placeholder="State"
             label="State"
             name="state"
-            onChange={onChange}
+            onSelect={item => onSelectState(item.name)}
             value={state.value}
             errorMessage={state.error}
-            required
+            required={state.required}
+            isDisabled={!country}
           />
           <TextInput
             placeholder="12345"
