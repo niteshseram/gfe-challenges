@@ -48,7 +48,7 @@ const CollectionsGridSection = () => {
             <div className={clsx('flex-1')}>
               <CollectionCard
                 imageUrl={collections[1].image_url}
-                name={collections[2].name}
+                name={collections[1].name}
                 description={collections[1].description}
                 id={collections[1].collection_id}
                 variant="secondary"
