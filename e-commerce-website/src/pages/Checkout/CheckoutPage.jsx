@@ -20,7 +20,7 @@ const CheckoutPage = () => {
 
   const [formData, setFormData] = useState({
     email: { value: '', error: '', required: true },
-    country: { value: 'United States', error: '', required: true },
+    country: { value: 'US', error: '', required: true },
     firstName: { value: '', error: '', required: true },
     lastName: { value: '', error: '', required: true },
     address1: { value: '', error: '', required: true },

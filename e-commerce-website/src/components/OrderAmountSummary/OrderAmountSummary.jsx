@@ -11,7 +11,6 @@ const OrderAmountSummary = ({
   type = 'cart',
 }) => {
   const isCartView = type === 'cart';
-  console.log(subtotal);
 
   return (
     <dl className={clsx('flex flex-col gap-4', className)}>

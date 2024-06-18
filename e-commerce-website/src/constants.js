@@ -186,3 +186,54 @@ export const FIELD_NAME = {
   cardExpiry: 'Expiry',
   cardCvv: 'CVV',
 };
+
+
+export const COUNTRIES = [
+  {
+    id: 'US',
+    name: 'United States',
+  },
+  {
+    id: 'IN',
+    name: 'India',
+  },
+];
+
+export const STATES = {
+  US: [
+    {
+      id: 'AZ',
+      name: 'Arizona',
+    },
+    {
+      id: 'CA',
+      name: 'California',
+    },
+    {
+      id: 'FL',
+      name: 'Florida',
+    },
+    {
+      id: 'IA',
+      name: 'Iowa',
+    },
+  ],
+  IN: [
+    {
+      id: 'AP',
+      name: 'Andhra Pradesh',
+    },
+    {
+      id: 'AS',
+      name: 'Assam',
+    },
+    {
+      id: 'JH',
+      name: 'Jharkhand',
+    },
+    {
+      id: 'KA',
+      name: 'Karnataka',
+    },
+  ],
+};
