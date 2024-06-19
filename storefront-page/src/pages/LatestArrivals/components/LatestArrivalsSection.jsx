@@ -39,12 +39,7 @@ const LatestArrivalsSection = ({ className }) => {
         <div className="font-semibold text-2xl md:text-3xl">
           Latest Arrivals
         </div>
-        <Button
-          label="View all"
-          variant="secondary"
-          href="/products"
-          size="lg"
-        />
+        <Button label="View all" variant="secondary" href="/latest" size="lg" />
       </div>
       {isProductsLoading ? (
         <div className="w-full h-full flex items-center justify-center">
