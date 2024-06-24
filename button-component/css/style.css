@@ -67,7 +67,7 @@ body {
 }
 
 /* Size classes */
-.button_size_md {
+.button--size-md {
   height: 40px;
   column-gap: 6px;
   padding: 10px 14px;
@@ -75,11 +75,11 @@ body {
   font-size: 14px;
   line-height: 20px;
 }
-.button_secondary.button_size_md {
+.button--secondary.button--size-md {
   padding: 9px 13px;
 }
 
-.button_size_lg {
+.button--size-lg {
   height: 44px;
   column-gap: 8px;
   padding: 10px 16px; 
@@ -87,11 +87,11 @@ body {
   font-size: 16px;
   line-height: 24px;
 }
-.button_secondary.button_size_lg {
+.button--secondary.button--size-lg {
   padding: 9px 15px; 
 }
 
-.button_size_xl {
+.button--size-xl {
   height: 48px;
   column-gap: 8px;
   padding: 12px 20px;
@@ -99,11 +99,11 @@ body {
   font-size: 16px;
   line-height: 24px;
 }
-.button_secondary.button_size_xl {
+.button--secondary.button--size-xl {
   padding: 11px 19px; 
 }
 
-.button_size_2xl {
+.button--size-2xl {
   height: 60px;
   column-gap: 12px;
   padding: 16px 24px; 
@@ -111,60 +111,60 @@ body {
   font-size: 18px;
   line-height: 28px;
 }
-.button_secondary.button_size_2xl {
+.button--secondary.button--size-2xl {
   padding: 15px 23px; 
 }
 
-.button_link.button_size_md,
-.button_link.button_size_lg,
-.button_link.button_size_xl,
-.button_link.button_size_2xl  {
+.button--link.button--size-md,
+.button--link.button--size-lg,
+.button--link.button--size-xl,
+.button--link.button--size-2xl  {
   padding: 0;
   height: 100%;
 }
 
-.button_icon_size_md {
+.button--icon-size-md {
   width: 40px;
 }
-.button_icon_size_lg {
+.button--icon-size-lg {
   width: 44px;
 }
-.button_icon_size_xl {
+.button--icon-size-xl {
   width: 48px;
 }
-.button_icon_size_2xl {
+.button--icon-size-2xl {
   width: 56px;
   height: 56px;
 }
 
 /* button variants */
-.button_primary{
+.button--primary{
   background: #4338CA;
   box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.06);
   color: #ffffff;
 }
-.button_primary:hover, .button_primary:focus  {
+.button--primary:hover, .button--primary:focus  {
   background: #3730A3;
 }
-.button_primary:disabled, .button_secondary:disabled {
+.button--primary:disabled, .button--secondary:disabled {
   background: #F5F5F5;
   box-shadow: none;
   color: #A3A3A3;
   pointer-events: none;
 }
 
-.button_secondary{
+.button--secondary{
   border: 0.5px solid #E6E6E6;
   background: #FFFFFF;
   box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.06);
   color: #171717;
 }
-.button_secondary:hover, .button_secondary:focus {
+.button--secondary:hover, .button--secondary:focus {
   background: #FAFAFA;
   border: 1px solid #E6E6E6;
   color: #0A0A0A
 }
-.button_secondary:focus {
+.button--secondary:focus {
   box-shadow: 0px 0px 0px 4px rgba(68, 76, 231, 0.12);
 }
 
@@ -174,35 +174,35 @@ body {
 .button_tertiary:hover, .button_tertiary:focus {
   background: #FAFAFA;
 }
-.button_tertiary:disabled, .button_danger:disabled  {
+.button_tertiary:disabled, .button--danger:disabled  {
   background: none;
   box-shadow: none;
   color: #A3A3A3;
   pointer-events: none;
 }
 
-.button_danger{
+.button--danger{
   background: #DC2626;
   color: #ffffff;
 }
-.button_danger:hover, .button_danger:focus  {
+.button--danger:hover, .button--danger:focus  {
   background: #B91C1C;;
 }
-.button_danger:focus {
+.button--danger:focus {
   box-shadow: 0px 0px 0px 1px #D92D20, 0px 0px 0px 4px rgba(217, 45, 32, 0.12);
 }
 
-.button_link {
+.button--link {
   color: #4338CA;
 }
-.button_link:hover, .button_link:focus {
+.button--link:hover, .button--link:focus {
   color: #3730A3;
 }
 
-.button_link_gray {
+.button--link-gray {
   color: #525252;
 }
-.button_link_gray:hover, .button_link_gray:focus {
+.button--link-gray:hover, .button--link-gray:focus {
   color: #171717;
 }
 
