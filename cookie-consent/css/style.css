@@ -357,7 +357,7 @@ input:disabled + .switch__slider:before {
   }
 
   .button--allow-cookie,
-  .button-secondary.button--allow-cookie {
+  .button--secondary.button--allow-cookie {
     width: 184px;
   }
 
