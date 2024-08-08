@@ -18,7 +18,7 @@ const InfoSection = () => {
           <AccordionItem key={item.title} id={item.title}>
             <AccordionTrigger>{item.title}</AccordionTrigger>
             <AccordionContent>
-              <ul className="list-disc ml-4 pl-2">
+              <ul className="list-disc ml-4 pl-2 text-neutral-600">
                 {item.description.map(descItem => (
                   <li key={descItem}>{descItem}</li>
                 ))}

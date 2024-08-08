@@ -15,7 +15,7 @@ const CartButton = ({ disabled, count }) => {
       )}>
       <RiShoppingBag3Line className="size-6" aria-hidden="true" />
 
-      {count && count > 0 && (
+      {count > 0 && (
         <div
           className={clsx(
             'absolute -top-1.5 -right-1.5 rounded-full text-xs text-center font-semibold h-[18px] w-[18px]',

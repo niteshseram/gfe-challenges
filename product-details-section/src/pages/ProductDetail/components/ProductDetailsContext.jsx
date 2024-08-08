@@ -38,7 +38,7 @@ const ProductDetailsContextProvider = ({ children }) => {
   }, [productId, navigate]);
 
   const decrementQuantity = useCallback(() => {
-    setItemQuantity(prev => (prev > 0 ? prev - 1 : 0));
+    setItemQuantity(prev => (prev > 1 ? prev - 1 : 1));
   }, []);
 
   const incrementQuantity = useCallback(() => {

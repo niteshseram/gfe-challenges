@@ -18,12 +18,13 @@ const AccordionItem = ({ children, id }) => {
 
 const AccordionTrigger = ({ children }) => {
   const { id, isOpen, setIsOpen } = useContext(AccordionItemContext);
+  const Icon = isOpen ? RiSubtractLine : RiAddLine;
   return (
     <button
       className={clsx(
         'w-full',
         'flex gap-6 justify-between items-center',
-        'focus:outline-none',
+        'focus:outline-none focus-visible:ring-4 focus-visible:ring-indigo-600/[.12]',
         'text-left text-neutral-900 font-medium'
       )}
       onClick={() => setIsOpen(!isOpen)}
@@ -31,13 +32,7 @@ const AccordionTrigger = ({ children }) => {
       aria-controls={`accordion-content-${id}`}
       id={`accordion-header-${id}`}>
       <span>{children}</span>
-      <div className="p-0.5" aria-hidden="true">
-        {isOpen ? (
-          <RiSubtractLine className="size-5 text-neutral-600" />
-        ) : (
-          <RiAddLine className="size-5 text-neutral-600" />
-        )}
-      </div>
+      <Icon className="m-0.5 size-5 text-neutral-600" aria-hidden={true} />
     </button>
   );
 };
@@ -73,7 +68,7 @@ const Accordion = ({ children }) => {
     <div className="w-full">
       {!hasMultipleItem
         ? children
-        : children.map((item, index) => (
+        : children.map(item => (
             <div key={item.props.id}>
               {item}
               <div className="h-[1px] bg-neutral-200 my-6" />

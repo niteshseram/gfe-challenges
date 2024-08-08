@@ -20,7 +20,9 @@ const InfoSection = () => {
             <AccordionContent>
               <ul className="list-disc ml-4 pl-2">
                 {item.description.map(descItem => (
-                  <li key={descItem}>{descItem}</li>
+                  <li key={descItem} className="text-neutral-600">
+                    {descItem}
+                  </li>
                 ))}
               </ul>
             </AccordionContent>

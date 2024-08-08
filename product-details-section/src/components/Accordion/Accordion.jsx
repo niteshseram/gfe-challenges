@@ -18,12 +18,14 @@ const AccordionItem = ({ children, id }) => {
 
 const AccordionTrigger = ({ children }) => {
   const { id, isOpen, setIsOpen } = useContext(AccordionItemContext);
+  const Icon = isOpen ? RiIndeterminateCircleLine : RiAddCircleLine;
   return (
     <button
       className={clsx(
         'w-full',
         'flex gap-6 justify-between items-center',
-        'focus:outline-none',
+        'rounded',
+        'focus:outline-none focus-visible:ring-4 focus-visible:ring-indigo-600/[.12]',
         'text-left text-lg text-neutral-900 font-medium'
       )}
       onClick={() => setIsOpen(!isOpen)}
@@ -31,11 +33,7 @@ const AccordionTrigger = ({ children }) => {
       aria-controls={`accordion-content-${id}`}
       id={`accordion-header-${id}`}>
       <span>{children}</span>
-      {isOpen ? (
-        <RiIndeterminateCircleLine className="size-6 text-neutral-400" />
-      ) : (
-        <RiAddCircleLine className="size-6 text-neutral-400" />
-      )}
+      <Icon className="size-6 text-neutral-400" />
     </button>
   );
 };
@@ -58,7 +56,7 @@ const AccordionContent = ({ children }) => {
         maxHeight: isOpen ? `${contentRef.current?.scrollHeight}px` : '0',
       }}
       ref={contentRef}>
-      <div className="text-neutral-600">{children}</div>
+      {children}
     </div>
   );
 };
