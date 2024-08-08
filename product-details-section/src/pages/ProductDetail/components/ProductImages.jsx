@@ -1,13 +1,17 @@
-import { useState } from 'react';
+import { useMemo, useState } from 'react';
 import clsx from 'clsx';
 
 import { useProductDetailsContext } from './ProductDetailsContext';
+import { getSelectedColorImages } from '../utils';
 
 const ProductImages = () => {
-  const { product, getSelectedColorImages } = useProductDetailsContext();
+  const { product, selectedColor } = useProductDetailsContext();
   const [selectedPreview, setSelectedPreview] = useState(0);
 
-  const images = getSelectedColorImages();
+  const images = useMemo(
+    () => getSelectedColorImages({ product, color: selectedColor }),
+    [product, selectedColor]
+  );
 
   return (
     <div className="flex flex-col gap-6">

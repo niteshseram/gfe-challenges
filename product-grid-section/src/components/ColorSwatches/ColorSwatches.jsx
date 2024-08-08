@@ -54,14 +54,6 @@ const ColorSwatches = ({
         }}
         tabIndex={-1}
         disabled={outOfStock}
-        onKeyDown={e => {
-          if (e.key === 'Enter' || e.key === ' ') {
-            if (!onClick) {
-              return;
-            }
-            onClick(color);
-          }
-        }}
       />
       <div
         aria-hidden="true"
@@ -80,6 +72,11 @@ const ColorSwatches = ({
               ]
         )}
         style={{ backgroundColor: color }}
+        onKeyDown={e => {
+          if (e.key === 'Enter' || e.key === ' ') {
+            onClick(color);
+          }
+        }}
         tabIndex={selected || outOfStock || readOnly ? -1 : 0}>
         {selected && !outOfStock && (
           <svg

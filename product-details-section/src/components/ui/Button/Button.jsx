@@ -1,6 +1,6 @@
 import clsx from 'clsx';
 
-import Link from '../Link';
+import Link from 'src/components/ui/Link';
 
 const paddingClasses = {
   md: 'px-3.5 py-2.5',

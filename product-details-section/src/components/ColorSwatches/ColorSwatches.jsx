@@ -19,11 +19,6 @@ const ColorSwatches = ({ color, selectedColor, onClick, outOfStock }) => {
         aria-checked={selectedColor === color}
         onChange={() => onClick(color)}
         disabled={outOfStock}
-        onKeyDown={e => {
-          if (e.key === 'Enter' || e.key === ' ') {
-            onClick(color);
-          }
-        }}
       />
       <div
         aria-hidden="true"
@@ -38,7 +33,12 @@ const ColorSwatches = ({ color, selectedColor, onClick, outOfStock }) => {
               ]
         )}
         style={{ backgroundColor: color }}
-        tabIndex={selectedColor === color || outOfStock ? -1 : 0}>
+        tabIndex={selectedColor === color || outOfStock ? -1 : 0}
+        onKeyDown={e => {
+          if (e.key === 'Enter' || e.key === ' ') {
+            onClick(color);
+          }
+        }}>
         {selectedColor === color && !outOfStock && (
           <svg
             width="28"
