@@ -49,9 +49,9 @@ const ReviewsList = () => {
               <Avatar src={review.user.avatar_url} name={review.user.name} />
               <div className="flex flex-col gap-1 grow">
                 <div className="flex items-center justify-between">
-                  <span className="font-semibold text-base text-neutral-900">
+                  <h4 className="font-semibold text-base text-neutral-900">
                     {review.user.name}
-                  </span>
+                  </h4>
                   <span className="text-xs text-nowrap">
                     {formatDate(new Date(review.created_at))}
                   </span>

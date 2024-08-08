@@ -1,6 +1,6 @@
 import { useState } from 'react';
-import Star from './Star';
 import clsx from 'clsx';
+import Star from './Star';
 
 const Rating = ({ value, max = 5, onChange, className }) => {
   const [hoveredIndex, setHoveredIndex] = useState(null);

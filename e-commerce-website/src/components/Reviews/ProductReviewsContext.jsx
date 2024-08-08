@@ -1,20 +1,22 @@
+import { useParams } from 'react-router-dom';
 import { useMediaQuery } from 'usehooks-ts';
 
-const {
+import {
   createContext,
   useContext,
   useState,
   useEffect,
   useCallback,
   useMemo,
-} = require('react');
+} from 'react';
 
 const ProductReviewsContext = createContext();
 
 export const useProductReviewsContext = () => useContext(ProductReviewsContext);
 
 const ProductReviewsContextProvider = ({ children }) => {
-  const isAboveTablet = useMediaQuery('(min-width: 1024px)');
+  const { productId } = useParams();
+  const isDesktopView = useMediaQuery('(min-width: 1024px)');
   const [reviews, setReviews] = useState([]);
   const [isInitialLoading, setIsInitialLoading] = useState(true);
   const [isFetchingMore, setIsFetchingMore] = useState(false);
@@ -26,7 +28,7 @@ const ProductReviewsContextProvider = ({ children }) => {
   });
   const [aggregateRating, setAggregateRating] = useState(null);
   const [selectedRating, setSelectedRating] = useState(null);
-  const limit = isAboveTablet ? 12 : 10;
+  const limit = isDesktopView ? 12 : 10;
 
   const getReviews = useCallback(
     async (initialFetching = false) => {
@@ -36,12 +38,14 @@ const ProductReviewsContextProvider = ({ children }) => {
         setIsFetchingMore(true);
       }
 
-      const data = await fetch(
-        `https://www.greatfrontend.com/api/projects/challenges/e-commerce/products/voyager-hoodie/reviews?page=${currentPage}&per_page=${limit}${
+      const response = await fetch(
+        `https://www.greatfrontend.com/api/projects/challenges/e-commerce/products/${productId}/reviews?page=${currentPage}&per_page=${limit}${
           selectedRating ? `&rating=${selectedRating}` : ''
         }`
       );
-      const result = await data.json();
+
+      const result = await response.json();
+
       if (result) {
         setReviews(
           currentPage === 1 ? result.data : prev => [...prev, ...result.data]
@@ -56,13 +60,13 @@ const ProductReviewsContextProvider = ({ children }) => {
       setIsInitialLoading(false);
       setIsFetchingMore(false);
     },
-    [currentPage, limit, selectedRating]
+    [currentPage, limit, selectedRating, productId]
   );
 
   useEffect(() => {
     getReviews(isInitialLoading);
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [currentPage, selectedRating, getReviews]);
+  }, [currentPage, selectedRating]);
 
   const loadMoreReviews = useCallback(() => {
     if (pagination.hasMore) {

@@ -1,9 +1,9 @@
 import clsx from 'clsx';
 import { RiChatSmile3Line } from 'react-icons/ri';
 
-import Avatar from '../Avatar';
-import Rating from '../Rating';
-import Button from '../Button';
+import Avatar from '../ui/Avatar';
+import Rating from '../ui/Rating';
+import Button from '../ui/Button';
 
 import { useProductReviewsContext } from './ProductReviewsContext';
 
@@ -55,9 +55,9 @@ const ReviewsList = () => {
               <Avatar src={review.user.avatar_url} name={review.user.name} />
               <div className="flex flex-col gap-1 grow">
                 <div className="flex items-center justify-between">
-                  <span className="font-semibold text-base text-neutral-900">
+                  <h4 className="font-semibold text-base text-neutral-900">
                     {review.user.name}
-                  </span>
+                  </h4>
                   <span className="text-xs text-nowrap">
                     {formatDate(new Date(review.created_at))}
                   </span>

@@ -1,20 +1,19 @@
 import { useMediaQuery } from 'usehooks-ts';
-
-const {
+import {
   createContext,
   useContext,
   useState,
   useEffect,
   useCallback,
   useMemo,
-} = require('react');
+} from 'react';
 
 const ProductReviewsContext = createContext();
 
 export const useProductReviewsContext = () => useContext(ProductReviewsContext);
 
 const ProductReviewsContextProvider = ({ children }) => {
-  const isAboveTablet = useMediaQuery('(min-width: 1024px)');
+  const isDesktopView = useMediaQuery('(min-width: 1024px)');
   const [reviews, setReviews] = useState([]);
   const [isInitialLoading, setIsInitialLoading] = useState(true);
   const [isFetchingMore, setIsFetchingMore] = useState(false);
@@ -26,7 +25,7 @@ const ProductReviewsContextProvider = ({ children }) => {
   });
   const [aggregateRating, setAggregateRating] = useState(null);
   const [selectedRating, setSelectedRating] = useState(null);
-  const limit = isAboveTablet ? 12 : 10;
+  const limit = isDesktopView ? 12 : 10;
 
   const getReviews = useCallback(
     async (initialFetching = false) => {
@@ -62,7 +61,7 @@ const ProductReviewsContextProvider = ({ children }) => {
   useEffect(() => {
     getReviews(isInitialLoading);
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [currentPage, selectedRating, getReviews]);
+  }, [currentPage, selectedRating]);
 
   const loadMoreReviews = useCallback(() => {
     if (pagination.hasMore) {

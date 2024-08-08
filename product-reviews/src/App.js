@@ -1,7 +1,7 @@
-import './App.css';
 import clsx from 'clsx';
+import './App.css';
 
-import Modal from 'src/components/Modal';
+import Modal from 'src/components/ui/Modal';
 import Reviews from 'src/components/Reviews';
 import ProductReviewsContextProvider from 'src/components/Reviews/ProductReviewsContext';
 

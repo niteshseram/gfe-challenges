@@ -1,7 +1,7 @@
 import clsx from 'clsx';
-import Rating from '../Rating';
-import ProgressBar from '../ProgressBar/ProgressBar';
-import Button from '../Button';
+import Rating from '../ui/Rating';
+import ProgressBar from '../ui/ProgressBar/ProgressBar';
+import Button from '../ui/Button';
 import { useProductReviewsContext } from './ProductReviewsContext';
 
 const OverallRating = () => {
