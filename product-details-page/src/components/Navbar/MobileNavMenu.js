@@ -51,7 +51,7 @@ const MobileNavMenu = ({ links }) => {
                 <Link
                   to={link.href}
                   onClick={() => setOpenMenu(false)}
-                  className="py-2 px-3"
+                  className="py-2 px-3 text-sm"
                   variant="gray"
                   type="nav">
                   {link.name}

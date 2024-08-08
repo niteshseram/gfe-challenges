@@ -48,7 +48,7 @@ const MobileNavMenu = ({ links }) => {
             </div>
             <div className="flex flex-col gap-2">
               {links.map(link => (
-                <Link to={link.href} className="py-2 px-3">
+                <Link to={link.href} className="py-2 px-3 text-sm">
                   {link.name}
                 </Link>
               ))}
