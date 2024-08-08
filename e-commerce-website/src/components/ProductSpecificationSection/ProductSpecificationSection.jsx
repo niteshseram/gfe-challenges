@@ -163,17 +163,17 @@ const ProductSpecificationSection = () => {
         'flex flex-col gap-16'
       )}>
       <div className="flex flex-col gap-6">
-        <span className="font-semibold text-3xl md:text-5xl text-neutral-900">
+        <h2 className="font-semibold text-3xl md:text-5xl text-neutral-900">
           Discover timeless elegance
-        </span>
-        <span className="text-lg text-neutral-600">
+        </h2>
+        <p className="text-lg text-neutral-600">
           Step into a world where quality meets quintessential charm with our
           collection. Every thread weaves a promise of unparalleled quality,
           ensuring that each garment is not just a part of your wardrobe, but a
           piece of art. Here's the essence of what makes our apparel the
           hallmark for those with an eye for excellence and a heart for the
           environment.
-        </span>
+        </p>
       </div>
 
       <div className="flex flex-col gap-8">
@@ -201,10 +201,10 @@ const ProductSpecificationSection = () => {
 
           <div className="flex flex-col gap-8">
             <div className="flex flex-col gap-2">
-              <span className="font-medium text-2xl text-neutral-900">
+              <h3 className="font-medium text-2xl text-neutral-900">
                 {data.title}
-              </span>
-              <span className=" text-neutral-600">{data.description}</span>
+              </h3>
+              <p className=" text-neutral-600">{data.description}</p>
             </div>
             <div
               className={clsx(
