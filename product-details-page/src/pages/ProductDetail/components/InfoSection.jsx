@@ -3,7 +3,7 @@ import {
   AccordionContent,
   AccordionItem,
   AccordionTrigger,
-} from 'src/components/Accordion';
+} from 'src/components/ui/Accordion';
 
 import { useProductDetailsContext } from './ProductDetailsContext';
 

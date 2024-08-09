@@ -1,7 +1,7 @@
 import clsx from 'clsx';
 import { RiAddFill, RiSubtractFill } from 'react-icons/ri';
 
-import Tooltip from '../Tooltip';
+import Tooltip from '../ui/Tooltip';
 
 const CartControl = ({ quantity, decrement, increment, availableStock }) => {
   const disabledDecrement = quantity === 1;

@@ -1,6 +1,6 @@
 import clsx from 'clsx';
 
-import Link from '../Link';
+import Link from '../ui/Link';
 import CartButton from '../CartButton';
 import MobileNavMenu from './MobileNavMenu';
 

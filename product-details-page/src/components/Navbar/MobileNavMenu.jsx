@@ -3,7 +3,7 @@ import clsx from 'clsx';
 import { createPortal } from 'react-dom';
 import { RiCloseLine, RiMenuLine } from 'react-icons/ri';
 
-import Link from '../Link';
+import Link from '../ui/Link';
 
 const MobileNavMenu = ({ links }) => {
   const [openMenu, setOpenMenu] = useState(false);

@@ -1,7 +1,7 @@
 import clsx from 'clsx';
 import { Outlet } from 'react-router-dom';
 
-import Toast from 'src/components/Toast';
+import Toast from 'src/components/ui/Toast';
 import Footer from 'src/components/Footer';
 
 import { useToastContext } from './context/ToastContext';

@@ -1,6 +1,6 @@
 import { useState } from 'react';
-import Button from '../Button';
-import TextInput from '../TextInput';
+import Button from 'src/components/ui/Button';
+import TextInput from 'src/components/ui/TextInput';
 import { useToast } from '../../context/ToastContext';
 
 const EMAIL_REGEX = /^[^@]+@[^@]+\.[^@]+$/;

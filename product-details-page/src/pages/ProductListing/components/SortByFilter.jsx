@@ -1,4 +1,4 @@
-import { Dropdown, DropdownItem } from 'src/components/Dropdown';
+import { Dropdown, DropdownItem } from 'src/components/ui/Dropdown';
 
 import { useProductListingContext } from './ProductListingContext';
 import { SORT_OPTIONS } from 'src/constants';

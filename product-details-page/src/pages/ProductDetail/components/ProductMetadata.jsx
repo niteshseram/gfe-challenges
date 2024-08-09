@@ -2,9 +2,9 @@ import { useMemo } from 'react';
 import clsx from 'clsx';
 import { useMediaQuery } from 'usehooks-ts';
 
-import Badge from 'src/components/Badge';
-import Button from 'src/components/Button';
-import Rating from 'src/components/Rating';
+import Badge from 'src/components/ui/Badge';
+import Button from 'src/components/ui/Button';
+import Rating from 'src/components/ui/Rating';
 import AvailableColors from './AvailableColors';
 import AvailableSizes from './AvailableSizes';
 import ProductQuantity from './ProductQuantity';
