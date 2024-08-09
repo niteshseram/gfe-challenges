@@ -7,7 +7,7 @@ import {
   RiYoutubeLine,
 } from 'react-icons/ri';
 
-import Link from '../Link';
+import Link from '../ui/Link';
 import NewsletterForm from './NewsletterForm';
 
 const shopCategories = [

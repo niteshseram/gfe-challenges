@@ -3,7 +3,7 @@ import clsx from 'clsx';
 import './App.css';
 
 import Footer from './components/Footer';
-import Toast from './components/Toast/Toast';
+import Toast from './components/ui/Toast';
 import { useToastContext } from './context/ToastContext';
 
 function App() {
