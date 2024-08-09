@@ -19,7 +19,7 @@ import {
   RiWindyLine,
 } from 'react-icons/ri';
 
-import Tabs from '../Tabs';
+import Tabs from '../ui/Tabs';
 
 const TABS = [
   { label: 'Sustainability', value: 'sustainability' },
