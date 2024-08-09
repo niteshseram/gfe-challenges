@@ -2,7 +2,7 @@ import { RiTShirt2Line } from 'react-icons/ri';
 import clsx from 'clsx';
 
 import ProductCard from 'src/components/ProductCard';
-import Button from 'src/components/Button';
+import Button from 'src/components/ui/Button';
 
 import { useProductListingContext } from './ProductListingContext';
 

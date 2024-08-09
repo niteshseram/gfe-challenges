@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import LatestArrivalsSection from './components/LatestArrivalsSection';
 import clsx from 'clsx';
-import Button from 'src/components/Button';
+import Button from 'src/components/ui/Button';
 
 const LatestArrivalsPage = () => {
   const [products, setProducts] = useState([]);
@@ -36,7 +36,12 @@ const LatestArrivalsPage = () => {
         <div className="font-semibold text-2xl md:text-3xl">
           Latest Arrivals
         </div>
-        <Button label="View all" variant="secondary" href="/latest" size="lg" />
+        <Button
+          label="View all"
+          variant="secondary"
+          href="/products?collectionId=latest"
+          size="lg"
+        />
       </div>
       {isProductsLoading ? (
         <div className="w-full h-full flex items-center justify-center">

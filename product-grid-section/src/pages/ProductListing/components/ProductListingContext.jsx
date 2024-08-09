@@ -102,7 +102,6 @@ const ProductListingContextProvider = ({ children }) => {
     return {
       products,
       isProductsLoading,
-
       selectedCollections,
       selectedCategory,
       selectedColors,
@@ -116,7 +115,6 @@ const ProductListingContextProvider = ({ children }) => {
   }, [
     products,
     isProductsLoading,
-
     selectedCollections,
     selectedCategory,
     selectedColors,
