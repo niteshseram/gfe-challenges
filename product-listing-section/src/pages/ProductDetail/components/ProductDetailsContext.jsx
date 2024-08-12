@@ -7,6 +7,7 @@ import {
   useState,
 } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
+import { getUnavailableSizes } from '../utils';
 
 const ProductDetailsContext = createContext();
 
@@ -45,61 +46,6 @@ const ProductDetailsContextProvider = ({ children }) => {
     setItemQuantity(prev => prev + 1);
   }, []);
 
-  const getUnavailableColors = useCallback(() => {
-    const colorsInStock = new Set();
-    const allColors = new Set(product.colors);
-
-    product.inventory.forEach(item => {
-      if (item.stock > 0) {
-        colorsInStock.add(item.color);
-      }
-    });
-
-    const unavailableColors = [...allColors].filter(
-      color => !colorsInStock.has(color)
-    );
-
-    return unavailableColors;
-  }, [product]);
-
-  const getUnavailableSizes = useCallback(
-    color => {
-      const sizesInStock = new Set();
-      const allSizes = new Set(product.sizes);
-
-      product.inventory.forEach(item => {
-        if (item.stock > 0 && item.color === color) {
-          sizesInStock.add(item.size);
-        }
-      });
-
-      const unavailableSizes = [...allSizes].filter(
-        size => !sizesInStock.has(size)
-      );
-
-      return unavailableSizes;
-    },
-    [product]
-  );
-
-  const getInventoryData = useCallback(() => {
-    let data = {};
-    product.inventory.forEach(item => {
-      if (item.size === selectedSize && item.color === selectedColor) {
-        data = item;
-      }
-    });
-
-    return data;
-  }, [product, selectedColor, selectedSize]);
-
-  const getSelectedColorImages = useCallback(() => {
-    const images = product.images?.filter(
-      image => image.color === selectedColor
-    );
-    return images;
-  }, [product, selectedColor]);
-
   useEffect(() => {
     getProduct();
   }, [getProduct]);
@@ -110,14 +56,17 @@ const ProductDetailsContextProvider = ({ children }) => {
       return;
     }
 
-    const unavailableSizes = getUnavailableSizes(selectedColor);
+    const unavailableSizes = getUnavailableSizes({
+      product,
+      color: selectedColor,
+    });
     const availableSizes = [...product.sizes].filter(
       size => !unavailableSizes.includes(size)
     );
     if (availableSizes.length > 0) {
       setSelectedSize(availableSizes[0]);
     }
-  }, [getUnavailableSizes, selectedColor, product]);
+  }, [selectedColor, product]);
 
   const value = useMemo(() => {
     return {
@@ -130,10 +79,6 @@ const ProductDetailsContextProvider = ({ children }) => {
       itemQuantity,
       incrementQuantity,
       decrementQuantity,
-      getUnavailableColors,
-      getUnavailableSizes,
-      getInventoryData,
-      getSelectedColorImages,
     };
   }, [
     product,
@@ -145,10 +90,6 @@ const ProductDetailsContextProvider = ({ children }) => {
     itemQuantity,
     incrementQuantity,
     decrementQuantity,
-    getUnavailableColors,
-    getUnavailableSizes,
-    getInventoryData,
-    getSelectedColorImages,
   ]);
 
   return (

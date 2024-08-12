@@ -2,10 +2,11 @@ import clsx from 'clsx';
 import { useCallback, useMemo } from 'react';
 import { useNavigate } from 'react-router-dom';
 
-import Link from '../Link';
-import ColorSwatches from '../ColorSwatches';
+import Link from '../ui/Link';
+import ColorSwatches from '../ui/ColorSwatches';
 
 import { COLORS } from 'src/constants';
+import { getUnavailableColors } from 'src/pages/ProductDetail/utils';
 
 const ProductCard = ({ product }) => {
   const navigate = useNavigate();
@@ -14,26 +15,9 @@ const ProductCard = ({ product }) => {
 
   const hasDiscount = !!discount_percentage;
 
-  const getUnavailableColors = useCallback(() => {
-    const colorsInStock = new Set();
-    const allColors = new Set(product.colors);
-
-    product.inventory.forEach(item => {
-      if (item.stock > 0) {
-        colorsInStock.add(item.color);
-      }
-    });
-
-    const unavailableColors = [...allColors].filter(
-      color => !colorsInStock.has(color)
-    );
-
-    return unavailableColors;
-  }, [product]);
-
   const unavailableColors = useMemo(
-    () => getUnavailableColors(),
-    [getUnavailableColors]
+    () => getUnavailableColors(product),
+    [product]
   );
 
   const redirectUrl = `/products/${product.product_id}`;
