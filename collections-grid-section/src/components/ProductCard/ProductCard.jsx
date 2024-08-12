@@ -2,8 +2,8 @@ import clsx from 'clsx';
 import { useCallback, useMemo } from 'react';
 import { useNavigate } from 'react-router-dom';
 
-import Link from '../Link';
-import ColorSwatches from '../ColorSwatches';
+import Link from '../ui/Link';
+import ColorSwatches from '../ui/ColorSwatches';
 
 import { COLORS } from 'src/constants';
 

@@ -1,8 +1,9 @@
-import ProductCard from 'src/components/ProductCard';
-import { useProductListingContext } from './ProductListingContext';
-import clsx from 'clsx';
-import Button from 'src/components/Button';
 import { RiTShirt2Line } from 'react-icons/ri';
+import clsx from 'clsx';
+
+import ProductCard from 'src/components/ProductCard';
+import Button from 'src/components/ui/Button';
+import { useProductListingContext } from './ProductListingContext';
 
 const ProductListingSection = () => {
   const { products, isProductsLoading, filterCount, resetFilters } =

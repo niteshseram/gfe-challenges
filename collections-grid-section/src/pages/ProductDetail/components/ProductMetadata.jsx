@@ -2,23 +2,28 @@ import clsx from 'clsx';
 import { useMediaQuery } from 'usehooks-ts';
 import { useMemo } from 'react';
 
-import Badge from 'src/components/Badge';
-import Button from 'src/components/Button';
-import Rating from 'src/components/Rating';
+import Badge from 'src/components/ui/Badge';
+import Button from 'src/components/ui/Button';
+import Rating from 'src/components/ui/Rating';
 import AvailableColors from './AvailableColors';
 import AvailableSizes from './AvailableSizes';
 import ProductQuantity from './ProductQuantity';
 import InfoSection from './InfoSection';
 
 import { useProductDetailsContext } from './ProductDetailsContext';
+import { getInventoryData } from '../utils';
 
 const ProductMetadata = () => {
   const isMobileAndBelow = useMediaQuery('(max-width: 767px)');
-  const { product, getInventoryData, itemQuantity } =
+  const { product, itemQuantity, selectedColor, selectedSize } =
     useProductDetailsContext();
 
   const { name, description, reviews, rating } = product;
-  const inventoryData = useMemo(() => getInventoryData(), [getInventoryData]);
+  const inventoryData = useMemo(
+    () =>
+      getInventoryData({ product, color: selectedColor, size: selectedSize }),
+    [product, selectedColor, selectedSize]
+  );
   const { discount_percentage, list_price, sale_price, stock } = inventoryData;
 
   const roundedRating = Math.round(rating * 10) / 10;

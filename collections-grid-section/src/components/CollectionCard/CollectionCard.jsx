@@ -2,7 +2,7 @@ import clsx from 'clsx';
 import { useCallback } from 'react';
 import { useNavigate } from 'react-router-dom';
 
-import Link from 'src/components/Link';
+import Link from 'src/components/ui/Link';
 
 const variantClasses = {
   primary: clsx('max-w-[594px] h-[580px]'),
