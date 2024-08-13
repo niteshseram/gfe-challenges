@@ -5,8 +5,8 @@ import { useNavigate } from 'react-router-dom';
 import Link from 'src/components/ui/Link';
 
 const variantClasses = {
-  primary: clsx('max-w-[594px] h-[580px]'),
-  secondary: clsx('max-w-[594px] h-[337px] md:h-[276px]'),
+  primary: clsx('w-full lg:max-w-[594px] h-[580px]'),
+  secondary: clsx('w-full lg:max-w-[594px] h-[337px] md:h-[276px]'),
 };
 
 const CollectionCard = ({
