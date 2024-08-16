@@ -56,9 +56,15 @@ body {
   transition: all 0.3s ease;
   position: relative;
 }
+.tabs__button:hover, tabs__button:focus {
+  color: #171717
+}
 
 .tabs__button.active {
   color: #4338CA;
+}
+.tabs__button.active:hover, .tabs__button.active:focus {
+  color: #3730A3;
 }
 
 .tabs__button.active::after {
