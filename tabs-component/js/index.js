@@ -4,10 +4,7 @@ document.querySelectorAll('.tabs__button').forEach(button => {
 
     // Update selected state for buttons
     document.querySelectorAll('.tabs__button').forEach(btn => {
-      btn.classList.toggle(
-        'tabs__button--selected',
-        btn.getAttribute('data-value') === value
-      );
+      btn.classList.toggle('active', btn.getAttribute('data-value') === value);
       btn.setAttribute(
         'aria-selected',
         btn.getAttribute('data-value') === value

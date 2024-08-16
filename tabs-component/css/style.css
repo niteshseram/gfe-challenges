@@ -57,11 +57,11 @@ body {
   position: relative;
 }
 
-.tabs__button--selected {
+.tabs__button.active {
   color: #4338CA;
 }
 
-.tabs__button--selected::after {
+.tabs__button.active::after {
   content: '';
   position: absolute;
   bottom: -1px;
